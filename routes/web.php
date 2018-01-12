@@ -31,3 +31,12 @@ Route::resource('mobil','SupplierController')->middleware('auth');
 Route::get('/supplier/view', 'SupplierController@index')->middleware('auth');
 Route::get('/supplier/search', 'SupplierController@search')->middleware('auth');
 Route::resource('supplier','SupplierController')->middleware('auth');
+
+
+Route::get('/driver/view', 'DriverController@index')->middleware('auth');
+Route::get('/driver/search', 'DriverController@search')->middleware('auth');
+Route::resource('driver','DriverController')->middleware('auth');
+
+Route::get('/gudang/view', 'GudangController@index')->middleware('auth');
+Route::get('/gudang/search', 'GudangController@search')->middleware('auth');
+Route::resource('gudang','GudangController')->middleware('auth');

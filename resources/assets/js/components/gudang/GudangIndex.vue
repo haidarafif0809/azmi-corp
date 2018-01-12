@@ -4,17 +4,17 @@
         <div class="col-md-8 col-md-offset-2">
             <ul class="breadcrumb">
               <li><router-link :to="{name: 'IndexDashboard'}">Home</router-link></li>
-              <li class="active">Kelola Supplier</li>
+              <li class="active">Kelola Gudang</li>
             </ul>
             <div class="panel panel-default">
-                <div class="panel-heading">Kelola Supplier</div>
+                <div class="panel-heading">Kelola Gudang</div>
 
                 <div class="panel-body">
 
                     <router-link 
-                      :to="{name: 'CreateSupplier'}" 
+                      :to="{name: 'CreateGudang'}" 
                       class="btn btn-md btn-primary"> 
-                        Tambah Supplier
+                        Tambah Gudang
                     </router-link>
                     <div class="table-responsive">
                     
@@ -24,26 +24,24 @@
                     </div>
                     <table class="table table-bordered" >
                     <thead>
-                        <th>Kode Supplier</th>
-                        <th>Nama Supplier</th>
-                        <th>Kontak Supplier</th>
+                        <th>Kode Gudang</th>
+                        <th>Nama Gudang</th>
                         <th>Aksi</th>
                     </thead>
-                    <tbody v-if="suppliers.length">
-                      <tr v-for="supplier,index in suppliers">
-                        <td>{{ supplier.kode}}</td>
-                        <td>{{ supplier.nama}}</td>
-                        <td>{{ supplier.kontak}}</td>
+                    <tbody v-if="gudangs.length">
+                      <tr v-for="gudang,index in gudangs">
+                        <td>{{ gudang.kode}}</td>
+                        <td>{{ gudang.nama}}</td>
                         <td>
                         <router-link 
-                          :to="{name:'EditSupplier' ,params:{id: supplier.id}}" 
+                          :to="{name:'EditGudang' ,params:{id: gudang.id}}" 
                           class="btn btn-xs btn-default"
                        >
                           Edit
                        </router-link>
                         <button 
                           class="btn btn-xs btn-danger" 
-                          v-on:click="konfirmasiHapus(supplier.id,index,supplier.nama)"
+                          v-on:click="konfirmasiHapus(gudang.id,index,gudang.nama)"
                         >
                           Hapus
                         </button>
@@ -64,9 +62,9 @@
   export default {
     data: function() {
       return {
-        suppliers: [],
-        suppliersData: {},
-        url: window.location.origin + (window.location.pathname).replace("home","supplier"),
+        gudangs: [],
+        gudangsData: {},
+        url: window.location.origin + (window.location.pathname).replace("home","gudang"),
         pencarian: '',
         loading: true
       }
@@ -88,8 +86,8 @@
         }
         axios.get(app.url + '/view?page=' + page)
         .then(function(resp){
-          app.suppliers = resp.data.data;
-          app.suppliersData = resp.data;
+          app.gudangs = resp.data.data;
+          app.gudangsData = resp.data;
           app.loading = false;
         })
         .catch(function(resp){
@@ -106,8 +104,8 @@
         }
         axios.get(app.url + '/search?q='+app.pencarian+'&page=' + page)
         .then(function(resp){
-          app.suppliers = resp.data.data;
-          app.suppliersData = resp.data;
+          app.gudangs = resp.data.data;
+          app.gudangsData = resp.data;
           app.loading = false;
         })
         .catch(function(resp){
@@ -116,21 +114,21 @@
          
         })
       },
-      deleteEntry(id,index,namaSupplier){
+      deleteEntry(id,index,namaGudang){
           axios.delete(this.url + '/' + id)
           .then((resp) => {
             this.getResults();
-            this.alert("Berhasil Menghapus","Berhasil Menghapus Supplier " + namaSupplier);
+            this.alert("Berhasil Menghapus","Berhasil Menghapus Gudang " + namaGudang);
           })
           .catch((resp) =>{
             alert("Something Goes Wrong")
             console.log(resp);
           })
       },
-      konfirmasiHapus(id,index,namaSupplier){
+      konfirmasiHapus(id,index,namaGudang){
       
         this.$swal({
-          title: "Yakin Ingin Menghapus Supplier " + namaSupplier + "?",
+          title: "Yakin Ingin Menghapus Gudang " + namaGudang + "?",
           text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
           icon: "warning",
           buttons: true,
@@ -138,7 +136,7 @@
         })
         .then((willDelete) => {
           if (willDelete) {
-            this.deleteEntry(id,index,namaSupplier);
+            this.deleteEntry(id,index,namaGudang);
           }
         })  
       },

@@ -41,6 +41,8 @@
                         <li><router-link :to="{name: 'IndexUser'}" >User</router-link></li>
                         <li><router-link :to="{name: 'IndexMobil'}" >Mobil</router-link></li>
                         <li><router-link :to="{name: 'IndexSupplier'}" >Supplier</router-link></li>
+                        <li><router-link :to="{name: 'IndexDriver'}" >Driver</router-link></li>
+                        <li><router-link :to="{name: 'IndexGudang'}" >Gudang</router-link></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

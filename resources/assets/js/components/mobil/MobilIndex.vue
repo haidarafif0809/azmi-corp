@@ -14,7 +14,7 @@
                     <router-link 
                       :to="{name: 'CreateMobil'}" 
                       class="btn btn-md btn-primary"> 
-                        Tamba Mobil
+                        Tambah Mobil
                     </router-link>
                     <div class="table-responsive">
                     

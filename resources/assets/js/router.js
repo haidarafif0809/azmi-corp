@@ -11,9 +11,13 @@ import MobilEdit from './components/mobil/MobilEdit.vue';
 import SupplierIndex from './components/supplier/SupplierIndex.vue';
 import SupplierCreate from './components/supplier/SupplierCreate.vue';
 import SupplierEdit from './components/supplier/SupplierEdit.vue';
+import DriverIndex from './components/driver/DriverIndex.vue';
+import DriverCreate from './components/driver/DriverCreate.vue';
+import DriverEdit from './components/driver/DriverEdit.vue';
+import GudangIndex from './components/gudang/GudangIndex.vue';
+import GudangCreate from './components/gudang/GudangCreate.vue';
+import GudangEdit from './components/gudang/GudangEdit.vue';
 
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -21,8 +25,6 @@ const Bar = { template: '<div>bar</div>' }
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar },
   { path: '/', component: DashboardIndex,name:'IndexDashboard' },
   { path: '/user', component: UserIndex,name: 'IndexUser' },
   { path: '/user/create', component: UserCreate,name: 'CreateUser' },
@@ -33,6 +35,12 @@ const routes = [
   { path: '/supplier', component:SupplierIndex,name: 'IndexSupplier' },
   { path: '/supplier/create', component:SupplierCreate,name: 'CreateSupplier' },
   { path: '/supplier/edit/:id', component:SupplierEdit,name: 'EditSupplier' },
+  { path: '/driver', component:DriverIndex,name: 'IndexDriver' },
+  { path: '/driver/create', component:DriverCreate,name: 'CreateDriver' },
+  { path: '/driver/edit/:id', component:DriverEdit,name: 'EditDriver' },
+  { path: '/gudang', component:GudangIndex,name: 'IndexGudang' },
+  { path: '/gudang/create', component:GudangCreate,name: 'CreateGudang' },
+  { path: '/gudang/edit/:id', component:GudangEdit,name: 'EditGudang' },
 ]
 
 export default routes;
