@@ -8,6 +8,9 @@ import UserEdit from './components/user/UserEdit.vue';
 import MobilIndex from './components/mobil/MobilIndex.vue';
 import MobilCreate from './components/mobil/MobilCreate.vue';
 import MobilEdit from './components/mobil/MobilEdit.vue';
+import SupplierIndex from './components/supplier/SupplierIndex.vue';
+import SupplierCreate from './components/supplier/SupplierCreate.vue';
+import SupplierEdit from './components/supplier/SupplierEdit.vue';
 
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
@@ -27,6 +30,9 @@ const routes = [
   { path: '/mobil', component: MobilIndex,name: 'IndexMobil' },
   { path: '/mobil/create', component: MobilCreate,name: 'CreateMobil' },
   { path: '/mobil/edit/:id', component: MobilEdit,name: 'EditMobil' },
+  { path: '/supplier', component:SupplierIndex,name: 'IndexSupplier' },
+  { path: '/supplier/create', component:SupplierCreate,name: 'CreateSupplier' },
+  { path: '/supplier/edit/:id', component:SupplierEdit,name: 'EditSupplier' },
 ]
 
 export default routes;

@@ -40,6 +40,7 @@
                         <li><router-link :to="{name: 'IndexDashboard'}" >Home</router-link></li>
                         <li><router-link :to="{name: 'IndexUser'}" >User</router-link></li>
                         <li><router-link :to="{name: 'IndexMobil'}" >Mobil</router-link></li>
+                        <li><router-link :to="{name: 'IndexSupplier'}" >Supplier</router-link></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
