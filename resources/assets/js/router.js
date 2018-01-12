@@ -17,6 +17,9 @@ import DriverEdit from './components/driver/DriverEdit.vue';
 import GudangIndex from './components/gudang/GudangIndex.vue';
 import GudangCreate from './components/gudang/GudangCreate.vue';
 import GudangEdit from './components/gudang/GudangEdit.vue';
+import PelangganIndex from './components/pelanggan/PelangganIndex.vue';
+import PelangganCreate from './components/pelanggan/PelangganCreate.vue';
+import PelangganEdit from './components/pelanggan/PelangganEdit.vue';
 
 
 // 2. Define some routes
@@ -41,6 +44,9 @@ const routes = [
   { path: '/gudang', component:GudangIndex,name: 'IndexGudang' },
   { path: '/gudang/create', component:GudangCreate,name: 'CreateGudang' },
   { path: '/gudang/edit/:id', component:GudangEdit,name: 'EditGudang' },
+  { path: '/pelanggan', component:PelangganIndex,name: 'IndexPelanggan' },
+  { path: '/pelanggan/create', component:PelangganCreate,name: 'CreatePelanggan' },
+  { path: '/pelanggan/edit/:id', component:PelangganEdit,name: 'EditPelanggan' },
 ]
 
 export default routes;

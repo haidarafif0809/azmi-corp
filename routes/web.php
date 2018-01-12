@@ -40,3 +40,7 @@ Route::resource('driver','DriverController')->middleware('auth');
 Route::get('/gudang/view', 'GudangController@index')->middleware('auth');
 Route::get('/gudang/search', 'GudangController@search')->middleware('auth');
 Route::resource('gudang','GudangController')->middleware('auth');
+
+Route::get('/pelanggan/view', 'PelangganController@index')->middleware('auth');
+Route::get('/pelanggan/search', 'PelangganController@search')->middleware('auth');
+Route::resource('pelanggan','PelangganController')->middleware('auth');

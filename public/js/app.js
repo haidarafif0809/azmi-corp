@@ -45706,9 +45706,18 @@ exports.version = version;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue__);
 
 // 1. Define route components.
 // These can be imported from other files
+
+
+
 
 
 
@@ -45731,7 +45740,7 @@ exports.version = version;
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }, { path: '/pelanggan', component: __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default.a, name: 'IndexPelanggan' }, { path: '/pelanggan/create', component: __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default.a, name: 'CreatePelanggan' }, { path: '/pelanggan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default.a, name: 'EditPelanggan' }];
 
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
@@ -51050,6 +51059,1114 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-313ebc9c", module.exports)
+  }
+}
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(102)
+/* template */
+var __vue_template__ = __webpack_require__(103)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/pelanggan/PelangganIndex.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19c75fb6", Component.options)
+  } else {
+    hotAPI.reload("data-v-19c75fb6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      pelanggans: [],
+      pelanggansData: {},
+      url: window.location.origin + window.location.pathname.replace("home", "pelanggan"),
+      pencarian: '',
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    var app = this;
+    app.getResults();
+  },
+
+  watch: {
+    pencarian: function pencarian(newSearch) {
+      this.getHasilPencarian();
+    }
+  },
+  methods: {
+    getResults: function getResults(page) {
+      var app = this;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      axios.get(app.url + '/view?page=' + page).then(function (resp) {
+        app.pelanggans = resp.data.data;
+        app.pelanggansData = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    getHasilPencarian: function getHasilPencarian(page) {
+
+      var app = this;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      axios.get(app.url + '/search?q=' + app.pencarian + '&page=' + page).then(function (resp) {
+        app.pelanggans = resp.data.data;
+        app.pelanggansData = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    deleteEntry: function deleteEntry(id, index, namaPelanggan) {
+      var _this = this;
+
+      axios.delete(this.url + '/' + id).then(function (resp) {
+        _this.getResults();
+        _this.alert("Berhasil Menghapus", "Berhasil Menghapus Pelanggan " + namaPelanggan);
+      }).catch(function (resp) {
+        alert("Something Goes Wrong");
+        console.log(resp);
+      });
+    },
+    konfirmasiHapus: function konfirmasiHapus(id, index, namaPelanggan) {
+      var _this2 = this;
+
+      this.$swal({
+        title: "Yakin Ingin Menghapus Pelanggan " + namaPelanggan + "?",
+        text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(function (willDelete) {
+        if (willDelete) {
+          _this2.deleteEntry(id, index, namaPelanggan);
+        }
+      });
+    },
+    alert: function alert(title, pesan) {
+      this.$swal({
+        title: title,
+        text: pesan,
+        icon: "success"
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "IndexDashboard" } } }, [
+                _vm._v("Home")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Kelola Pelanggan")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Kelola Pelanggan")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "panel-body" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-md btn-primary",
+                  attrs: { to: { name: "CreatePelanggan" } }
+                },
+                [
+                  _vm._v(
+                    " \n                        Tambah Pelanggan\n                    "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "table-responsive" }, [
+                _c("div", { attrs: { align: "right" } }, [
+                  _vm._v(
+                    "\n                   Pencarian \n                    "
+                  ),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.pencarian,
+                        expression: "pencarian"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    style: { width: "20%" },
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.pencarian },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.pencarian = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("table", { staticClass: "table table-bordered" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm.pelanggans.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.pelanggans, function(pelanggan, index) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(pelanggan.kode))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(pelanggan.nama))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(pelanggan.kontak))]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "btn btn-xs btn-default",
+                                    attrs: {
+                                      to: {
+                                        name: "EditPelanggan",
+                                        params: { id: pelanggan.id }
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                          Edit\n                       "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-xs btn-danger",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.konfirmasiHapus(
+                                          pelanggan.id,
+                                          index,
+                                          pelanggan.nama
+                                        )
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                          Hapus\n                        "
+                                    )
+                                  ]
+                                )
+                              ],
+                              1
+                            )
+                          ])
+                        })
+                      )
+                    : _vm._e()
+                ])
+              ])
+            ],
+            1
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("th", [_vm._v("Kode Pelanggan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Nama Pelanggan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Kontak Pelanggan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Aksi")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19c75fb6", module.exports)
+  }
+}
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(105)
+/* template */
+var __vue_template__ = __webpack_require__(106)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/pelanggan/PelangganEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-61cef4d6", Component.options)
+  } else {
+    hotAPI.reload("data-v-61cef4d6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      pelanggan: {
+        kode: '',
+        nama: '',
+        kontak: ''
+      },
+      pelangganId: null,
+      url: window.location.origin + window.location.pathname.replace("home", "pelanggan"),
+      errors: [],
+      message: ''
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var app = this;
+    this.pelangganId = this.$route.params.id;
+    axios.get(app.url + '/' + this.pelangganId + '/edit').then(function (resp) {
+      _this.pelanggan = resp.data;
+    }).catch(function (resp) {
+      alert("Something Goes Wrong");
+    });
+  },
+
+  methods: {
+    alert: function alert(pesan) {
+      this.$swal({
+        title: "Berhasil Mengubah Pelanggan",
+        text: pesan,
+        icon: "success"
+      });
+    },
+    saveForm: function saveForm() {
+      var _this2 = this;
+
+      var newPelanggan = this.pelanggan;
+      axios.patch(this.url + '/' + this.pelangganId, newPelanggan).then(function (resp) {
+        _this2.alert('Berhasil Mengubah Pelanggan ' + _this2.pelanggan.nama);
+        _this2.$router.replace('/pelanggan/');
+      }).catch(function (resp) {
+        if (resp.response.status == 500) alert('Something Goes Wrong');
+        _this2.errors = resp.response.data.errors;
+        console.log(resp);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c("li", [_vm._v("Home")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "IndexPelanggan" } } }, [
+                _vm._v("Kelola Pelanggan")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Edit  Pelanggan")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Edit  Pelanggan")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "form",
+              {
+                staticClass: "form-horizontal",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.saveForm()
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Kode")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.kode,
+                          expression: "pelanggan.kode"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Kode Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.kode },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "kode", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.kode
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.kode[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Plat")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.nama,
+                          expression: "pelanggan.nama"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Plat Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.nama },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "nama", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.nama
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.nama[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Kontak")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.kontak,
+                          expression: "pelanggan.kontak"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Kontak Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.kontak },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "kontak", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.kontak
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.kontak[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "col-md-4 col-md-offset-2" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-61cef4d6", module.exports)
+  }
+}
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(108)
+/* template */
+var __vue_template__ = __webpack_require__(109)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/pelanggan/PelangganCreate.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-46d8e1c8", Component.options)
+  } else {
+    hotAPI.reload("data-v-46d8e1c8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      pelanggan: {
+        kode: '',
+        nama: '',
+        kontak: ''
+      },
+      url: window.location.origin + window.location.pathname.replace("home", "pelanggan"),
+      errors: [],
+      message: ''
+    };
+  },
+  mounted: function mounted() {
+    var app = this;
+  },
+
+  methods: {
+    alert: function alert(pesan) {
+      this.$swal({
+        title: "Berhasil Menambah Pelanggan",
+        text: pesan,
+        icon: "success"
+      });
+    },
+    saveForm: function saveForm() {
+      var _this = this;
+
+      var newPelanggan = this.pelanggan;
+      axios.post(this.url, newPelanggan).then(function (resp) {
+        _this.alert('Berhasil Menambah Pelanggan ' + _this.pelanggan.nama);
+        _this.$router.replace('/pelanggan/');
+      }).catch(function (resp) {
+        if (resp.response.status == 500) alert('Something Goes Wrong');
+        _this.errors = resp.response.data.errors;
+        console.log(resp);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c("li", [_vm._v("Home")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "IndexPelanggan" } } }, [
+                _vm._v("Kelola Pelanggan")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Tambah Pelanggan")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Tambah Pelanggan")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "form",
+              {
+                staticClass: "form-horizontal",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.saveForm()
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Kode")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.kode,
+                          expression: "pelanggan.kode"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Kode Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.kode },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "kode", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.kode
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.kode[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Nama")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.nama,
+                          expression: "pelanggan.nama"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Nama Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.nama },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "nama", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.nama
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.nama[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Kontak")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.kontak,
+                          expression: "pelanggan.kontak"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Kontak Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.kontak },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.pelanggan, "kontak", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.kontak
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.kontak[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "col-md-4 col-md-offset-2" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-46d8e1c8", module.exports)
   }
 }
 
