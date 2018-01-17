@@ -62,9 +62,17 @@
                         <td>{{ transaksi.deskripsi}}</td>
                         <td>{{ transaksi.masuk}}</td>
                         <td>{{ transaksi.keluar}}</td>
-                        <td>
+                        <td >
                         <router-link 
-                          :to="{name:'EditTransaksiKas' ,params:{id: transaksi.id}}" 
+                          v-if="transaksi.masuk > 0"
+                          :to="{name:'EditTransaksiKasMasuk' ,params:{id: transaksi.id}}" 
+                          class="btn btn-xs btn-default"
+                       >
+                          Edit
+                       </router-link>
+                        <router-link 
+                          v-if="transaksi.keluar > 0"
+                          :to="{name:'EditTransaksiKasKeluar' ,params:{id: transaksi.id}}" 
                           class="btn btn-xs btn-default"
                        >
                           Edit

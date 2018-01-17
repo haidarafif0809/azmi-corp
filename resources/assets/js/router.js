@@ -38,6 +38,7 @@ import TransaksiKasEdit from './components/transaksi-kas/TransaksiKasEdit.vue';
 import TransaksiKasMasukCreate from './components/transaksi-kas/TransaksiKasMasukCreate.vue';
 import TransaksiKasKeluarCreate from './components/transaksi-kas/TransaksiKasKeluarCreate.vue';
 import TransaksiKasMasukEdit from './components/transaksi-kas/TransaksiKasMasukEdit.vue';
+import TransaksiKasKeluarEdit from './components/transaksi-kas/TransaksiKasKeluarEdit.vue';
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -80,6 +81,7 @@ const routes = [
   { path: '/transaksi-kas/create/kas-masuk', component:TransaksiKasMasukCreate,name: 'CreateTransaksiKasMasuk' },
   { path: '/transaksi-kas/create/kas-keluar', component:TransaksiKasKeluarCreate,name: 'CreateTransaksiKasKeluar' },
   { path: '/transaksi-kas/edit/kas-masuk/:id', component:TransaksiKasMasukEdit,name: 'EditTransaksiKasMasuk' },
+  { path: '/transaksi-kas/edit/kas-keluar/:id', component:TransaksiKasKeluarEdit,name: 'EditTransaksiKasKeluar' },
 ]
 
 export default routes;

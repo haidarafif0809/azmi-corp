@@ -5,10 +5,10 @@
             <ul class="breadcrumb">
               <li>Home</li>
               <li><router-link :to="{name: 'IndexTransaksiKas'}">Transaksi Kas</router-link></li>
-              <li class="active">Edit Transaksi Kas Masuk</li>
+              <li class="active">Edit Transaksi Kas Keluar</li>
             </ul>
             <div class="panel panel-default">
-                <div class="panel-heading">Edit Transaksi Kas Masuk</div>
+                <div class="panel-heading">Edit Transaksi Kas Keluar</div>
 
                 <div class="panel-body">
                     <form v-on:submit.prevent="saveForm()" class="form-horizontal" >
@@ -45,8 +45,8 @@
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Jumlah</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Jumlah Masuk" v-model="transaksiKas.masuk" autofocus=""/>
-                        <span v-if="errors.masuk" class="label label-danger"> {{ errors.masuk[0]}}</span>
+                          <input type="text" class="form-control" required="" placeholder="Jumlah Keluar" v-model="transaksiKas.keluar" autofocus=""/>
+                        <span v-if="errors.keluar" class="label label-danger"> {{ errors.keluar[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -70,7 +70,7 @@
         transaksiKas: {
           akun_masuk: '',
           akun_keluar: '',
-          masuk: '',
+          keluar: '',
           deskripsi: ''
         },
         akuns: [],
@@ -98,7 +98,7 @@
       },
       alert(pesan){
         this.$swal({
-          title: "Berhasil Mengubah Kas Masuk",
+          title: "Berhasil Mengubah Kas Keluar",
           text: pesan,
           icon: "success"
         });
@@ -116,9 +116,9 @@
       },
       saveForm(){
         var newKasMasuk = this.transaksiKas;
-        axios.patch(this.url + '/' + this.kasMasukId + '/kas-masuk', newKasMasuk)
+        axios.patch(this.url + '/' + this.kasMasukId + '/kas-keluar', newKasMasuk)
         .then((resp) => {
-          this.alert('Berhasil Mengubah Kas Masuk Sejumlah ' + this.transaksiKas.masuk );
+          this.alert('Berhasil Mengubah Kas Keluar Sejumlah ' + this.transaksiKas.keluar );
           this.$router.replace('/transaksi-kas/');
         })
         .catch((resp) =>{
