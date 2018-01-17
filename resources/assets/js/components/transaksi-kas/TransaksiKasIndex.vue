@@ -44,6 +44,7 @@
                     </div>
                     <table class="table table-bordered" >
                     <thead>
+                        <th>Tanggal</th>
                         <th>No Transaksi</th>
                         <th>Dari Akun</th>
                         <th>Ke Akun</th>
@@ -54,7 +55,8 @@
                     </thead>
                     <tbody v-if="transaksiKas.length">
                       <tr v-for="transaksi,index in transaksiKas">
-                        <td>{{ transaksi.id}}</td>
+                        <td>{{ transaksi.created_at}}</td>
+                        <td>{{ transaksi.no_trans}}</td>
                         <td>{{ transaksi.nama_akun_keluar}}</td>
                         <td>{{ transaksi.nama_akun_masuk}}</td>
                         <td>{{ transaksi.deskripsi}}</td>

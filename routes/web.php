@@ -65,3 +65,8 @@ Route::post('/transaksi-kas/kas-mutasi', 'TransaksiKasController@storeKasMutasi'
 Route::get('/transaksi-kas/search', 'TransaksiKasController@search')->middleware('auth');
 Route::get('/transaksi-kas/posisi-kas', 'TransaksiKasController@posisiKas')->middleware('auth');
 Route::resource('/transaksi-kas','TransaksiKasController')->middleware('auth');
+Route::patch('/transaksi-kas/{id}/kas-masuk','TransaksiKasController@updateKasMasuk')
+        ->middleware('auth');
+Route::patch('/transaksi-kas/{id}/kas-keluar','TransaksiKasController@updateKasKeluar')
+        ->middleware('auth');
+

@@ -65,7 +65,9 @@ class TransaksiKasController extends Controller
             'jumlah' => 'required|numeric',
             'deskripsi' => 'max:255'
         ]);
-        $transaksiKas = TransaksiKas::create(['akun_masuk' => $request->akun_masuk,
+        $noTrans = TransaksiKas::noTrans();
+        $transaksiKas = TransaksiKas::create(['no_trans' => $noTrans,
+                                             'akun_masuk' => $request->akun_masuk,
                                              'akun_keluar' => $request->akun_keluar,
                                              'masuk' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
@@ -84,7 +86,8 @@ class TransaksiKasController extends Controller
             'jumlah' => 'required|numeric',
             'deskripsi' => 'max:255'
         ]);
-        $transaksiKas = TransaksiKas::create(['akun_masuk' => $request->akun_masuk,
+        $transaksiKas = TransaksiKas::create(['no_trans' => $noTrans,
+                                              'akun_masuk' => $request->akun_masuk,
                                              'akun_keluar' => $request->akun_keluar,
                                              'masuk' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
@@ -183,6 +186,36 @@ class TransaksiKasController extends Controller
           return response(500);    
         }
 
+    }
+    public function updateKasMasuk(Request $request, $id){
+        
+        $request->validate([
+            'akun_masuk' => 'required|numeric',
+            'akun_keluar' => 'required|numeric',
+            'masuk' => 'required|numeric',
+            'deskripsi' => 'max:255'
+        ]);
+        $transaksiKas = TransaksiKas::find($id)->update($request->all());
+        if($transaksiKas){
+          return response(200);    
+        } else {
+          return response()->status(500);    
+        }
+    }
+    public function updateKasKeluar(Request $request, $id){
+        
+        $request->validate([
+            'akun_masuk' => 'required|numeric',
+            'akun_keluar' => 'required|numeric',
+            'keluar' => 'required|numeric',
+            'deskripsi' => 'max:255'
+        ]);
+        $transaksiKas = TransaksiKas::find($id)->update($request->all());
+        if($transaksiKas){
+          return response(200);    
+        } else {
+          return response()->status(500);    
+        }
     }
 
     /**

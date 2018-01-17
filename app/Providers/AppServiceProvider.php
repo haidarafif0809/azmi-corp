@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\TransaksiKas;
+use App\Observers\TransaksiKasObserver;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        TransaksiKas::observe(TransaksiKasObserver::class);
     }
 
     /**

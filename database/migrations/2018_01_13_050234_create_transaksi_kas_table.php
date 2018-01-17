@@ -15,6 +15,7 @@ class CreateTransaksiKasTable extends Migration
     {
         Schema::create('transaksi_kas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('no_trans')->unique();
             $table->integer('akun_masuk')->unsigned();
             $table->integer('akun_keluar')->unsigned();
             $table->string('deskripsi')->nullable();
