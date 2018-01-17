@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
 
 class ProdukController extends Controller
 {
@@ -14,6 +15,7 @@ class ProdukController extends Controller
     public function index()
     {
         //
+        return Produk::paginate(10);
     }
 
     /**
@@ -35,8 +37,25 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'kode' => 'required|unique:produks,kode|max:255',
+            'nama' => 'required|unique:produks,nama|max:255',
+        ]);
+        $produk = Produk::create($request->all());
+        if($produk){
+          return response(200);    
+        } else {
+          return response(500);    
+        }
     }
-
+    
+    public function search(Request $request){
+          
+        $produk = Produk::where('kode','LIKE',"%$request->q%")
+                          ->orWhere('nama','LIKE',"%$request->q%")
+                          ->paginate(10);
+        return $produk;
+    }
     /**
      * Display the specified resource.
      *
@@ -57,6 +76,7 @@ class ProdukController extends Controller
     public function edit($id)
     {
         //
+        return Produk::find($id);
     }
 
     /**
@@ -69,6 +89,18 @@ class ProdukController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'kode' => 'required|unique:produks,kode,'.$id.'|max:255',
+            'nama' => 'required|unique:produks,nama,'.$id.'|max:255',
+        ]);
+       
+        $produk = Produk::find($id)->update($request->all());
+        if($produk){
+          return response(200);    
+        } else {
+          return response(500);    
+        }
+
     }
 
     /**
@@ -80,5 +112,11 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         //
+        $produk = Produk::destroy($id);
+        if($produk){
+          return response(200);    
+        } else {
+          return response(500);
+        }
     }
 }

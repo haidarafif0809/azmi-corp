@@ -27,6 +27,10 @@ import AkunIndex from './components/akun/AkunIndex.vue';
 import AkunCreate from './components/akun/AkunCreate.vue';
 import AkunEdit from './components/akun/AkunEdit.vue';
 
+import ProdukIndex from './components/produk/ProdukIndex.vue';
+import ProdukCreate from './components/produk/ProdukCreate.vue';
+import ProdukEdit from './components/produk/ProdukEdit.vue';
+
 import PosisiKasIndex from './components/transaksi-kas/PosisiKasIndex.vue';
 import TransaksiKasIndex from './components/transaksi-kas/TransaksiKasIndex.vue';
 import TransaksiKasCreate from './components/transaksi-kas/TransaksiKasCreate.vue';
@@ -65,6 +69,9 @@ const routes = [
   { path: '/akun', component:AkunIndex,name: 'IndexAkun' },
   { path: '/akun/create', component:AkunCreate,name: 'CreateAkun' },
   { path: '/akun/edit/:id', component:AkunEdit,name: 'EditAkun' },
+  { path: '/produk', component:ProdukIndex,name: 'IndexProduk' },
+  { path: '/produk/create', component:ProdukCreate,name: 'CreateProduk' },
+  { path: '/produk/edit/:id', component:ProdukEdit,name: 'EditProduk' },
   { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
   { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/transaksi-kas/create', component:TransaksiKasCreate,name: 'CreateTransaksiKas' },

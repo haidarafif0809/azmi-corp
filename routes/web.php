@@ -49,6 +49,10 @@ Route::get('/kas/view', 'KasController@index')->middleware('auth');
 Route::get('/kas/search', 'KasController@search')->middleware('auth');
 Route::resource('/kas','KasController')->middleware('auth');
 
+Route::get('/produk/view', 'ProdukController@index')->middleware('auth');
+Route::get('/produk/search', 'ProdukController@search')->middleware('auth');
+Route::resource('/produk','ProdukController')->middleware('auth');
+
 Route::get('/akun/view', 'AkunController@index')->middleware('auth');
 Route::get('/akun/all', 'AkunController@all')->middleware('auth');
 Route::get('/akun/search', 'AkunController@search')->middleware('auth');

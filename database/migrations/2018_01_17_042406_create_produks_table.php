@@ -15,6 +15,8 @@ class CreateProduksTable extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kode')->unique();
+            $table->string('nama')->unique();
             $table->timestamps();
         });
     }
