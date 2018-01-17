@@ -37,13 +37,24 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        @if(Auth::check())
                         <li><router-link :to="{name: 'IndexDashboard'}" >Home</router-link></li>
-                        <li><router-link :to="{name: 'IndexUser'}" >User</router-link></li>
-                        <li><router-link :to="{name: 'IndexMobil'}" >Mobil</router-link></li>
-                        <li><router-link :to="{name: 'IndexSupplier'}" >Supplier</router-link></li>
-                        <li><router-link :to="{name: 'IndexDriver'}" >Driver</router-link></li>
-                        <li><router-link :to="{name: 'IndexGudang'}" >Gudang</router-link></li>
-                        <li><router-link :to="{name: 'IndexPelanggan'}" >Pelanggan</router-link></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Master Data
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><router-link :to="{name: 'IndexUser'}" >User</router-link></li>
+                                <li><router-link :to="{name: 'IndexMobil'}" >Mobil</router-link></li>
+                                <li><router-link :to="{name: 'IndexSupplier'}" >Supplier</router-link></li>
+                                <li><router-link :to="{name: 'IndexDriver'}" >Driver</router-link></li>
+                                <li><router-link :to="{name: 'IndexGudang'}" >Gudang</router-link></li>
+                                <li><router-link :to="{name: 'IndexPelanggan'}" >Pelanggan</router-link></li>
+                                <li><router-link :to="{name: 'IndexAkun'}" >Akun</router-link></li>
+                            </ul>
+                        </li>
+                        <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
+                        <li><router-link :to="{name: 'IndexPosisiKas'}" >Posisi Kas</router-link></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

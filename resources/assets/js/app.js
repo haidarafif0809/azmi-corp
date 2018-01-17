@@ -20,6 +20,7 @@ import routes from './router.js';
  */
 
 Vue.component('vue-pagination', require('laravel-vue-pagination'));
+Vue.component('vue-spinner', require('vue-simple-spinner'));
 
 Vue.use(VueSwal)
 Vue.use(VueRouter);

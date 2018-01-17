@@ -44,3 +44,20 @@ Route::resource('gudang','GudangController')->middleware('auth');
 Route::get('/pelanggan/view', 'PelangganController@index')->middleware('auth');
 Route::get('/pelanggan/search', 'PelangganController@search')->middleware('auth');
 Route::resource('pelanggan','PelangganController')->middleware('auth');
+
+Route::get('/kas/view', 'KasController@index')->middleware('auth');
+Route::get('/kas/search', 'KasController@search')->middleware('auth');
+Route::resource('/kas','KasController')->middleware('auth');
+
+Route::get('/akun/view', 'AkunController@index')->middleware('auth');
+Route::get('/akun/all', 'AkunController@all')->middleware('auth');
+Route::get('/akun/search', 'AkunController@search')->middleware('auth');
+Route::resource('/akun','AkunController')->middleware('auth');
+
+Route::get('/transaksi-kas/view', 'TransaksiKasController@index')->middleware('auth');
+Route::post('/transaksi-kas/kas-masuk', 'TransaksiKasController@storeKasMasuk')->middleware('auth');
+Route::post('/transaksi-kas/kas-keluar', 'TransaksiKasController@storeKasKeluar')->middleware('auth');
+Route::post('/transaksi-kas/kas-mutasi', 'TransaksiKasController@storeKasMutasi')->middleware('auth');
+Route::get('/transaksi-kas/search', 'TransaksiKasController@search')->middleware('auth');
+Route::get('/transaksi-kas/posisi-kas', 'TransaksiKasController@posisiKas')->middleware('auth');
+Route::resource('/transaksi-kas','TransaksiKasController')->middleware('auth');

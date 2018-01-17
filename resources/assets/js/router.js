@@ -20,7 +20,19 @@ import GudangEdit from './components/gudang/GudangEdit.vue';
 import PelangganIndex from './components/pelanggan/PelangganIndex.vue';
 import PelangganCreate from './components/pelanggan/PelangganCreate.vue';
 import PelangganEdit from './components/pelanggan/PelangganEdit.vue';
+import KasIndex from './components/kas/KasIndex.vue';
+import KasCreate from './components/kas/KasCreate.vue';
+import KasEdit from './components/kas/KasEdit.vue';
+import AkunIndex from './components/akun/AkunIndex.vue';
+import AkunCreate from './components/akun/AkunCreate.vue';
+import AkunEdit from './components/akun/AkunEdit.vue';
 
+import PosisiKasIndex from './components/transaksi-kas/PosisiKasIndex.vue';
+import TransaksiKasIndex from './components/transaksi-kas/TransaksiKasIndex.vue';
+import TransaksiKasCreate from './components/transaksi-kas/TransaksiKasCreate.vue';
+import TransaksiKasEdit from './components/transaksi-kas/TransaksiKasEdit.vue';
+import TransaksiKasMasukCreate from './components/transaksi-kas/TransaksiKasMasukCreate.vue';
+import TransaksiKasKeluarCreate from './components/transaksi-kas/TransaksiKasKeluarCreate.vue';
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -47,6 +59,18 @@ const routes = [
   { path: '/pelanggan', component:PelangganIndex,name: 'IndexPelanggan' },
   { path: '/pelanggan/create', component:PelangganCreate,name: 'CreatePelanggan' },
   { path: '/pelanggan/edit/:id', component:PelangganEdit,name: 'EditPelanggan' },
+  { path: '/kas', component:KasIndex,name: 'IndexKas' },
+  { path: '/kas/create', component:KasCreate,name: 'CreateKas' },
+  { path: '/kas/edit/:id', component:KasEdit,name: 'EditKas' },
+  { path: '/akun', component:AkunIndex,name: 'IndexAkun' },
+  { path: '/akun/create', component:AkunCreate,name: 'CreateAkun' },
+  { path: '/akun/edit/:id', component:AkunEdit,name: 'EditAkun' },
+  { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
+  { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
+  { path: '/transaksi-kas/create', component:TransaksiKasCreate,name: 'CreateTransaksiKas' },
+  { path: '/transaksi-kas/edit/:id', component:TransaksiKasEdit,name: 'EditTransaksiKas' },
+  { path: '/transaksi-kas/create/kas-masuk', component:TransaksiKasMasukCreate,name: 'CreateTransaksiKasMasuk' },
+  { path: '/transaksi-kas/create/kas-keluar', component:TransaksiKasKeluarCreate,name: 'CreateTransaksiKasKeluar' },
 ]
 
 export default routes;

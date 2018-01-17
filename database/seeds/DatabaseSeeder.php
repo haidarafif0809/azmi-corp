@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
          $this->call(DriverSeeder::class);
          $this->call(GudangSeeder::class);
          $this->call(PelangganSeeder::class);
+         $this->call(AkunSeeder::class);
+         $this->call(TransaksiKasSeeder::class);
     }
 }
