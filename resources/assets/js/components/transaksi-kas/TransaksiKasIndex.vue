@@ -36,12 +36,13 @@
                        </li>
 
                     </ul>
+                    <br/>
                     <div class="table-responsive">
                     
                     <div align="right">
-                   Pencarian 
-                    <input type="text" v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
+                    <input type="text" placeholder="Pencarian ..." v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
                     </div>
+                    <br/>
                     <table class="table table-bordered" >
                     <thead>
                         <th>Tanggal</th>

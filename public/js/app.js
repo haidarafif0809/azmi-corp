@@ -54821,6 +54821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -54995,14 +54996,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
             _c(
               "div",
               { staticClass: "table-responsive" },
               [
                 _c("div", { attrs: { align: "right" } }, [
-                  _vm._v(
-                    "\n                   Pencarian \n                    "
-                  ),
                   _c("input", {
                     directives: [
                       {
@@ -55014,7 +55014,7 @@ var render = function() {
                     ],
                     staticClass: "form-control",
                     style: { width: "20%" },
-                    attrs: { type: "text" },
+                    attrs: { type: "text", placeholder: "Pencarian ..." },
                     domProps: { value: _vm.pencarian },
                     on: {
                       input: function($event) {
@@ -55026,6 +55026,8 @@ var render = function() {
                     }
                   })
                 ]),
+                _vm._v(" "),
+                _c("br"),
                 _vm._v(" "),
                 _c("table", { staticClass: "table table-bordered" }, [
                   _vm._m(1),
