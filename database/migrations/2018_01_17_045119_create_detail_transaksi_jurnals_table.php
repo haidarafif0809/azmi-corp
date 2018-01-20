@@ -20,6 +20,7 @@ class CreateDetailTransaksiJurnalsTable extends Migration
             $table->string('no_trans');
             $table->integer('akun_id');
             $table->string('jenis_trans');
+            $table->string('deskripsi');
             $table->float('debit')->default(0);
             $table->float('kredit')->default(0);
             $table->timestamps();

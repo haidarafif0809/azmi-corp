@@ -59,6 +59,7 @@ Route::get('/akun/search', 'AkunController@search')->middleware('auth');
 Route::resource('/akun','AkunController')->middleware('auth');
 
 Route::get('/transaksi-kas/view', 'TransaksiKasController@index')->middleware('auth');
+Route::get('/transaksi-kas/laporan', 'TransaksiKasController@laporanKas')->middleware('auth');
 Route::post('/transaksi-kas/kas-masuk', 'TransaksiKasController@storeKasMasuk')->middleware('auth');
 Route::post('/transaksi-kas/kas-keluar', 'TransaksiKasController@storeKasKeluar')->middleware('auth');
 Route::post('/transaksi-kas/kas-mutasi', 'TransaksiKasController@storeKasMutasi')->middleware('auth');
@@ -69,4 +70,6 @@ Route::patch('/transaksi-kas/{id}/kas-masuk','TransaksiKasController@updateKasMa
         ->middleware('auth');
 Route::patch('/transaksi-kas/{id}/kas-keluar','TransaksiKasController@updateKasKeluar')
         ->middleware('auth');
-
+Route::get('/akuntansi/jurnal-umum','AkuntansiController@jurnalUmum')->middleware('auth');
+Route::get('/akuntansi/neraca','AkuntansiController@neraca')->middleware('auth');
+Route::get('/akuntansi/laba-rugi','AkuntansiController@labaRugi')->middleware('auth');

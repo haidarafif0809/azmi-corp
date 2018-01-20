@@ -16,7 +16,7 @@
                        <router-link 
                           :to="{name: 'IndexTransaksiKas'}" 
                        > 
-                          Transaksi Kas
+                          Daftar Transaksi
                         </router-link>
                        </li>
                       <li role="presentation"class="active">
@@ -38,6 +38,13 @@
                           :to="{name: 'CreateTransaksiKasKeluar'}" 
                        > 
                           Tambah Kas Keluar
+                        </router-link>
+                       </li>
+                      <li role="presentation">
+                       <router-link 
+                          :to="{name: 'CreateTransaksiKasMutasi'}" 
+                       > 
+                          Tambah Kas Mutasi
                         </router-link>
                        </li>
 

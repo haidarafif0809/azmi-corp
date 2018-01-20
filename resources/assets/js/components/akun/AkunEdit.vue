@@ -37,7 +37,9 @@
                             <option value="penjualan">Penjualan</option>
                             <option value="pembelian">Pembelian</option>
                             <option value="piutang">Piutang</option>
+                            <option value="hutang">Hutang</option>
                             <option value="modal">Modal</option>
+                            <option value="biaya">Biaya</option>
                             <option value="persediaan">Persediaan</option>
                             <option value="hpp">Harga Pokok Penjualan</option>
                           </select>

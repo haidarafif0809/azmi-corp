@@ -18,10 +18,17 @@ class AkunController extends Controller
         return Akun::paginate(10);
     }
 
-    public function all()
+    public function all(Request $request)
     {
         //
-        return Akun::all();
+        if(isset($request->kas)){
+            
+          return Akun::where('jenis','kas')->get();
+        } else {
+              
+          return Akun::where('jenis','!=','kas')->get();
+        }
+
     }
     /**
      * Show the form for creating a new resource.

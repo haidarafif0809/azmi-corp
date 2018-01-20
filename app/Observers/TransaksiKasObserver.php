@@ -29,8 +29,8 @@ class TransaksiKasObserver
         } else {
         $jenisTrans = 'kas_masuk';
         $totalNilai = $transaksiKas->masuk;
-        $akunDebit = $transaksiKas->akun_keluar;
-        $akunKredit = $transaksiKas->akun_masuk;
+        $akunDebit = $transaksiKas->akun_masuk;
+        $akunKredit = $transaksiKas->akun_keluar;
         $nilaiDebitKredit = $transaksiKas->masuk;
         }
         $deskripsi = $transaksiKas->deskripsi;
@@ -39,6 +39,7 @@ class TransaksiKasObserver
                                                        'trans_id' => $transaksiKas->id,
                                                        'no_trans' => $noTrans,
                                                        'akun_id' => $akunDebit,
+                                                       'deskripsi' => $deskripsi,
                                                        'jenis_trans' => $jenisTrans,
                                                        'debit' => $nilaiDebitKredit,
                                                        'kredit' => 0 ]);
@@ -46,6 +47,7 @@ class TransaksiKasObserver
                                                        'trans_id' => $transaksiKas->id,
                                                        'no_trans' => $noTrans,
                                                        'akun_id' => $akunKredit,
+                                                       'deskripsi' => $deskripsi,
                                                        'jenis_trans' => $jenisTrans,
                                                        'kredit' => $nilaiDebitKredit,
                                                        'debit' => 0

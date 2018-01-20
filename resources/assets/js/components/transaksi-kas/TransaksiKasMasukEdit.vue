@@ -30,7 +30,7 @@
                         <div class="col-md-4">
                         <select v-model="transaksiKas.akun_masuk" class="form-control" required="" >
                             <option value="">Pilih Akun Kas</option>
-                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                            <option v-for="akun in kasKas" :value="akun.id">{{ akun.nama}}</option>
                           </select>
                         <span v-if="errors.akun_masuk" class="label label-danger"> {{ errors.akun_masuk[0]}}</span>
                         </div>
@@ -74,6 +74,7 @@
           deskripsi: ''
         },
         akuns: [],
+        kasKas: [],
         kasMasukId : null,
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-kas"),
         errors: [],
@@ -88,6 +89,13 @@
     methods: {
       getAkuns(){ 
         var app = this;
+        axios.get(app.url.replace("transaksi-kas","akun") + '/all?kas=1')
+        .then(function(resp){
+          app.kasKas = resp.data;
+        })
+        .catch(function(resp){
+          console.log(resp); 
+        })
         axios.get(app.url.replace("transaksi-kas","akun") + '/all')
         .then(function(resp){
           app.akuns = resp.data;

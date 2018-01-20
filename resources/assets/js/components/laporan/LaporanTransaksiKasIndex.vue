@@ -4,52 +4,35 @@
         <div class="col-md-8 col-md-offset-2">
             <ul class="breadcrumb">
               <li><router-link :to="{name: 'IndexDashboard'}">Home</router-link></li>
-              <li class="active">Transaksi Kas</li>
+              <li>Laporan</li>
+              <li class="active">Laporan Transaksi Kas</li>
             </ul>
             <div class="panel panel-default">
                 <div class="panel-heading">Transaksi Kas</div>
 
                 <div class="panel-body">
-
-                    <ul class="nav nav-tabs">
-                      <li role="presentation" class="active"><a href="#">Daftar Transaksi</a></li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'IndexPosisiKas'}" 
-                       > 
-                          Posisi Kas
-                        </router-link>
-                       </li>
-                      <li role="presentation">                 
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMasuk'}" 
-                       > 
-                          Tambah Kas Masuk
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasKeluar'}" 
-                       > 
-                          Tambah Kas Keluar
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMutasi'}" 
-                       > 
-                          Tambah Kas Mutasi
-                        </router-link>
-                       </li>
-
-                    </ul>
+                     <form v-on:submit.prevent="getResults" class="form-inline">
+                      <div class="form-group">
+                        <input type="date" class="form-control"  v-model="laporan.dariTanggal" placeholder="Dari Tanggal">
+                      </div>
+                      <div class="form-group">
+                        <input type="date" class="form-control" v-model="laporan.sampaiTanggal" placeholder="Sampai Tanggal">
+                      </div>
+                      <div class="form-group">
+                        <select
+                          v-model="laporan.kas"
+                          class="form-control" 
+                          required="" >
+                            <option value="">Pilih Kas</option>
+                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                          </select>
+                      
+                      </div>
+                      <button type="submit" class="btn btn-default">Tampil</button>
+                    </form> 
                     <br/>
                     <div class="table-responsive">
                     
-                    <div align="right">
-                    <input type="text" placeholder="Pencarian ..." v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
-                    </div>
-                    <br/>
                     <table class="table table-bordered" >
                     <thead>
                         <th>Tanggal</th>
@@ -117,28 +100,44 @@
       return {
         transaksiKas: [],
         transaksiKasData: {},
+        laporan : { 
+            kas: '',
+            dariTanggal: '',
+            sampaiTanggal: '',
+            },
+        akuns: [],
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-kas"),
-        pencarian: '',
         loading: true
       }
     },
     mounted()  {
      var app = this;
-    app.getResults();
-    },
-    watch: {
-       pencarian: function(newSearch){
-         this.loading = true;
-         this.getHasilPencarian();
-       }  
+    app.getAkuns();
     },
     methods: {
+      getAkuns(page){
+       var app = this;
+        axios.get(app.url.replace('transaksi-kas','akun') + '/all?kas=1')
+        .then(function(resp){
+          app.akuns= resp.data;
+          app.loading = false;
+        })
+        .catch(function(resp){
+          console.log(resp);
+          app.loading = false;
+         
+        })
+      },
       getResults(page){
+        
         var app = this;
+        app.loading = true;
         if(typeof page == 'undefined'){
           page = 1;
         }
-        axios.get(app.url + '/view?page=' + page)
+        var url = app.url + '/laporan?page=' + page + '&kas=' + app.laporan.kas 
+                + '&dariTanggal=' + app.laporan.dariTanggal + '&sampaiTanggal=' + app.laporan.sampaiTanggal;
+        axios.get(url)
         .then(function(resp){
           app.transaksiKas = resp.data.data;
           app.transaksiKasData = resp.data;
@@ -149,50 +148,6 @@
           app.loading = false;
          
         })
-      },
-      getHasilPencarian(page){
-          
-        var app = this;
-        if(typeof page == 'undefined'){
-          page = 1;
-        }
-        axios.get(app.url + '/search?q='+app.pencarian+'&page=' + page)
-        .then(function(resp){
-          app.transaksiKas = resp.data.data;
-          app.transaksiKasData = resp.data;
-          app.loading = false;
-        })
-        .catch(function(resp){
-          console.log(resp);
-          app.loading = false;
-         
-        })
-      },
-      deleteEntry(id,index,noTransaksi){
-          axios.delete(this.url + '/' + id)
-          .then((resp) => {
-            this.getResults();
-            this.alert("Berhasil Menghapus","Berhasil Menghapus Transaksi :  " + noTransaksi);
-          })
-          .catch((resp) =>{
-            alert("Something Goes Wrong")
-            console.log(resp);
-          })
-      },
-      konfirmasiHapus(id,index,noTransaksi){
-      
-        this.$swal({
-          title: " Ingin Menghapus Transaksi :  " + noTransaksi + "?",
-          text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
-          icon: "warning",
-          buttons: true,
-          dangerMode: true,
-        })
-        .then((willDelete) => {
-          if (willDelete) {
-            this.deleteEntry(id,index,noTransaksi);
-          }
-        })  
       },
       alert(title,pesan){
         this.$swal({

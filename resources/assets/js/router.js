@@ -26,7 +26,6 @@ import KasEdit from './components/kas/KasEdit.vue';
 import AkunIndex from './components/akun/AkunIndex.vue';
 import AkunCreate from './components/akun/AkunCreate.vue';
 import AkunEdit from './components/akun/AkunEdit.vue';
-
 import ProdukIndex from './components/produk/ProdukIndex.vue';
 import ProdukCreate from './components/produk/ProdukCreate.vue';
 import ProdukEdit from './components/produk/ProdukEdit.vue';
@@ -37,8 +36,14 @@ import TransaksiKasCreate from './components/transaksi-kas/TransaksiKasCreate.vu
 import TransaksiKasEdit from './components/transaksi-kas/TransaksiKasEdit.vue';
 import TransaksiKasMasukCreate from './components/transaksi-kas/TransaksiKasMasukCreate.vue';
 import TransaksiKasKeluarCreate from './components/transaksi-kas/TransaksiKasKeluarCreate.vue';
+import TransaksiKasMutasiCreate from './components/transaksi-kas/TransaksiKasMutasiCreate.vue';
 import TransaksiKasMasukEdit from './components/transaksi-kas/TransaksiKasMasukEdit.vue';
 import TransaksiKasKeluarEdit from './components/transaksi-kas/TransaksiKasKeluarEdit.vue';
+
+import LaporanTransaksiKasIndex from './components/laporan/LaporanTransaksiKasIndex.vue';
+import LaporanJurnalUmumIndex from './components/laporan/LaporanJurnalUmumIndex.vue';
+import LaporanNeracaIndex from './components/laporan/LaporanNeracaIndex.vue';
+import LaporanLabaRugiIndex from './components/laporan/LaporanLabaRugiIndex.vue';
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -76,8 +81,13 @@ const routes = [
   { path: '/produk/edit/:id', component:ProdukEdit,name: 'EditProduk' },
   { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
   { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
+  { path: '/laporan/transaksi-kas', component:LaporanTransaksiKasIndex,name: 'IndexLaporanTransaksiKas' },
+  { path: '/laporan/neraca', component:LaporanNeracaIndex,name: 'IndexLaporanNeraca' },
+  { path: '/laporan/laba-rugi', component:LaporanLabaRugiIndex,name: 'IndexLaporanLabaRugi' },
+  { path: '/laporan/jurnal-umum', component:LaporanJurnalUmumIndex,name: 'IndexLaporanJurnalUmum' },
   { path: '/transaksi-kas/create', component:TransaksiKasCreate,name: 'CreateTransaksiKas' },
   { path: '/transaksi-kas/edit/:id', component:TransaksiKasEdit,name: 'EditTransaksiKas' },
+  { path: '/transaksi-kas/create/kas-mutasi', component:TransaksiKasMutasiCreate,name: 'CreateTransaksiKasMutasi' },
   { path: '/transaksi-kas/create/kas-masuk', component:TransaksiKasMasukCreate,name: 'CreateTransaksiKasMasuk' },
   { path: '/transaksi-kas/create/kas-keluar', component:TransaksiKasKeluarCreate,name: 'CreateTransaksiKasKeluar' },
   { path: '/transaksi-kas/edit/kas-masuk/:id', component:TransaksiKasMasukEdit,name: 'EditTransaksiKasMasuk' },

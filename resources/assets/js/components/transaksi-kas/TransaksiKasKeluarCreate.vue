@@ -13,14 +13,14 @@
                 <div class="panel-body">
                     <form v-on:submit.prevent="saveForm()" class="form-horizontal" >
                       <div class="form-group">
-                        <label for="name" class="col-md-2 control-label" >Dari Akun</label>
+                        <label for="name" class="col-md-2 control-label" >Dari Kas</label>
                         <div class="col-md-4">
                         <select
                           v-model="transaksiKas.akun_keluar" 
                           class="form-control" 
                           required="" >
-                            <option value="">Pilih Akun</option>
-                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                            <option value="">Pilih Kas</option>
+                            <option v-for="akun in kasKas" :value="akun.id">{{ akun.nama}}</option>
                           </select>
                         <span v-if="errors.akun_keluar" class="label label-danger"> {{ errors.akun_keluar[0]}}</span>
                         </div>
@@ -85,6 +85,7 @@
           jumlah: ''
         },
         akuns: [],
+        kasKas: [],
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-kas"),
         errors: [],
         message: ''
@@ -117,6 +118,13 @@
       },
       getAkuns(){ 
         var app = this;
+        axios.get(app.url.replace("transaksi-kas","akun") + '/all?kas=1')
+        .then(function(resp){
+          app.kasKas = resp.data;
+        })
+        .catch(function(resp){
+          console.log(resp); 
+        })
         axios.get(app.url.replace("transaksi-kas","akun") + '/all')
         .then(function(resp){
           app.akuns = resp.data;

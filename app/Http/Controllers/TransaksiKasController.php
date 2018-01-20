@@ -25,6 +25,30 @@ class TransaksiKasController extends Controller
                ->paginate(10);
     }
 
+    public function laporanKas(Request $request){
+      
+      $kas = $request->kas;
+      $dariTanggal = $request->dariTanggal;
+      $sampaiTanggal = $request->sampaiTanggal;
+      
+      $laporan = TransaksiKas::leftJoin('akuns as akun_yang_masuk',
+               'transaksi_kas.akun_masuk','=','akun_yang_masuk.id')
+               ->leftJoin('akuns as akun_yang_keluar',
+               'transaksi_kas.akun_keluar','=','akun_yang_keluar.id')
+               ->select('transaksi_kas.*','akun_yang_masuk.nama as nama_akun_masuk',
+               'akun_yang_keluar.nama as nama_akun_keluar')
+                ->where('akun_masuk',$kas)
+               ->orWhere('akun_keluar',$kas)
+               ->where(function($query) use ($dariTanggal,$sampaiTanggal){
+                  $query 
+                   ->whereDate('transaksi_kas.created_at','>=',$dariTanggal)
+                   ->whereDate('transaksi_kas.created_at','<=',$sampaiTanggal);
+               })
+               ->paginate(10);
+      return $laporan;
+    
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -86,10 +110,11 @@ class TransaksiKasController extends Controller
             'jumlah' => 'required|numeric',
             'deskripsi' => 'max:255'
         ]);
+        $noTrans = TransaksiKas::noTrans();
         $transaksiKas = TransaksiKas::create(['no_trans' => $noTrans,
                                               'akun_masuk' => $request->akun_masuk,
                                              'akun_keluar' => $request->akun_keluar,
-                                             'masuk' => $request->jumlah,
+                                             'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiKas){
           return response(200);    
@@ -106,7 +131,9 @@ class TransaksiKasController extends Controller
             'jumlah' => 'required|numeric',
             'deskripsi' => 'max:255'
         ]);
-        $transaksiKas = TransaksiKas::create(['akun_masuk' => $request->akun_masuk,
+        $noTrans = TransaksiKas::noTrans();
+        $transaksiKas = TransaksiKas::create(['no_trans' => $noTrans,
+                                             'akun_masuk' => $request->akun_masuk,
                                              'akun_keluar' => $request->akun_keluar,
                                              'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
@@ -133,7 +160,8 @@ class TransaksiKasController extends Controller
 
           $kasMasuk = TransaksiKas::where('akun_masuk',$akun->id)->sum('masuk');
           $kasKeluar = TransaksiKas::where('akun_keluar',$akun->id)->sum('keluar');
-          $jumlahKas = $kasMasuk - $kasKeluar;
+          $kasMutasi = TransaksiKas::where('akun_masuk',$akun->id)->sum('keluar');
+          $jumlahKas = $kasMasuk - $kasKeluar + $kasMutasi;
           array_push($posisiKas,['id' => $akun->id,'nama'=>  $akun->nama,'jumlah' => $jumlahKas]);
        } 
 
