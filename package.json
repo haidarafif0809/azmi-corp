@@ -22,6 +22,7 @@
         "laravel-vue-pagination": "^1.0.6",
         "vue-router": "^3.0.1",
         "vue-simple-spinner": "^1.2.8",
-        "vue-swal": "0.0.6"
+        "vue-swal": "0.0.6",
+        "vue2-selectize": "^1.1.4"
     }
 }

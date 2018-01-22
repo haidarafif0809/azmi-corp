@@ -17,6 +17,11 @@ class PelangganController extends Controller
         return Pelanggan::paginate(10);
     }
 
+    public function all()
+    {
+        //
+        return Pelanggan::all();
+    }
     /**
      * Show the form for creating a new resource.
      *

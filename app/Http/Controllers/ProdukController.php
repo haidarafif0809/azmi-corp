@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produk;
+use App\DetailTransaksiGasMasuk;
+use App\DetailTransaksiGasKeluar;
 
 class ProdukController extends Controller
 {
@@ -15,7 +17,33 @@ class ProdukController extends Controller
     public function index()
     {
         //
-        return Produk::paginate(10);
+        $produks = Produk::paginate(10);
+        foreach($produks as $produk){
+          $jumlahKosongP = $this->jumlahGas($produk->id,'kosong_p');
+          $jumlahKosongR = $this->jumlahGas($produk->id,'kosong_r');
+          $jumlahKosongK = $this->jumlahGas($produk->id,'kosong_k');
+          $jumlahIsi = $this->jumlahGas($produk->id,'isi');
+          $produk->kosong_p = $jumlahKosongP;
+          $produk->kosong_r = $jumlahKosongR;
+          $produk->kosong_k = $jumlahKosongK;
+          $produk->isi = $jumlahIsi;
+        }
+
+        return $produks;
+    }
+
+
+    private function jumlahGas($produkId,$jenis){
+        
+          $masuk = DetailTransaksiGasMasuk::where('produk_id',$produkId)->sum($jenis);
+          $keluar = DetailTransaksiGasKeluar::where('produk_id',$produkId)->sum($jenis);
+          $jumlah =  $masuk - $keluar;
+          return $jumlah;
+    }
+    public function all()
+    {
+        //
+        return Produk::all();
     }
 
     /**

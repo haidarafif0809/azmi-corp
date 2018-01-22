@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProduksTable extends Migration
+class CreateDetailTransaksiGasKeluarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,21 @@ class CreateProduksTable extends Migration
      */
     public function up()
     {
-        Schema::create('produks', function (Blueprint $table) {
+        Schema::create('detail_transaksi_gas_keluars', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode')->unique();
-            $table->string('nama')->unique();
+            $table->integer('produk_id')->unsigned();
+            $table->string('nama_produk');
+            $table->string('kode_produk');
             $table->integer('kosong_p')->nullable();
             $table->integer('kosong_r')->nullable();
             $table->integer('kosong_k')->nullable();
             $table->integer('isi')->nullable();
+            $table->string('no_rute');
+            $table->integer('transaksi_gas_id')->unsigned();
             $table->timestamps();
+            $table->foreign('produk_id')->references('id')->on('produks');
+            $table->foreign('transaksi_gas_id')->references('id')->on('transaksi_gas')->onDelete('cascade');
+           
         });
     }
 
@@ -32,6 +38,6 @@ class CreateProduksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produks');
+        Schema::dropIfExists('detail_transaksi_gas_keluars');
     }
 }

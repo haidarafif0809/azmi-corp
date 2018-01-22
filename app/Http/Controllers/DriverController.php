@@ -17,6 +17,12 @@ class DriverController extends Controller
         //
         return Driver::paginate(10);
     }
+    
+    public function all()
+    {
+        //
+        return Driver::all();
+    }
 
     /**
      * Show the form for creating a new resource.

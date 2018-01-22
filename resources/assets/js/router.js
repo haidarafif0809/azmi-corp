@@ -45,6 +45,12 @@ import LaporanJurnalUmumIndex from './components/laporan/LaporanJurnalUmumIndex.
 import LaporanNeracaIndex from './components/laporan/LaporanNeracaIndex.vue';
 import LaporanLabaRugiIndex from './components/laporan/LaporanLabaRugiIndex.vue';
 
+import TransaksiGasIndex from './components/transaksi-gas/TransaksiGasIndex.vue';
+import TransaksiGasCreate from './components/transaksi-gas/TransaksiGasCreate.vue';
+import TransaksiGasEdit from './components/transaksi-gas/TransaksiGasEdit.vue';
+
+import Page404 from './components/error/Page404.vue';
+
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
@@ -79,6 +85,9 @@ const routes = [
   { path: '/produk', component:ProdukIndex,name: 'IndexProduk' },
   { path: '/produk/create', component:ProdukCreate,name: 'CreateProduk' },
   { path: '/produk/edit/:id', component:ProdukEdit,name: 'EditProduk' },
+  { path: '/transaksi-gas', component:TransaksiGasIndex,name: 'IndexTransaksiGas' },
+  { path: '/transaksi-gas/create', component:TransaksiGasCreate,name: 'CreateTransaksiGas' },
+  { path: '/transaksi-gas/edit/:id', component:TransaksiGasEdit,name: 'EditTransaksiGas' },
   { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
   { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/laporan/transaksi-kas', component:LaporanTransaksiKasIndex,name: 'IndexLaporanTransaksiKas' },
@@ -92,6 +101,7 @@ const routes = [
   { path: '/transaksi-kas/create/kas-keluar', component:TransaksiKasKeluarCreate,name: 'CreateTransaksiKasKeluar' },
   { path: '/transaksi-kas/edit/kas-masuk/:id', component:TransaksiKasMasukEdit,name: 'EditTransaksiKasMasuk' },
   { path: '/transaksi-kas/edit/kas-keluar/:id', component:TransaksiKasKeluarEdit,name: 'EditTransaksiKasKeluar' },
+  { path: '/*', component: Page404 },
 ]
 
 export default routes;

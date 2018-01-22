@@ -57,6 +57,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Laporan
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
+                                <li><router-link :to="{name: 'IndexPosisiKas'}" >Posisi Kas</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanTransaksiKas'}" >Transaksi Kas</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanJurnalUmum'}" >Jurnal Umum</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanNeraca'}" >Neraca</router-link></li>
@@ -64,7 +65,7 @@
                             </ul>
                         </li>
                         <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
-                        <li><router-link :to="{name: 'IndexPosisiKas'}" >Posisi Kas</router-link></li>
+                        <li><router-link :to="{name: 'IndexTransaksiGas'}" >Transaksi Gas</router-link></li>
                         @endif
                     </ul>
 

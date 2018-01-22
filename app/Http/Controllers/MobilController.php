@@ -16,6 +16,11 @@ class MobilController extends Controller
         //
         return Mobil::paginate(10);
     }
+    public function all()
+    {
+        //
+        return Mobil::all();
+    }
 
     /**
      * Show the form for creating a new resource.

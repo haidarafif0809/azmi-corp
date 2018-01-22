@@ -17,6 +17,11 @@ class GudangController extends Controller
         return Gudang::paginate(10);
     }
 
+    public function all()
+    {
+        //
+        return Gudang::all();
+    }
     /**
      * Show the form for creating a new resource.
      *

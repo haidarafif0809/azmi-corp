@@ -15,23 +15,23 @@
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Dari Akun</label>
                         <div class="col-md-4">
-                        <select
+                        <vue-selectize
                           v-model="transaksiKas.akun_keluar" 
                           class="form-control" 
                           required="" >
                             <option value="">Pilih Akun</option>
                             <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
-                          </select>
+                          </vue-selectize>
                         <span v-if="errors.akun_keluar" class="label label-danger"> {{ errors.akun_keluar[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Ke Akun</label>
                         <div class="col-md-4">
-                        <select v-model="transaksiKas.akun_masuk" class="form-control" required="" >
+                        <vue-selectize v-model="transaksiKas.akun_masuk" class="form-control" required="" >
                             <option value="">Pilih Akun Kas</option>
                             <option v-for="akun in kasKas" :value="akun.id">{{ akun.nama}}</option>
-                          </select>
+                          </vue-selectize>
                         <span v-if="errors.akun_masuk" class="label label-danger"> {{ errors.akun_masuk[0]}}</span>
                         </div>
                       </div>

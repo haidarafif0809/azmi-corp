@@ -4,18 +4,19 @@
         <div class="col-md-8 col-md-offset-2">
             <ul class="breadcrumb">
               <li><router-link :to="{name: 'IndexDashboard'}">Home</router-link></li>
-              <li class="active">Kelola Produk</li>
+              <li class="active">Transaksi Gas</li>
             </ul>
             <div class="panel panel-default">
-                <div class="panel-heading">Kelola Produk</div>
+                <div class="panel-heading">Transaksi Gas</div>
 
                 <div class="panel-body">
-
                     <router-link 
-                      :to="{name: 'CreateProduk'}" 
+                      :to="{name: 'CreateTransaksiGas'}" 
                       class="btn btn-md btn-primary"> 
-                        Tambah Produk
+                        Tambah Transaksi Gas
                     </router-link>
+
+                    <br/>
                     <div class="table-responsive">
                     
                     <div align="right">
@@ -24,39 +25,55 @@
                     <br/>
                     <table class="table table-bordered" >
                     <thead>
-                        <th>Kode Produk</th>
-                        <th>Nama Produk</th>
-                        <th>Kosong(p)</th>
-                        <th>Kosong(r)</th>
-                        <th>Kosong(k)</th>
-                        <th>Isi</th>
+                        <th>Tanggal</th>
+                        <th>No Rute</th>
+                        <th>Plat No</th>
+                        <th>Driver</th>
+                        <th>Status</th>
+                        <th>Asal</th>
+                        <th>Tujuan</th>
+                        <th>Uang Jalan</th>
                         <th>Aksi</th>
                     </thead>
-                    <tbody v-if="produks.length">
-                      <tr v-for="produk,index in produks">
-                        <td>{{ produk.kode}}</td>
-                        <td>{{ produk.nama}}</td>
-                        <td>{{ produk.kosong_p}}</td>
-                        <td>{{ produk.kosong_r}}</td>
-                        <td>{{ produk.kosong_k}}</td>
-                        <td>{{ produk.isi}}</td>
-                        <td>
+                    <tbody v-if="transaksiGas.length">
+                      <tr v-for="transaksi,index in transaksiGas">
+                        <td>{{ transaksi.created_at}}</td>
+                        <td>{{ transaksi.no_rute}}</td>
+                        <td>{{ transaksi.mobil}}</td>
+                        <td>{{ transaksi.driver}}</td>
+                        <td>{{ transaksi.status_barang}}</td>
+                        <td>{{ transaksi.asal_barang}}</td>
+                        <td>{{ transaksi.tujuan_barang}}</td>
+                        <td>{{ transaksi.uang_jalan}}</td>
+                        <td >
                         <router-link 
-                          :to="{name:'EditProduk' ,params:{id: produk.id}}" 
+                          :to="{name:'EditTransaksiGas' ,params:{id: transaksi.id}}" 
                           class="btn btn-xs btn-default"
                        >
                           Edit
                        </router-link>
                         <button 
                           class="btn btn-xs btn-danger" 
-                          v-on:click="konfirmasiHapus(produk.id,index,produk.nama)"
+                          v-on:click="konfirmasiHapus(transaksi.id,index,transaksi.id)"
                         >
                           Hapus
                         </button>
                         </td>
                       </tr>
                     </tbody>
+                    <tbody v-else>
+                    <tr >
+                      <td colspan="9"><center>Tidak Ada Data</center></td>
+                    </tr>
+                    </tbody>
                     </table>
+                    <vue-pagination 
+                      :data="transaksiGasData" 
+                      v-on:pagination-change-page="getResults"
+                      :limit="4"
+                    >
+                    </vue-pagination>
+                    <vue-simple-spinner v-if="loading" message="Loading..."></vue-simple-spinner>
                    </div>
                 </div>
             </div>
@@ -70,9 +87,9 @@
   export default {
     data: function() {
       return {
-        produks: [],
-        produksData: {},
-        url: window.location.origin + (window.location.pathname).replace("home","produk"),
+        transaksiGas: [],
+        transaksiGasData: {},
+        url: window.location.origin + (window.location.pathname).replace("home","transaksi-gas"),
         pencarian: '',
         loading: true
       }
@@ -83,6 +100,7 @@
     },
     watch: {
        pencarian: function(newSearch){
+         this.loading = true;
          this.getHasilPencarian();
        }  
     },
@@ -94,8 +112,8 @@
         }
         axios.get(app.url + '/view?page=' + page)
         .then(function(resp){
-          app.produks = resp.data.data;
-          app.produksData = resp.data;
+          app.transaksiGas = resp.data.data;
+          app.transaksiGasData = resp.data;
           app.loading = false;
         })
         .catch(function(resp){
@@ -112,8 +130,8 @@
         }
         axios.get(app.url + '/search?q='+app.pencarian+'&page=' + page)
         .then(function(resp){
-          app.produks = resp.data.data;
-          app.produksData = resp.data;
+          app.transaksiGas = resp.data.data;
+          app.transaksiGasData = resp.data;
           app.loading = false;
         })
         .catch(function(resp){
@@ -122,21 +140,21 @@
          
         })
       },
-      deleteEntry(id,index,namaProduk){
+      deleteEntry(id,index,noTransaksi){
           axios.delete(this.url + '/' + id)
           .then((resp) => {
             this.getResults();
-            this.alert("Berhasil Menghapus","Berhasil Menghapus Produk " + namaProduk);
+            this.alert("Berhasil Menghapus","Berhasil Menghapus Transaksi :  " + noTransaksi);
           })
           .catch((resp) =>{
             alert("Something Goes Wrong")
             console.log(resp);
           })
       },
-      konfirmasiHapus(id,index,namaProduk){
+      konfirmasiHapus(id,index,noTransaksi){
       
         this.$swal({
-          title: "Yakin Ingin Menghapus Produk " + namaProduk + "?",
+          title: " Ingin Menghapus Transaksi :  " + noTransaksi + "?",
           text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
           icon: "warning",
           buttons: true,
@@ -144,7 +162,7 @@
         })
         .then((willDelete) => {
           if (willDelete) {
-            this.deleteEntry(id,index,namaProduk);
+            this.deleteEntry(id,index,noTransaksi);
           }
         })  
       },
