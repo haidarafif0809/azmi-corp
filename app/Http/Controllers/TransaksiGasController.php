@@ -241,11 +241,55 @@ class TransaksiGasController extends Controller
             'uang_jalan' => 'nullable|numeric',
         ]);
         $transaksiGas = TransaksiGas::find($id)->update($request->all());
+        $detailTransaksiGas = $this->updateDetailTransaksiGas(
+                                        $request->produks,
+                                        $request->status_barang,
+                                        $request->no_rute,
+                                        $id
+                                        );
         if($transaksiGas){
           return response(200);    
         } else {
           return response()->status(500);    
         }
+    }
+    private function updateDetailTransaksiGas($produks,$status_barang,$noRute,$transaksiGasId){
+        
+        
+        if($status_barang == 'masuk'){
+           DetailTransaksiGasMasuk::where('transaksi_gas_id',$transaksiGasId)->delete();   
+           foreach($produks as $gas){
+              
+              DetailTransaksiGasMasuk::create([
+                            'produk_id' => $gas['produk_id'],
+                            'nama_produk' => $gas['nama_produk'],
+                            'kode_produk' => $gas['kode_produk'],
+                            'kosong_p' => $gas['kosong_p'],
+                            'kosong_r' => $gas['kosong_r'],
+                            'kosong_k' => $gas['kosong_k'],
+                            'isi' => $gas['isi'],
+                            'no_rute' => $noRute,
+                            'transaksi_gas_id' => $transaksiGasId
+                            ]);
+           }
+        } else {
+            
+           DetailTransaksiGasKeluar::where('transaksi_gas_id',$transaksiGasId)->delete();   
+           foreach($produks as $gas){
+              DetailTransaksiGasKeluar::create([
+                            'produk_id' => $gas['id'],
+                            'nama_produk' => $gas['nama'],
+                            'kode_produk' => $gas['kode'],
+                            'kosong_p' => $gas['kosong_p'],
+                            'kosong_r' => $gas['kosong_r'],
+                            'kosong_k' => $gas['kosong_k'],
+                            'isi' => $gas['isi'],
+                            'no_rute' => $noRute,
+                            'transaksi_gas_id' => $transaksiGasId
+                            ]);
+            } 
+        }
+        return true;
     }
 
     /**
