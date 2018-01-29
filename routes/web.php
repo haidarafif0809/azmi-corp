@@ -85,6 +85,7 @@ Route::patch('/transaksi-kas/{id}/kas-keluar','TransaksiKasController@updateKasK
 Route::get('/akuntansi/jurnal-umum','AkuntansiController@jurnalUmum')->middleware('auth');
 Route::get('/akuntansi/neraca','AkuntansiController@neraca')->middleware('auth');
 Route::get('/akuntansi/laba-rugi','AkuntansiController@labaRugi')->middleware('auth');
+Route::get('/akuntansi/buku-besar','AkuntansiController@bukuBesar')->middleware('auth');
 
 //Transaksi Gas
 Route::get('/transaksi-gas/view', 'TransaksiGasController@index')->middleware('auth');

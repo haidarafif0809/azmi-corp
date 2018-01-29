@@ -23,6 +23,21 @@ class AkuntansiController extends Controller
     
     }
 
+    public function bukuBesar(Request $request){
+      
+      $dariTanggal = $request->dariTanggal;
+      $sampaiTanggal = $request->sampaiTanggal;
+      $akun = $request->akun;
+      $detailJurnal = DetailTransaksiJurnal::leftJoin('akuns','akuns.id','detail_transaksi_jurnals.akun_id')
+                      ->select('detail_transaksi_jurnals.*','akuns.nama AS nama_akun')
+                      ->where('akun_id',$akun)
+                      ->whereDate('detail_transaksi_jurnals.created_at','>=',$dariTanggal)
+                      ->whereDate('detail_transaksi_jurnals.created_at','<=',$sampaiTanggal)
+                      ->paginate(10);
+      return $detailJurnal;
+    
+    }
+
     public function neraca(Request $request) {
       $tanggal = $request->sampaiTanggal;
       $nilaiKas = $this->dapatkanNilaiAkunAktiva('kas',$tanggal); 

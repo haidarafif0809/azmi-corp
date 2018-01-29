@@ -41,6 +41,7 @@ import TransaksiKasMasukEdit from './components/transaksi-kas/TransaksiKasMasukE
 import TransaksiKasKeluarEdit from './components/transaksi-kas/TransaksiKasKeluarEdit.vue';
 
 import LaporanTransaksiKasIndex from './components/laporan/LaporanTransaksiKasIndex.vue';
+import LaporanBukuBesarIndex from './components/laporan/LaporanBukuBesarIndex.vue';
 import LaporanJurnalUmumIndex from './components/laporan/LaporanJurnalUmumIndex.vue';
 import LaporanNeracaIndex from './components/laporan/LaporanNeracaIndex.vue';
 import LaporanLabaRugiIndex from './components/laporan/LaporanLabaRugiIndex.vue';
@@ -99,6 +100,7 @@ const routes = [
   { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/laporan/transaksi-kas', component:LaporanTransaksiKasIndex,name: 'IndexLaporanTransaksiKas' },
   { path: '/laporan/neraca', component:LaporanNeracaIndex,name: 'IndexLaporanNeraca' },
+  { path: '/laporan/buku-besar', component:LaporanBukuBesarIndex,name: 'IndexLaporanBukuBesar' },
   { path: '/laporan/laba-rugi', component:LaporanLabaRugiIndex,name: 'IndexLaporanLabaRugi' },
   { path: '/laporan/jurnal-umum', component:LaporanJurnalUmumIndex,name: 'IndexLaporanJurnalUmum' },
   { path: '/transaksi-kas/create', component:TransaksiKasCreate,name: 'CreateTransaksiKas' },

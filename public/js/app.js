@@ -45754,29 +45754,32 @@ exports.version = version;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarEdit_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_laporan_LaporanTransaksiKasIndex_vue__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_laporan_LaporanTransaksiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_37__components_laporan_LaporanTransaksiKasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanJurnalUmumIndex_vue__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanJurnalUmumIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanJurnalUmumIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanNeracaIndex_vue__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanNeracaIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanNeracaIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanLabaRugiIndex_vue__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanLabaRugiIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanLabaRugiIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_gas_TransaksiGasIndex_vue__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_gas_TransaksiGasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41__components_transaksi_gas_TransaksiGasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasCreate_vue__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasEdit_vue__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_jurnal_manual_JurnalManualIndex_vue__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_jurnal_manual_JurnalManualIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_44__components_jurnal_manual_JurnalManualIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualCreate_vue__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualEdit_vue__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_error_Page404_vue__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_error_Page404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47__components_error_Page404_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanBukuBesarIndex_vue__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanBukuBesarIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanBukuBesarIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanJurnalUmumIndex_vue__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanJurnalUmumIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanJurnalUmumIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanNeracaIndex_vue__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanNeracaIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanNeracaIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_laporan_LaporanLabaRugiIndex_vue__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_laporan_LaporanLabaRugiIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41__components_laporan_LaporanLabaRugiIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasIndex_vue__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasCreate_vue__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_gas_TransaksiGasEdit_vue__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_gas_TransaksiGasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_44__components_transaksi_gas_TransaksiGasEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualIndex_vue__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualCreate_vue__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_jurnal_manual_JurnalManualEdit_vue__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_jurnal_manual_JurnalManualEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47__components_jurnal_manual_JurnalManualEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_error_Page404_vue__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_error_Page404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_48__components_error_Page404_vue__);
 
 // 1. Define route components.
 // These can be imported from other files
+
 
 
 
@@ -45836,7 +45839,7 @@ exports.version = version;
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }, { path: '/pelanggan', component: __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default.a, name: 'IndexPelanggan' }, { path: '/pelanggan/create', component: __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default.a, name: 'CreatePelanggan' }, { path: '/pelanggan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default.a, name: 'EditPelanggan' }, { path: '/kas', component: __WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue___default.a, name: 'IndexKas' }, { path: '/kas/create', component: __WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue___default.a, name: 'CreateKas' }, { path: '/kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue___default.a, name: 'EditKas' }, { path: '/akun', component: __WEBPACK_IMPORTED_MODULE_22__components_akun_AkunIndex_vue___default.a, name: 'IndexAkun' }, { path: '/akun/create', component: __WEBPACK_IMPORTED_MODULE_23__components_akun_AkunCreate_vue___default.a, name: 'CreateAkun' }, { path: '/akun/edit/:id', component: __WEBPACK_IMPORTED_MODULE_24__components_akun_AkunEdit_vue___default.a, name: 'EditAkun' }, { path: '/produk', component: __WEBPACK_IMPORTED_MODULE_25__components_produk_ProdukIndex_vue___default.a, name: 'IndexProduk' }, { path: '/produk/create', component: __WEBPACK_IMPORTED_MODULE_26__components_produk_ProdukCreate_vue___default.a, name: 'CreateProduk' }, { path: '/produk/edit/:id', component: __WEBPACK_IMPORTED_MODULE_27__components_produk_ProdukEdit_vue___default.a, name: 'EditProduk' }, { path: '/transaksi-gas', component: __WEBPACK_IMPORTED_MODULE_41__components_transaksi_gas_TransaksiGasIndex_vue___default.a, name: 'IndexTransaksiGas' }, { path: '/transaksi-gas/create', component: __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasCreate_vue___default.a, name: 'CreateTransaksiGas' }, { path: '/transaksi-gas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasEdit_vue___default.a, name: 'EditTransaksiGas' }, { path: '/jurnal-manual', component: __WEBPACK_IMPORTED_MODULE_44__components_jurnal_manual_JurnalManualIndex_vue___default.a, name: 'IndexJurnalManual' }, { path: '/jurnal-manual/create', component: __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualCreate_vue___default.a, name: 'CreateJurnalManual' }, { path: '/jurnal-manual/edit/:id', component: __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualEdit_vue___default.a, name: 'EditJurnalManual' }, { path: '/posisi-kas', component: __WEBPACK_IMPORTED_MODULE_28__components_transaksi_kas_PosisiKasIndex_vue___default.a, name: 'IndexPosisiKas' }, { path: '/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_29__components_transaksi_kas_TransaksiKasIndex_vue___default.a, name: 'IndexTransaksiKas' }, { path: '/laporan/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_37__components_laporan_LaporanTransaksiKasIndex_vue___default.a, name: 'IndexLaporanTransaksiKas' }, { path: '/laporan/neraca', component: __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanNeracaIndex_vue___default.a, name: 'IndexLaporanNeraca' }, { path: '/laporan/laba-rugi', component: __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanLabaRugiIndex_vue___default.a, name: 'IndexLaporanLabaRugi' }, { path: '/laporan/jurnal-umum', component: __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanJurnalUmumIndex_vue___default.a, name: 'IndexLaporanJurnalUmum' }, { path: '/transaksi-kas/create', component: __WEBPACK_IMPORTED_MODULE_30__components_transaksi_kas_TransaksiKasCreate_vue___default.a, name: 'CreateTransaksiKas' }, { path: '/transaksi-kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_TransaksiKasEdit_vue___default.a, name: 'EditTransaksiKas' }, { path: '/transaksi-kas/create/kas-mutasi', component: __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default.a, name: 'CreateTransaksiKasMutasi' }, { path: '/transaksi-kas/create/kas-masuk', component: __WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasMasukCreate_vue___default.a, name: 'CreateTransaksiKasMasuk' }, { path: '/transaksi-kas/create/kas-keluar', component: __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default.a, name: 'CreateTransaksiKasKeluar' }, { path: '/transaksi-kas/edit/kas-masuk/:id', component: __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukEdit_vue___default.a, name: 'EditTransaksiKasMasuk' }, { path: '/transaksi-kas/edit/kas-keluar/:id', component: __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default.a, name: 'EditTransaksiKasKeluar' }, { path: '/*', component: __WEBPACK_IMPORTED_MODULE_47__components_error_Page404_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }, { path: '/pelanggan', component: __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default.a, name: 'IndexPelanggan' }, { path: '/pelanggan/create', component: __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default.a, name: 'CreatePelanggan' }, { path: '/pelanggan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default.a, name: 'EditPelanggan' }, { path: '/kas', component: __WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue___default.a, name: 'IndexKas' }, { path: '/kas/create', component: __WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue___default.a, name: 'CreateKas' }, { path: '/kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue___default.a, name: 'EditKas' }, { path: '/akun', component: __WEBPACK_IMPORTED_MODULE_22__components_akun_AkunIndex_vue___default.a, name: 'IndexAkun' }, { path: '/akun/create', component: __WEBPACK_IMPORTED_MODULE_23__components_akun_AkunCreate_vue___default.a, name: 'CreateAkun' }, { path: '/akun/edit/:id', component: __WEBPACK_IMPORTED_MODULE_24__components_akun_AkunEdit_vue___default.a, name: 'EditAkun' }, { path: '/produk', component: __WEBPACK_IMPORTED_MODULE_25__components_produk_ProdukIndex_vue___default.a, name: 'IndexProduk' }, { path: '/produk/create', component: __WEBPACK_IMPORTED_MODULE_26__components_produk_ProdukCreate_vue___default.a, name: 'CreateProduk' }, { path: '/produk/edit/:id', component: __WEBPACK_IMPORTED_MODULE_27__components_produk_ProdukEdit_vue___default.a, name: 'EditProduk' }, { path: '/transaksi-gas', component: __WEBPACK_IMPORTED_MODULE_42__components_transaksi_gas_TransaksiGasIndex_vue___default.a, name: 'IndexTransaksiGas' }, { path: '/transaksi-gas/create', component: __WEBPACK_IMPORTED_MODULE_43__components_transaksi_gas_TransaksiGasCreate_vue___default.a, name: 'CreateTransaksiGas' }, { path: '/transaksi-gas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_44__components_transaksi_gas_TransaksiGasEdit_vue___default.a, name: 'EditTransaksiGas' }, { path: '/jurnal-manual', component: __WEBPACK_IMPORTED_MODULE_45__components_jurnal_manual_JurnalManualIndex_vue___default.a, name: 'IndexJurnalManual' }, { path: '/jurnal-manual/create', component: __WEBPACK_IMPORTED_MODULE_46__components_jurnal_manual_JurnalManualCreate_vue___default.a, name: 'CreateJurnalManual' }, { path: '/jurnal-manual/edit/:id', component: __WEBPACK_IMPORTED_MODULE_47__components_jurnal_manual_JurnalManualEdit_vue___default.a, name: 'EditJurnalManual' }, { path: '/posisi-kas', component: __WEBPACK_IMPORTED_MODULE_28__components_transaksi_kas_PosisiKasIndex_vue___default.a, name: 'IndexPosisiKas' }, { path: '/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_29__components_transaksi_kas_TransaksiKasIndex_vue___default.a, name: 'IndexTransaksiKas' }, { path: '/laporan/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_37__components_laporan_LaporanTransaksiKasIndex_vue___default.a, name: 'IndexLaporanTransaksiKas' }, { path: '/laporan/neraca', component: __WEBPACK_IMPORTED_MODULE_40__components_laporan_LaporanNeracaIndex_vue___default.a, name: 'IndexLaporanNeraca' }, { path: '/laporan/buku-besar', component: __WEBPACK_IMPORTED_MODULE_38__components_laporan_LaporanBukuBesarIndex_vue___default.a, name: 'IndexLaporanBukuBesar' }, { path: '/laporan/laba-rugi', component: __WEBPACK_IMPORTED_MODULE_41__components_laporan_LaporanLabaRugiIndex_vue___default.a, name: 'IndexLaporanLabaRugi' }, { path: '/laporan/jurnal-umum', component: __WEBPACK_IMPORTED_MODULE_39__components_laporan_LaporanJurnalUmumIndex_vue___default.a, name: 'IndexLaporanJurnalUmum' }, { path: '/transaksi-kas/create', component: __WEBPACK_IMPORTED_MODULE_30__components_transaksi_kas_TransaksiKasCreate_vue___default.a, name: 'CreateTransaksiKas' }, { path: '/transaksi-kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_TransaksiKasEdit_vue___default.a, name: 'EditTransaksiKas' }, { path: '/transaksi-kas/create/kas-mutasi', component: __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default.a, name: 'CreateTransaksiKasMutasi' }, { path: '/transaksi-kas/create/kas-masuk', component: __WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasMasukCreate_vue___default.a, name: 'CreateTransaksiKasMasuk' }, { path: '/transaksi-kas/create/kas-keluar', component: __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default.a, name: 'CreateTransaksiKasKeluar' }, { path: '/transaksi-kas/edit/kas-masuk/:id', component: __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukEdit_vue___default.a, name: 'EditTransaksiKasMasuk' }, { path: '/transaksi-kas/edit/kas-keluar/:id', component: __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default.a, name: 'EditTransaksiKasKeluar' }, { path: '/*', component: __WEBPACK_IMPORTED_MODULE_48__components_error_Page404_vue___default.a }];
 
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
@@ -66157,6 +66160,430 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-48f65d72", module.exports)
+  }
+}
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(204)
+/* template */
+var __vue_template__ = __webpack_require__(205)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/laporan/LaporanBukuBesarIndex.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3775b4ee", Component.options)
+  } else {
+    hotAPI.reload("data-v-3775b4ee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 204 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      jurnals: [],
+      jurnalsData: {},
+      laporan: {
+        akun: '',
+        dariTanggal: '',
+        sampaiTanggal: ''
+      },
+      akuns: [],
+      url: window.location.origin + window.location.pathname.replace("home", "akuntansi/buku-besar"),
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    var app = this;
+    app.getAkuns();
+  },
+
+  methods: {
+    getAkuns: function getAkuns(page) {
+      var app = this;
+      axios.get(app.url.replace('akuntansi/buku-besar', 'akun') + '/all?all=1').then(function (resp) {
+        app.akuns = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    getResults: function getResults(page) {
+
+      var app = this;
+      app.loading = true;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      var url = app.url + '?page=' + page + '&akun=' + app.laporan.akun + '&dariTanggal=' + app.laporan.dariTanggal + '&sampaiTanggal=' + app.laporan.sampaiTanggal;
+      axios.get(url).then(function (resp) {
+        app.jurnals = resp.data.data;
+        app.jurnalsData = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    alert: function alert(title, pesan) {
+      this.$swal({
+        title: title,
+        text: pesan,
+        icon: "success"
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "IndexDashboard" } } }, [
+                _vm._v("Home")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", [_vm._v("Laporan")]),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Laporan Buku Besar")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [_vm._v("Buku Besar")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "form",
+              {
+                staticClass: "form-inline",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.getResults($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.laporan.dariTanggal,
+                        expression: "laporan.dariTanggal"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "date", placeholder: "Dari Tanggal" },
+                    domProps: { value: _vm.laporan.dariTanggal },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.laporan,
+                          "dariTanggal",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.laporan.sampaiTanggal,
+                        expression: "laporan.sampaiTanggal"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "date", placeholder: "Sampai Tanggal" },
+                    domProps: { value: _vm.laporan.sampaiTanggal },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.laporan,
+                          "sampaiTanggal",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.laporan.akun,
+                          expression: "laporan.akun"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { required: "" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.laporan,
+                            "akun",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "" } }, [
+                        _vm._v("Pilih Akun")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.akuns, function(akun) {
+                        return _c("option", { domProps: { value: akun.id } }, [
+                          _vm._v(_vm._s(akun.nama))
+                        ])
+                      })
+                    ],
+                    2
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-default", attrs: { type: "submit" } },
+                  [_vm._v("Tampil")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "table-responsive" },
+              [
+                _c("table", { staticClass: "table table-bordered" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm.jurnals.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.jurnals, function(transaksi, index) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(transaksi.created_at))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(transaksi.no_trans))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(transaksi.deskripsi))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(transaksi.debit))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(transaksi.kredit))])
+                          ])
+                        })
+                      )
+                    : _c("tbody", [
+                        _c("tr", [
+                          _c(
+                            "td",
+                            { attrs: { colspan: "5" } },
+                            [_c("center", [_vm._v("Tidak Ada Data")])],
+                            1
+                          )
+                        ])
+                      ])
+                ]),
+                _vm._v(" "),
+                _c("vue-pagination", {
+                  attrs: { data: _vm.jurnalsData, limit: 4 },
+                  on: { "pagination-change-page": _vm.getResults }
+                }),
+                _vm._v(" "),
+                _vm.loading
+                  ? _c("vue-simple-spinner", {
+                      attrs: { message: "Loading..." }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("th", [_vm._v("Tanggal")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("No Transaksi")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Deksripsi")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Debit")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Kredit")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3775b4ee", module.exports)
   }
 }
 

@@ -61,9 +61,12 @@
                                 <li><router-link :to="{name: 'IndexLaporanTransaksiKas'}" >Transaksi Kas</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanJurnalUmum'}" >Jurnal Umum</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanNeraca'}" >Neraca</router-link></li>
+                                <li><router-link :to="{name: 'IndexLaporanNeraca'}" >Neraca</router-link></li>
+                                <li><router-link :to="{name: 'IndexLaporanBukuBesar'}" >Buku Besar</router-link></li>
                                 <li><router-link :to="{name: 'IndexLaporanLabaRugi'}" >Laba Rugi</router-link></li>
                             </ul>
                         </li>
+                        <li><router-link :to="{name: 'IndexJurnalManual'}" >Jurnal Manual</router-link></li>
                         <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
                         <li><router-link :to="{name: 'IndexTransaksiGas'}" >Transaksi Gas</router-link></li>
                         @endif
