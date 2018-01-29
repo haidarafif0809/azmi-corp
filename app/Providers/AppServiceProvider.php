@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\TransaksiKas;
 use App\Observers\TransaksiKasObserver;
+use App\JurnalManual;
+use App\Observers\JurnalManualObserver;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(191);
         TransaksiKas::observe(TransaksiKasObserver::class);
+        JurnalManual::observe(JurnalManualObserver::class);
     }
 
     /**

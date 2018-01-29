@@ -49,6 +49,10 @@ import TransaksiGasIndex from './components/transaksi-gas/TransaksiGasIndex.vue'
 import TransaksiGasCreate from './components/transaksi-gas/TransaksiGasCreate.vue';
 import TransaksiGasEdit from './components/transaksi-gas/TransaksiGasEdit.vue';
 
+import JurnalManualIndex from './components/jurnal-manual/JurnalManualIndex.vue';
+import JurnalManualCreate from './components/jurnal-manual/JurnalManualCreate.vue';
+import JurnalManualEdit from './components/jurnal-manual/JurnalManualEdit.vue';
+
 import Page404 from './components/error/Page404.vue';
 
 // 2. Define some routes
@@ -88,6 +92,9 @@ const routes = [
   { path: '/transaksi-gas', component:TransaksiGasIndex,name: 'IndexTransaksiGas' },
   { path: '/transaksi-gas/create', component:TransaksiGasCreate,name: 'CreateTransaksiGas' },
   { path: '/transaksi-gas/edit/:id', component:TransaksiGasEdit,name: 'EditTransaksiGas' },
+  { path: '/jurnal-manual', component:JurnalManualIndex,name: 'IndexJurnalManual' },
+  { path: '/jurnal-manual/create', component:JurnalManualCreate,name: 'CreateJurnalManual' },
+  { path: '/jurnal-manual/edit/:id', component:JurnalManualEdit,name: 'EditJurnalManual' },
   { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
   { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/laporan/transaksi-kas', component:LaporanTransaksiKasIndex,name: 'IndexLaporanTransaksiKas' },

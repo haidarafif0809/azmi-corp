@@ -24,8 +24,11 @@ class AkunController extends Controller
         if(isset($request->kas)){
             
           return Akun::where('jenis','kas')->get();
-        } else {
+        } elseif(isset($request->all)){
               
+          return Akun::all();
+        } else {
+            
           return Akun::where('jenis','!=','kas')->get();
         }
 

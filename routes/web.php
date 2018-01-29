@@ -54,6 +54,10 @@ Route::get('/kas/view', 'KasController@index')->middleware('auth');
 Route::get('/kas/search', 'KasController@search')->middleware('auth');
 Route::resource('/kas','KasController')->middleware('auth');
 
+Route::get('/jurnal-manual/view', 'JurnalManualController@index')->middleware('auth');
+Route::get('/jurnal-manual/search', 'JurnalManualController@search')->middleware('auth');
+Route::resource('/jurnal-manual','JurnalManualController')->middleware('auth');
+
 Route::get('/produk/view', 'ProdukController@index')->middleware('auth');
 Route::get('/produk/all', 'ProdukController@all')->middleware('auth');
 Route::get('/produk/search', 'ProdukController@search')->middleware('auth');
