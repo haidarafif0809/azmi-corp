@@ -60546,6 +60546,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -60690,49 +60737,137 @@ var render = function() {
               "div",
               { staticClass: "table-responsive" },
               [
-                _c("table", { staticClass: "table table-bordered" }, [
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("Kas")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.kas))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Hutang")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.hutang))])
-                    ]),
+                _c("div", { staticClass: "col-sm-6" }, [
+                  _c("table", { staticClass: "table table-bordered" }, [
+                    _vm._m(0),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Piutang")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.piutang))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Modal")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.modal))])
-                    ]),
+                    _c(
+                      "tbody",
+                      [
+                        _c("tr", [
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c("td", [_c("b", [_vm._v(_vm._s(_vm.neraca.kas))])])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_kas, function(kas) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(kas.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(kas.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("b", [_vm._v(_vm._s(_vm.neraca.piutang))])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_piutang, function(piutang) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(piutang.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(piutang.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(3),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("b", [_vm._v(_vm._s(_vm.neraca.persediaan))])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_wkwk, function(persediaan) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(persediaan.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(persediaan.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(4),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("b", [_vm._v(_vm._s(_vm.neraca.aktiva_tetap))])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_aktiva_tetap, function(
+                          aktiva_tetap
+                        ) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(aktiva_tetap.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(aktiva_tetap.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(5),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.neraca.nilai_aktiva))])
+                        ])
+                      ],
+                      2
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("table", { staticClass: "table table-bordered" }, [
+                    _vm._m(6),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Persediaan")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.persediaan))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("Laba Rugi Berjalan")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.laba_rugi))])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _vm._m(1),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.nilai_aktiva))]),
-                      _vm._v(" "),
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.neraca.nilai_pasiva))])
-                    ])
+                    _c(
+                      "tbody",
+                      [
+                        _c("tr", [
+                          _vm._m(7),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.neraca.hutang))])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_hutang, function(hutang) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(hutang.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(hutang.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(8),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.neraca.modal))])
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.neraca.akun_modal, function(modal) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(modal.akun))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(modal.saldo))])
+                          ])
+                        }),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(9),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.neraca.laba_rugi))])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _vm._m(10),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(_vm.neraca.nilai_pasiva))])
+                        ])
+                      ],
+                      2
+                    )
                   ])
                 ]),
                 _vm._v(" "),
@@ -60758,8 +60893,44 @@ var staticRenderFns = [
     return _c("thead", [
       _c("th", [_vm._v("Aktiva")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Saldo")]),
-      _vm._v(" "),
+      _c("th", [_vm._v("Saldo")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Kas / Bank")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Piutang")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Persediaan")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Aktiva Tetap (Aset)")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Saldo Keseluruhan")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
       _c("th", [_vm._v("Pasiva")]),
       _vm._v(" "),
       _c("th", [_vm._v("Saldo")])
@@ -60769,7 +60940,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [_c("b", [_vm._v("Saldo Keseluruhan")])])
+    return _c("td", [_c("b", [_vm._v("Hutang")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Modal")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("b", [_vm._v("Laba Rugi Berjalan")])])
   },
   function() {
     var _vm = this
@@ -66303,12 +66486,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       jurnals: [],
       jurnalsData: {},
+      total_nilai: 0,
       laporan: {
         akun: '',
         dariTanggal: '',
@@ -66346,6 +66531,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       axios.get(url).then(function (resp) {
         app.jurnals = resp.data.data;
         app.jurnalsData = resp.data;
+        app.total_nilai = resp.data.total_nilai;
         app.loading = false;
       }).catch(function (resp) {
         console.log(resp);
@@ -66544,6 +66730,12 @@ var render = function() {
                           ])
                         })
                       )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.jurnals.length
+                    ? _c("p", [
+                        _vm._v("Total Saldo : " + _vm._s(_vm.total_nilai) + " ")
+                      ])
                     : _c("tbody", [
                         _c("tr", [
                           _c(

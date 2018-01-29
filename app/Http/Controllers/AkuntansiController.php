@@ -34,7 +34,18 @@ class AkuntansiController extends Controller
                       ->whereDate('detail_transaksi_jurnals.created_at','>=',$dariTanggal)
                       ->whereDate('detail_transaksi_jurnals.created_at','<=',$sampaiTanggal)
                       ->paginate(10);
-      return $detailJurnal;
+      $sumDebit = DetailTransaksiJurnal::where('akun_id',$akun)
+                      ->whereDate('detail_transaksi_jurnals.created_at','>=',$dariTanggal)
+                      ->whereDate('detail_transaksi_jurnals.created_at','<=',$sampaiTanggal)
+                      ->sum('debit');
+      $sumKredit = DetailTransaksiJurnal::where('akun_id',$akun)
+                      ->whereDate('detail_transaksi_jurnals.created_at','>=',$dariTanggal)
+                      ->whereDate('detail_transaksi_jurnals.created_at','<=',$sampaiTanggal)
+                      ->sum('kredit');
+      $saldoAkun = $sumDebit - $sumKredit;
+      $totalNilai = collect(['total_nilai' => $saldoAkun]);
+      $data = $totalNilai->merge($detailJurnal);
+      return $data;
     
     }
 
@@ -43,21 +54,35 @@ class AkuntansiController extends Controller
       $nilaiKas = $this->dapatkanNilaiAkunAktiva('kas',$tanggal); 
       $nilaiPiutang = $this->dapatkanNilaiAkunAktiva('piutang',$tanggal); 
       $nilaiPersediaan = $this->dapatkanNilaiAkunAktiva('persediaan',$tanggal);
-      $nilaiAktiva = $nilaiKas + $nilaiPersediaan + $nilaiPiutang;
+      $nilaiAktivaTetap = $this->dapatkanNilaiAkunAktiva('aktiva_tetap',$tanggal);
+      $nilaiAktiva = $nilaiKas + $nilaiPersediaan + $nilaiPiutang + $nilaiAktivaTetap;
       $nilaiHutang = $this->dapatkanNilaiAkunPasiva('hutang',$tanggal); 
       $nilaiModal = $this->dapatkanNilaiAkunPasiva('modal',$tanggal); 
       $nilaiBiaya = $this->dapatkanNilaiAkunAktiva('biaya',$tanggal);
       $nilaiPenjualan = $this->dapatkanNilaiAkunPasiva('penjualan',$tanggal);
       $nilaiLabaBerjalan = $nilaiPenjualan - $nilaiBiaya;
       $nilaiPasiva = $nilaiModal + $nilaiLabaBerjalan + $nilaiHutang;
-
+      $akunKas = $this->dapatkanAkunDanNilai('kas',$tanggal,'aktiva');
+      $akunPiutang = $this->dapatkanAkunDanNilai('piutang',$tanggal,'aktiva');
+      $akunPersediaan = $this->dapatkanAkunDanNilai('persediaan',$tanggal,'aktiva');
+      $akunAktivaTetap = $this->dapatkanAkunDanNilai('aktiva_tetap',$tanggal,'aktiva');
+      $akunHutang = $this->dapatkanAkunDanNilai('hutang',$tanggal,'pasiva');
+      $akunModal = $this->dapatkanAkunDanNilai('modal',$tanggal,'pasiva');
       $neraca = ['kas' => $nilaiKas,
+                 'akun_kas' => $akunKas,
+                 'akun_wkwk' => $akunPersediaan,
                  'piutang' => $nilaiPiutang,
+                 'akun_piutang' => $akunPiutang,
                  'persediaan' => $nilaiPersediaan,
+                 'akun_punya_persediaan ' => $akunPersediaan,
+                 'aktiva_tetap' => $nilaiAktivaTetap,
+                 'akun_aktiva_tetap' => $akunAktivaTetap,
                  'nilai_aktiva' => $nilaiAktiva,
                  'nilai_pasiva' => $nilaiPasiva,
                  'hutang' => $nilaiHutang,
+                 'akun_hutang' => $akunHutang,
                  'modal' => $nilaiModal,
+                 'akun_modal' => $akunModal,
                  'laba_rugi' => $nilaiLabaBerjalan,
                  'penjualan' => $nilaiPenjualan,
                  'biaya' => $nilaiBiaya,
@@ -82,6 +107,25 @@ class AkuntansiController extends Controller
      return $labaRugi;
 
       
+    }
+    private function dapatkanAkunDanNilai($jenis,$tanggal,$aktivaPasiva){
+      $akuns = Akun::where('jenis',$jenis)->get();
+      $akunNilai = [];
+      foreach($akuns as $akun){
+             
+        $jurnal = DetailTransaksiJurnal::where('akun_id',$akun->id)
+                       ->whereDate('created_at','<=',$tanggal);
+        $sumDebit = $jurnal->sum('debit');
+        $sumKredit = $jurnal->sum('kredit');
+        if($aktivaPasiva == 'aktiva'){
+          $saldo = $sumDebit - $sumKredit;    
+        } else {
+          $saldo = $sumKredit - $sumDebit;    
+        }
+        array_push($akunNilai,['akun' => $akun->nama,'saldo' => $saldo]);
+      }
+      return $akunNilai;
+        
     }
     private function dapatkanNilaiAkunPasiva($jenis,$tanggal,$dariTanggal = ''){
         

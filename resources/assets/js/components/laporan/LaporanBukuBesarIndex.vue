@@ -50,6 +50,7 @@
                         <td>{{ transaksi.kredit}}</td>
                       </tr>
                     </tbody>
+                    <p v-if="jurnals.length">Total Saldo : {{total_nilai}} </p>
                     <tbody v-else>
                       <tr><td colspan="5"><center>Tidak Ada Data</center></td></tr>
                     </tbody>
@@ -76,6 +77,7 @@
       return {
         jurnals: [],
         jurnalsData: {},
+        total_nilai: 0,
         laporan : { 
             akun: '',
             dariTanggal: '',
@@ -117,6 +119,7 @@
         .then(function(resp){
           app.jurnals = resp.data.data;
           app.jurnalsData = resp.data;
+          app.total_nilai = resp.data.total_nilai
           app.loading = false;
         })
         .catch(function(resp){
