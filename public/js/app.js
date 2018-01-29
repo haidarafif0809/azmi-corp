@@ -53684,6 +53684,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -53942,6 +53944,14 @@ var render = function() {
                           _vm._v("Persediaan")
                         ]),
                         _vm._v(" "),
+                        _c("option", { attrs: { value: "persediaan" } }, [
+                          _vm._v("Persediaan")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "aktiva_tetap" } }, [
+                          _vm._v("Aktiva Tetap")
+                        ]),
+                        _vm._v(" "),
                         _c("option", { attrs: { value: "hpp" } }, [
                           _vm._v("Harga Pokok Penjualan")
                         ])
@@ -54043,6 +54053,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -54370,6 +54381,10 @@ var render = function() {
                         _vm._v(" "),
                         _c("option", { attrs: { value: "persediaan" } }, [
                           _vm._v("Persediaan")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "aktiva_tetap" } }, [
+                          _vm._v("Aktiva Tetap")
                         ]),
                         _vm._v(" "),
                         _c("option", { attrs: { value: "hpp" } }, [

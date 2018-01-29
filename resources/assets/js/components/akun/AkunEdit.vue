@@ -41,6 +41,7 @@
                             <option value="modal">Modal</option>
                             <option value="biaya">Biaya</option>
                             <option value="persediaan">Persediaan</option>
+                            <option value="aktiva_tetap">Aktiva Tetap</option>
                             <option value="hpp">Harga Pokok Penjualan</option>
                           </select>
                         <span v-if="errors.nama" class="label label-danger"> {{ errors.nama[0]}}</span>
