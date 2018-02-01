@@ -27,7 +27,7 @@ Route::resource('user','UserController')->middleware('auth');
 Route::get('/mobil/view', 'MobilController@index')->middleware('auth');
 Route::get('/mobil/all', 'MobilController@all')->middleware('auth');
 Route::get('/mobil/search', 'MobilController@search')->middleware('auth');
-Route::resource('mobil','SupplierController')->middleware('auth');
+Route::resource('mobil','MobilController')->middleware('auth');
 
 Route::get('/supplier/view', 'SupplierController@index')->middleware('auth');
 Route::get('/supplier/all', 'SupplierController@all')->middleware('auth');
