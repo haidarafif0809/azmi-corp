@@ -10,45 +10,6 @@
                 <div class="panel-heading">Posisi Kas</div>
 
                 <div class="panel-body">
-
-                    <ul class="nav nav-tabs">
-                      <li role="presentation" >
-                       <router-link 
-                          :to="{name: 'IndexTransaksiKas'}" 
-                       > 
-                          Daftar Transaksi
-                        </router-link>
-                       </li>
-                      <li role="presentation"class="active">
-                       <router-link 
-                          :to="{name: 'IndexPosisiKas'}" 
-                       > 
-                          Posisi Kas
-                        </router-link>
-                       </li>
-                      <li role="presentation">                 
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMasuk'}" 
-                       > 
-                          Tambah Kas Masuk
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasKeluar'}" 
-                       > 
-                          Tambah Kas Keluar
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMutasi'}" 
-                       > 
-                          Tambah Kas Mutasi
-                        </router-link>
-                       </li>
-
-                    </ul>
                     <br/>
                     <div class="table-responsive">
                     

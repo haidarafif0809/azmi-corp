@@ -56661,45 +56661,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -56758,93 +56719,6 @@ var render = function() {
           _c("div", { staticClass: "panel-heading" }, [_vm._v("Posisi Kas")]),
           _vm._v(" "),
           _c("div", { staticClass: "panel-body" }, [
-            _c("ul", { staticClass: "nav nav-tabs" }, [
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "IndexTransaksiKas" } } },
-                    [
-                      _vm._v(
-                        " \n                          Daftar Transaksi\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "active", attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "IndexPosisiKas" } } },
-                    [
-                      _vm._v(
-                        " \n                          Posisi Kas\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasMasuk" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Masuk\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasKeluar" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Keluar\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasMutasi" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Mutasi\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
             _c("br"),
             _vm._v(" "),
             _c(
