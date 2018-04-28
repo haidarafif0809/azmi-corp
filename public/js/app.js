@@ -56956,38 +56956,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ButtonTambah__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ButtonTambah___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ButtonTambah__);
 //
 //
 //
@@ -57070,6 +57040,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -57079,6 +57051,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       pencarian: '',
       loading: true
     };
+  },
+  components: {
+    ButtonTambah: __WEBPACK_IMPORTED_MODULE_0__ButtonTambah___default.a
   },
   mounted: function mounted() {
     var app = this;
@@ -57187,240 +57162,165 @@ var render = function() {
             _vm._v("Transaksi Kas")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
-            _c("ul", { staticClass: "nav nav-tabs" }, [
-              _vm._m(0),
+          _c(
+            "div",
+            { staticClass: "panel-body" },
+            [
+              _c("ButtonTambah"),
+              _vm._v(" "),
+              _c("br"),
               _vm._v(" "),
               _c(
-                "li",
-                { attrs: { role: "presentation" } },
+                "div",
+                { staticClass: "table-responsive" },
                 [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "IndexPosisiKas" } } },
-                    [
-                      _vm._v(
-                        " \n                          Posisi Kas\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasMasuk" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Masuk\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasKeluar" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Keluar\n                        "
-                      )
-                    ]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { attrs: { role: "presentation" } },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { name: "CreateTransaksiKasMutasi" } } },
-                    [
-                      _vm._v(
-                        " \n                          Tambah Kas Mutasi\n                        "
-                      )
-                    ]
-                  )
+                  _c("div", { attrs: { align: "right" } }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pencarian,
+                          expression: "pencarian"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      style: { width: "20%" },
+                      attrs: { type: "text", placeholder: "Pencarian ..." },
+                      domProps: { value: _vm.pencarian },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.pencarian = $event.target.value
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("table", { staticClass: "table table-bordered" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _vm.transaksiKas.length
+                      ? _c(
+                          "tbody",
+                          _vm._l(_vm.transaksiKas, function(transaksi, index) {
+                            return _c("tr", [
+                              _c("td", [_vm._v(_vm._s(transaksi.created_at))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(transaksi.no_trans))]),
+                              _vm._v(" "),
+                              _c("td", [
+                                _vm._v(_vm._s(transaksi.nama_akun_keluar))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", [
+                                _vm._v(_vm._s(transaksi.nama_akun_masuk))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(transaksi.deskripsi))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(transaksi.masuk))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(transaksi.keluar))]),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                [
+                                  transaksi.masuk > 0
+                                    ? _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "btn btn-xs btn-default",
+                                          attrs: {
+                                            to: {
+                                              name: "EditTransaksiKasMasuk",
+                                              params: { id: transaksi.id }
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                          Edit\n                       "
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  transaksi.keluar > 0
+                                    ? _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "btn btn-xs btn-default",
+                                          attrs: {
+                                            to: {
+                                              name: "EditTransaksiKasKeluar",
+                                              params: { id: transaksi.id }
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                          Edit\n                       "
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass: "btn btn-xs btn-danger",
+                                      on: {
+                                        click: function($event) {
+                                          _vm.konfirmasiHapus(
+                                            transaksi.id,
+                                            index,
+                                            transaksi.id
+                                          )
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                          Hapus\n                        "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          })
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c("vue-pagination", {
+                    attrs: { data: _vm.transaksiKasData, limit: 4 },
+                    on: { "pagination-change-page": _vm.getResults }
+                  }),
+                  _vm._v(" "),
+                  _vm.loading
+                    ? _c("vue-simple-spinner", {
+                        attrs: { message: "Loading..." }
+                      })
+                    : _vm._e()
                 ],
                 1
               )
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "table-responsive" },
-              [
-                _c("div", { attrs: { align: "right" } }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.pencarian,
-                        expression: "pencarian"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    style: { width: "20%" },
-                    attrs: { type: "text", placeholder: "Pencarian ..." },
-                    domProps: { value: _vm.pencarian },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.pencarian = $event.target.value
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-bordered" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _vm.transaksiKas.length
-                    ? _c(
-                        "tbody",
-                        _vm._l(_vm.transaksiKas, function(transaksi, index) {
-                          return _c("tr", [
-                            _c("td", [_vm._v(_vm._s(transaksi.created_at))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(transaksi.no_trans))]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _vm._v(_vm._s(transaksi.nama_akun_keluar))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _vm._v(_vm._s(transaksi.nama_akun_masuk))
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(transaksi.deskripsi))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(transaksi.masuk))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(transaksi.keluar))]),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                transaksi.masuk > 0
-                                  ? _c(
-                                      "router-link",
-                                      {
-                                        staticClass: "btn btn-xs btn-default",
-                                        attrs: {
-                                          to: {
-                                            name: "EditTransaksiKasMasuk",
-                                            params: { id: transaksi.id }
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                          Edit\n                       "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                transaksi.keluar > 0
-                                  ? _c(
-                                      "router-link",
-                                      {
-                                        staticClass: "btn btn-xs btn-default",
-                                        attrs: {
-                                          to: {
-                                            name: "EditTransaksiKasKeluar",
-                                            params: { id: transaksi.id }
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                          Edit\n                       "
-                                        )
-                                      ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-xs btn-danger",
-                                    on: {
-                                      click: function($event) {
-                                        _vm.konfirmasiHapus(
-                                          transaksi.id,
-                                          index,
-                                          transaksi.id
-                                        )
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                          Hapus\n                        "
-                                    )
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ])
-                        })
-                      )
-                    : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("vue-pagination", {
-                  attrs: { data: _vm.transaksiKasData, limit: 4 },
-                  on: { "pagination-change-page": _vm.getResults }
-                }),
-                _vm._v(" "),
-                _vm.loading
-                  ? _c("vue-simple-spinner", {
-                      attrs: { message: "Loading..." }
-                    })
-                  : _vm._e()
-              ],
-              1
-            )
-          ])
+            ],
+            1
+          )
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "li",
-      { staticClass: "active", attrs: { role: "presentation" } },
-      [_c("a", { attrs: { href: "#" } }, [_vm._v("Daftar Transaksi")])]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -67904,6 +67804,142 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(216)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/transaksi-kas/ButtonTambah.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-00249429", Component.options)
+  } else {
+    hotAPI.reload("data-v-00249429", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "btn-group" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("ul", { staticClass: "dropdown-menu" }, [
+      _c(
+        "li",
+        [
+          _c(
+            "router-link",
+            { attrs: { to: { name: "CreateTransaksiKasMasuk" } } },
+            [_vm._v(" \n        Tambah Kas Masuk\n      ")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c(
+            "router-link",
+            { attrs: { to: { name: "CreateTransaksiKasKeluar" } } },
+            [_vm._v(" \n      Tambah Kas Keluar\n      ")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        [
+          _c(
+            "router-link",
+            { attrs: { to: { name: "CreateTransaksiKasMutasi" } } },
+            [_vm._v(" \n      Tambah Kas Mutasi\n    ")]
+          )
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-default dropdown-toggle",
+        attrs: {
+          type: "button",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
+      },
+      [_vm._v("\n    Tambah "), _c("span", { staticClass: "caret" })]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-00249429", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

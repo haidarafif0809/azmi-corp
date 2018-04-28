@@ -10,39 +10,7 @@
                 <div class="panel-heading">Transaksi Kas</div>
 
                 <div class="panel-body">
-
-                    <ul class="nav nav-tabs">
-                      <li role="presentation" class="active"><a href="#">Daftar Transaksi</a></li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'IndexPosisiKas'}" 
-                       > 
-                          Posisi Kas
-                        </router-link>
-                       </li>
-                      <li role="presentation">                 
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMasuk'}" 
-                       > 
-                          Tambah Kas Masuk
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasKeluar'}" 
-                       > 
-                          Tambah Kas Keluar
-                        </router-link>
-                       </li>
-                      <li role="presentation">
-                       <router-link 
-                          :to="{name: 'CreateTransaksiKasMutasi'}" 
-                       > 
-                          Tambah Kas Mutasi
-                        </router-link>
-                       </li>
-
-                    </ul>
+                    <ButtonTambah />
                     <br/>
                     <div class="table-responsive">
                     
@@ -112,6 +80,8 @@
 
 
 <script>
+import ButtonTambah from './ButtonTambah'
+
   export default {
     data: function() {
       return {
@@ -121,6 +91,9 @@
         pencarian: '',
         loading: true
       }
+    },
+    components: {
+      ButtonTambah
     },
     mounted()  {
      var app = this;

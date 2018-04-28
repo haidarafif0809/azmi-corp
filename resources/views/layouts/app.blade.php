@@ -71,6 +71,7 @@
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
+                                <li><router-link :to="{name: 'IndexTransaksiKartuKredit'}" >Transaksi Kartu Kredit</router-link></li>
                                 <li><router-link :to="{name: 'IndexTransaksiGas'}" >Transaksi Gas</router-link></li>
                                 <li><router-link :to="{name: 'IndexJurnalManual'}" >Jurnal Manual</router-link></li>
                             </ul>
