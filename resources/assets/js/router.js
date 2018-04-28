@@ -23,6 +23,9 @@ import PelangganEdit from './components/pelanggan/PelangganEdit.vue';
 import KasIndex from './components/kas/KasIndex.vue';
 import KasCreate from './components/kas/KasCreate.vue';
 import KasEdit from './components/kas/KasEdit.vue';
+import KartuKreditIndex from './components/kartu-kredit/KartuKreditIndex.vue';
+import KartuKreditCreate from './components/kartu-kredit/KartuKreditCreate.vue';
+import KartuKreditEdit from './components/kartu-kredit/KartuKreditEdit.vue';
 import AkunIndex from './components/akun/AkunIndex.vue';
 import AkunCreate from './components/akun/AkunCreate.vue';
 import AkunEdit from './components/akun/AkunEdit.vue';
@@ -84,6 +87,9 @@ const routes = [
   { path: '/kas', component:KasIndex,name: 'IndexKas' },
   { path: '/kas/create', component:KasCreate,name: 'CreateKas' },
   { path: '/kas/edit/:id', component:KasEdit,name: 'EditKas' },
+  { path: '/kartu-kredit', component:KartuKreditIndex,name: 'IndexKartuKredit' },
+  { path: '/kartu-kredit/create', component:KartuKreditCreate,name: 'CreateKartuKredit' },
+  { path: '/kartu-kredit/edit/:id', component:KartuKreditEdit,name: 'EditKartuKredit' },
   { path: '/akun', component:AkunIndex,name: 'IndexAkun' },
   { path: '/akun/create', component:AkunCreate,name: 'CreateAkun' },
   { path: '/akun/edit/:id', component:AkunEdit,name: 'EditAkun' },

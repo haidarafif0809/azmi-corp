@@ -54,6 +54,10 @@ Route::get('/kas/view', 'KasController@index')->middleware('auth');
 Route::get('/kas/search', 'KasController@search')->middleware('auth');
 Route::resource('/kas','KasController')->middleware('auth');
 
+Route::get('/kartu-kredit/view', 'KartuKreditController@index')->middleware('auth');
+Route::get('/kartu-kredit/search', 'KartuKreditController@search')->middleware('auth');
+Route::resource('/kartu-kredit','KartuKreditController')->middleware('auth');
+
 Route::get('/jurnal-manual/view', 'JurnalManualController@index')->middleware('auth');
 Route::get('/jurnal-manual/search', 'JurnalManualController@search')->middleware('auth');
 Route::resource('/jurnal-manual','JurnalManualController')->middleware('auth');
