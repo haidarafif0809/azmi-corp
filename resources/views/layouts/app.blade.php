@@ -51,6 +51,7 @@
                                 <li><router-link :to="{name: 'IndexGudang'}" >Gudang</router-link></li>
                                 <li><router-link :to="{name: 'IndexPelanggan'}" >Pelanggan</router-link></li>
                                 <li><router-link :to="{name: 'IndexAkun'}" >Akun</router-link></li>
+                                <li><router-link :to="{name: 'IndexKartuKredit'}" >Kartu Kredit</router-link></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -65,9 +66,15 @@
                                 <li><router-link :to="{name: 'IndexLaporanLabaRugi'}" >Laba Rugi</router-link></li>
                             </ul>
                         </li>
-                        <li><router-link :to="{name: 'IndexJurnalManual'}" >Jurnal Manual</router-link></li>
-                        <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
-                        <li><router-link :to="{name: 'IndexTransaksiGas'}" >Transaksi Gas</router-link></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Transaksi
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><router-link :to="{name: 'IndexTransaksiKas'}" >Transaksi Kas</router-link></li>
+                                <li><router-link :to="{name: 'IndexTransaksiGas'}" >Transaksi Gas</router-link></li>
+                                <li><router-link :to="{name: 'IndexJurnalManual'}" >Jurnal Manual</router-link></li>
+                            </ul>
+                        </li>
                         @endif
                     </ul>
 
