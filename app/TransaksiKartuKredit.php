@@ -3,12 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
-class TransaksiKas extends Model
+class TransaksiKartuKredit extends Model
 {
     //
-   protected $fillable = ['no_trans','akun_masuk','akun_keluar','deskripsi','masuk','keluar'];
+   protected $fillable = ['no_trans','kartu_kredit','akun_keluar','deskripsi','masuk','keluar'];
    
    public static function noTrans(){
      $tahunSekarang = date('Y');

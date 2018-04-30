@@ -24,5 +24,6 @@ class AkunSeeder extends Seeder
         Akun::create(['kode' => '10' , 'nama' => 'modal','jenis' => 'modal']);
         Akun::create(['kode' => '11' , 'nama' => 'biaya','jenis' => 'biaya']);
         Akun::create(['kode' => '12' , 'nama' => 'persediaan','jenis' => 'persediaan']);
+        Akun::create(['kode' => '13' , 'nama' => 'Kartu Kredit','jenis' => 'hutang']);
     }
 }

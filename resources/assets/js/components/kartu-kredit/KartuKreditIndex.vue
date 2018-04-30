@@ -11,37 +11,37 @@
 
                 <div class="panel-body">
 
-                    <router-link 
-                      :to="{name: 'CreateKartuKredit'}" 
-                      class="btn btn-md btn-primary"> 
+                    <router-link
+                      :to="{name: 'CreateKartuKredit'}"
+                      class="btn btn-md btn-primary">
                         Tambah Kartu Kredit
                     </router-link>
                     <div class="table-responsive">
-                    
+
                     <div align="right">
-                   Pencarian 
+                   Pencarian
                     <input type="text" v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
                     </div>
                     <table class="table table-bordered" >
                     <thead>
-                        <th>Kode Kartu Kredit</th>
-                        <th>Nama Kartu Kredit</th>
+                        <th>Akun</th>
+                        <th>Limit</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody v-if="kartuKredits.length">
-                      <tr v-for="gudang,index in kartuKredits">
-                        <td>{{ gudang.kode}}</td>
-                        <td>{{ gudang.nama}}</td>
+                      <tr v-for="kartuKredit,index in kartuKredits">
+                        <td>{{ kartuKredit.akun.nama}}</td>
+                        <td>{{ kartuKredit.limit}}</td>
                         <td>
-                        <router-link 
-                          :to="{name:'EditKartuKredit' ,params:{id: gudang.id}}" 
+                        <router-link
+                          :to="{name:'EditKartuKredit' ,params:{id: kartuKredit.id}}"
                           class="btn btn-xs btn-default"
                        >
                           Edit
                        </router-link>
-                        <button 
-                          class="btn btn-xs btn-danger" 
-                          v-on:click="konfirmasiHapus(gudang.id,index,gudang.nama)"
+                        <button
+                          class="btn btn-xs btn-danger"
+                          v-on:click="konfirmasiHapus(kartuKredit.id,index,kartuKredit.nama)"
                         >
                           Hapus
                         </button>
@@ -76,7 +76,7 @@
     watch: {
        pencarian: function(newSearch){
          this.getHasilPencarian();
-       }  
+       }
     },
     methods: {
       getResults(page){
@@ -93,11 +93,11 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       getHasilPencarian(page){
-          
+
         var app = this;
         if(typeof page == 'undefined'){
           page = 1;
@@ -111,7 +111,7 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       deleteEntry(id,index,namaKartuKredit){
@@ -126,7 +126,7 @@
           })
       },
       konfirmasiHapus(id,index,namaKartuKredit){
-      
+
         this.$swal({
           title: "Yakin Ingin Menghapus KartuKredit " + namaKartuKredit + "?",
           text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
@@ -138,7 +138,7 @@
           if (willDelete) {
             this.deleteEntry(id,index,namaKartuKredit);
           }
-        })  
+        })
       },
       alert(title,pesan){
         this.$swal({

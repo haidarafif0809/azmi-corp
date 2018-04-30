@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKartuKreditsTable extends Migration
+class CreateTransaksiKartuKreditsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateKartuKreditsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kartu_kredits', function (Blueprint $table) {
+        Schema::create('transaksi_kartu_kredits', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('akun')->unsigned();
-            $table->string('limit');
             $table->timestamps();
-            $table->foreign('akun')->references('id')->on('akuns');
         });
     }
 
@@ -29,6 +26,6 @@ class CreateKartuKreditsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kartu_kredits');
+        Schema::dropIfExists('transaksi_kartu_kredits');
     }
 }

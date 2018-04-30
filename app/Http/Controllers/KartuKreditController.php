@@ -15,7 +15,7 @@ class KartuKreditController extends Controller
     public function index()
     {
         //
-        return KartuKredit::paginate(10);
+        return KartuKredit::with('akun')->paginate(10);
     }
 
     /**
@@ -38,26 +38,25 @@ class KartuKreditController extends Controller
     {
         //
         $request->validate([
-            'kode' => 'required|unique:kartu_kredits,kode|max:255',
-            'nama' => 'required|unique:kartu_kredits,nama|max:255',
+            'akun' => 'required|unique:kartu_kredits,akun|max:255',
         ]);
         $kartuKredit = KartuKredit::create($request->all());
         if($kartuKredit){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
-    
+
     public function search(Request $request){
-          
-        $kartuKredit = KartuKredit::where('kode','LIKE',"%$request->q%")
-                          ->orWhere('nama','LIKE',"%$request->q%")
+
+        $kartuKredit = KartuKredit::where('limit','LIKE',"%$request->q%")
+                          ->orWhere('akun','LIKE',"%$request->q%")
                           ->paginate(10);
         if($kartuKredit){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     /**
@@ -92,17 +91,15 @@ class KartuKreditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $request->validate([
-            'kode' => 'required|unique:kartu_kredits,kode,'.$id.'|max:255',
-            'nama' => 'required|unique:kartu_kredits,nama,'.$id.'|max:255',
+            'akun' => 'required|unique:kartu_kredits,akun,'.$id.'|max:255',
         ]);
-       
+
         $kartuKredit = KartuKredit::find($id)->update($request->all());
         if($kartuKredit){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
 
     }
@@ -118,7 +115,7 @@ class KartuKreditController extends Controller
         //
         $kartuKredit = KartuKredit::destroy($id);
         if($kartuKredit){
-          return response(200);    
+          return response(200);
         } else {
           return response(500);
         }

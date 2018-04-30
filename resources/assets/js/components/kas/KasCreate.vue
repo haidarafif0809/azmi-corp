@@ -5,25 +5,24 @@
         <div class="col-md-8 col-md-offset-2">
             <ul class="breadcrumb">
               <li>Home</li>
-              <li><router-link :to="{name: 'IndexGudang'}">Kelola Gudang</router-link></li>
-              <li class="active">Tambah Gudang</li>
+              <li><router-link :to="{name: 'IndexKas'}">Kelola Kas</router-link></li>
+              <li class="active">Tambah Kas</li>
             </ul>
             <div class="panel panel-default">
-                <div class="panel-heading">Tambah Gudang</div>
-
-                <div class="panel-body">
+                <div class="panel-heading">Tambah Kas</div>
+Kasdiv class="panel-body">
                     <form v-on:submit.prevent="saveForm()" class="form-horizontal" >
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Kode</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Kode Gudang" v-model="gudang.kode" autofocus=""/>
+                          <input type="text" class="form-control" required="" placeholder="Kode Kas" v-model="gudang.kode" autofocus=""/>
                         <span v-if="errors.kode" class="label label-danger"> {{ errors.kode[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Nama</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Nama Gudang" v-model="gudang.nama" autofocus=""/>
+                          <input type="text" class="form-control" required="" placeholder="Nama Kas" v-model="gudang.nama" autofocus=""/>
                         <span v-if="errors.nama" class="label label-danger"> {{ errors.nama[0]}}</span>
                         </div>
                       </div>
@@ -60,16 +59,16 @@
     methods: {
       alert(pesan){
         this.$swal({
-          title: "Berhasil Menambah Gudang",
+          title: "Berhasil Menambah Kas",
           text: pesan,
           icon: "success"
         });
       },
       saveForm(){
-        var newGudang = this.gudang;
-        axios.post(this.url,newGudang)
+        var newKas = this.gudang;
+        axios.post(this.url,newKas)
         .then((resp) => {
-          this.alert('Berhasil Menambah Gudang ' + this.gudang.nama );
+          this.alert('Berhasil Menambah Kas ' + this.gudang.nama );
           this.$router.replace('/gudang/');
         })
         .catch((resp) =>{
