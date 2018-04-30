@@ -72,6 +72,18 @@ Route::get('/akun/all', 'AkunController@all')->middleware('auth');
 Route::get('/akun/search', 'AkunController@search')->middleware('auth');
 Route::resource('/akun','AkunController')->middleware('auth');
 
+//Transaksi Kartu Kredit
+Route::get('/transaksi-kartu-kredit/view', 'TransaksiKartuKreditController@index')->middleware('auth');
+Route::resource('/transaksi-kartu-kredit','TransaksiKartuKreditController')->middleware('auth');
+Route::get('/transaksi-kartu-kredit/search', 'TransaksiKartuKreditController@search')->middleware('auth');
+Route::post('/transaksi-kartu-kredit/kartu-kredit-masuk', 'TransaksiKartuKreditController@storeKartuKreditMasuk')->middleware('auth');
+Route::post('/transaksi-kartu-kredit/kartu-kredit-keluar', 'TransaksiKartuKreditController@storeKartuKreditKeluar')->middleware('auth');
+Route::patch('/transaksi-kartu-kredit/{id}/kartu-kredit-masuk','TransaksiKartuKreditController@updateKartuKreditMasuk')
+        ->middleware('auth');
+Route::patch('/transaksi-kartu-kredit/{id}/kartu-kredit-keluar','TransaksiKartuKreditController@updateKartuKreditKeluar')
+        ->middleware('auth');
+
+
 //Transaksi Kas
 Route::get('/transaksi-kas/view', 'TransaksiKasController@index')->middleware('auth');
 Route::get('/transaksi-kas/laporan', 'TransaksiKasController@laporanKas')->middleware('auth');
@@ -85,6 +97,7 @@ Route::patch('/transaksi-kas/{id}/kas-masuk','TransaksiKasController@updateKasMa
         ->middleware('auth');
 Route::patch('/transaksi-kas/{id}/kas-keluar','TransaksiKasController@updateKasKeluar')
         ->middleware('auth');
+
 // Laporan Akuntansi
 Route::get('/akuntansi/jurnal-umum','AkuntansiController@jurnalUmum')->middleware('auth');
 Route::get('/akuntansi/neraca','AkuntansiController@neraca')->middleware('auth');

@@ -43,6 +43,12 @@ import TransaksiKasMutasiCreate from './components/transaksi-kas/TransaksiKasMut
 import TransaksiKasMasukEdit from './components/transaksi-kas/TransaksiKasMasukEdit.vue';
 import TransaksiKasKeluarEdit from './components/transaksi-kas/TransaksiKasKeluarEdit.vue';
 
+import TransaksiKartuKreditIndex from './components/transaksi-kartu-kredit/TransaksiKartuKreditIndex.vue';
+import TransaksiKartuKreditMasukCreate from './components/transaksi-kartu-kredit/TransaksiKartuKreditMasukCreate.vue';
+import TransaksiKartuKreditKeluarCreate from './components/transaksi-kartu-kredit/TransaksiKartuKreditKeluarCreate.vue';
+import TransaksiKartuKreditMasukEdit from './components/transaksi-kartu-kredit/TransaksiKartuKreditMasukEdit.vue';
+import TransaksiKartuKreditKeluarEdit from './components/transaksi-kartu-kredit/TransaksiKartuKreditKeluarEdit.vue';
+
 import LaporanTransaksiKasIndex from './components/laporan/LaporanTransaksiKasIndex.vue';
 import LaporanBukuBesarIndex from './components/laporan/LaporanBukuBesarIndex.vue';
 import LaporanJurnalUmumIndex from './components/laporan/LaporanJurnalUmumIndex.vue';
@@ -103,12 +109,12 @@ const routes = [
   { path: '/jurnal-manual/create', component:JurnalManualCreate,name: 'CreateJurnalManual' },
   { path: '/jurnal-manual/edit/:id', component:JurnalManualEdit,name: 'EditJurnalManual' },
   { path: '/posisi-kas', component:PosisiKasIndex,name: 'IndexPosisiKas' },
-  { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/laporan/transaksi-kas', component:LaporanTransaksiKasIndex,name: 'IndexLaporanTransaksiKas' },
   { path: '/laporan/neraca', component:LaporanNeracaIndex,name: 'IndexLaporanNeraca' },
   { path: '/laporan/buku-besar', component:LaporanBukuBesarIndex,name: 'IndexLaporanBukuBesar' },
   { path: '/laporan/laba-rugi', component:LaporanLabaRugiIndex,name: 'IndexLaporanLabaRugi' },
   { path: '/laporan/jurnal-umum', component:LaporanJurnalUmumIndex,name: 'IndexLaporanJurnalUmum' },
+  { path: '/transaksi-kas', component:TransaksiKasIndex,name: 'IndexTransaksiKas' },
   { path: '/transaksi-kas/create', component:TransaksiKasCreate,name: 'CreateTransaksiKas' },
   { path: '/transaksi-kas/edit/:id', component:TransaksiKasEdit,name: 'EditTransaksiKas' },
   { path: '/transaksi-kas/create/kas-mutasi', component:TransaksiKasMutasiCreate,name: 'CreateTransaksiKasMutasi' },
@@ -116,6 +122,11 @@ const routes = [
   { path: '/transaksi-kas/create/kas-keluar', component:TransaksiKasKeluarCreate,name: 'CreateTransaksiKasKeluar' },
   { path: '/transaksi-kas/edit/kas-masuk/:id', component:TransaksiKasMasukEdit,name: 'EditTransaksiKasMasuk' },
   { path: '/transaksi-kas/edit/kas-keluar/:id', component:TransaksiKasKeluarEdit,name: 'EditTransaksiKasKeluar' },
+  { path: '/transaksi-kartu-kredit', component:TransaksiKartuKreditIndex,name: 'IndexTransaksiKartuKredit' },
+  { path: '/transaksi-kartu-kredit/create/masuk', component:TransaksiKartuKreditMasukCreate,name: 'CreateTransaksiKartuKreditMasuk' },
+  { path: '/transaksi-kartu-kredit/create/keluar', component:TransaksiKartuKreditKeluarCreate,name: 'CreateTransaksiKartuKreditKeluar' },
+  { path: '/transaksi-kartu-kredit/edit/:id/masuk', component:TransaksiKartuKreditMasukEdit,name: 'EditTransaksiKartuKreditMasuk' },
+  { path: '/transaksi-kartu-kredit/edit/:id/keluar', component:TransaksiKartuKreditKeluarEdit,name: 'EditTransaksiKartuKreditKeluar' },
   { path: '/*', component: Page404 },
 ]
 

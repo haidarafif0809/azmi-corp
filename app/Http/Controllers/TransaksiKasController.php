@@ -26,11 +26,11 @@ class TransaksiKasController extends Controller
     }
 
     public function laporanKas(Request $request){
-      
+
       $kas = $request->kas;
       $dariTanggal = $request->dariTanggal;
       $sampaiTanggal = $request->sampaiTanggal;
-      
+
       $laporan = TransaksiKas::leftJoin('akuns as akun_yang_masuk',
                'transaksi_kas.akun_masuk','=','akun_yang_masuk.id')
                ->leftJoin('akuns as akun_yang_keluar',
@@ -40,13 +40,13 @@ class TransaksiKasController extends Controller
                 ->where('akun_masuk',$kas)
                ->orWhere('akun_keluar',$kas)
                ->where(function($query) use ($dariTanggal,$sampaiTanggal){
-                  $query 
+                  $query
                    ->whereDate('transaksi_kas.created_at','>=',$dariTanggal)
                    ->whereDate('transaksi_kas.created_at','<=',$sampaiTanggal);
                })
                ->paginate(10);
       return $laporan;
-    
+
     }
 
     /**
@@ -75,9 +75,9 @@ class TransaksiKasController extends Controller
         ]);
         $transaksiKas = TransaksiKas::create($request->all());
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     public function storeKasMasuk(Request $request)
@@ -96,9 +96,9 @@ class TransaksiKasController extends Controller
                                              'masuk' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     public function storeKasMutasi(Request $request)
@@ -117,9 +117,9 @@ class TransaksiKasController extends Controller
                                              'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     public function storeKasKeluar(Request $request)
@@ -138,14 +138,14 @@ class TransaksiKasController extends Controller
                                              'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
-    
+
     public function search(Request $request){
-          
+
         $transaksiKas = TransaksiKas::where('id',$request->q)
                           ->orWhere('deskripsi','LIKE',"%$request->q%")
                           ->paginate(10);
@@ -163,7 +163,7 @@ class TransaksiKasController extends Controller
           $kasMutasi = TransaksiKas::where('akun_masuk',$akun->id)->sum('keluar');
           $jumlahKas = $kasMasuk - $kasKeluar + $kasMutasi;
           array_push($posisiKas,['id' => $akun->id,'nama'=>  $akun->nama,'jumlah' => $jumlahKas]);
-       } 
+       }
 
        return $posisiKas;
 
@@ -206,17 +206,17 @@ class TransaksiKasController extends Controller
             'nama' => 'required|unique:akuns,nama,'.$id.'|max:255',
             'jenis' => 'required',
         ]);
-       
+
         $transaksiKas = TransaksiKas::find($id)->update($request->all());
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
 
     }
     public function updateKasMasuk(Request $request, $id){
-        
+
         $request->validate([
             'akun_masuk' => 'required|numeric',
             'akun_keluar' => 'required|numeric',
@@ -225,13 +225,13 @@ class TransaksiKasController extends Controller
         ]);
         $transaksiKas = TransaksiKas::find($id)->update($request->all());
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response()->status(500);    
+          return response()->status(500);
         }
     }
     public function updateKasKeluar(Request $request, $id){
-        
+
         $request->validate([
             'akun_masuk' => 'required|numeric',
             'akun_keluar' => 'required|numeric',
@@ -240,9 +240,9 @@ class TransaksiKasController extends Controller
         ]);
         $transaksiKas = TransaksiKas::find($id)->update($request->all());
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
-          return response()->status(500);    
+          return response()->status(500);
         }
     }
 
@@ -257,7 +257,7 @@ class TransaksiKasController extends Controller
         //
         $transaksiKas = TransaksiKas::destroy($id);
         if($transaksiKas){
-          return response(200);    
+          return response(200);
         } else {
           return response(500);
         }

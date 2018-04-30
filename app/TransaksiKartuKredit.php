@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class TransaksiKartuKredit extends Model
 {
     //
-   protected $fillable = ['no_trans','kartu_kredit','akun_keluar','deskripsi','masuk','keluar'];
-   
+   protected $fillable = ['no_trans','kartu_kredit','akun','deskripsi','masuk','keluar'];
+
    public static function noTrans(){
      $tahunSekarang = date('Y');
      $bulanSekarang = date('m');
@@ -17,25 +18,34 @@ class TransaksiKartuKredit extends Model
      if($digitBulan == 1){
        $bulanTerakhir = "0".$bulanSekarang;
      } else {
-       $bulanTerakhir = $bulanSekarang;     
+       $bulanTerakhir = $bulanSekarang;
     }
 
-    $transaksiKas = TransaksiKas::select([DB::raw('MONTH(created_at) bulan'),'no_trans'])
+    $transaksiKartuKredit = TransaksiKartuKredit::select([DB::raw('MONTH(created_at) bulan'),'no_trans'])
                       ->orderBy('id','DESC')->first();
-    if($transaksiKas != null){
-      $angkaNoKas = explode("/",$transaksiKas->no_trans);
-      $nomor = $angkaNoKas[0];
-      $bulanAkhir = $transaksiKas->bulan;
+    if($transaksiKartuKredit != null){
+      $angkaNoKartuKredit = explode("/",$transaksiKartuKredit->no_trans);
+      $nomor = $angkaNoKartuKredit[0];
+      $bulanAkhir = $transaksiKartuKredit->bulan;
     } else {
       $nomor = 1;
       $bulanAkhir = 13;
     }
     if($bulanAkhir != $bulanSekarang ){
-      $noTrans = "1/KS/". $bulanTerakhir . "/".$tahunTerakhir;      
+      $noTrans = "1/KRT/". $bulanTerakhir . "/".$tahunTerakhir;
     } else {
       $nomor++;
-      $noTrans = $nomor . "/KS/". $bulanTerakhir ."/". $tahunTerakhir;     
+      $noTrans = $nomor . "/KRT/". $bulanTerakhir ."/". $tahunTerakhir;
     }
     return $noTrans;
    }
+
+    public function kartu_kredit()
+    {
+        return $this->belongsTo('App\Akun','kartu_kredit');
+    }
+    public function akun()
+    {
+        return $this->belongsTo('App\Akun','akun');
+    }
 }
