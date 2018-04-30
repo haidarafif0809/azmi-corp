@@ -124,9 +124,9 @@ class TransaksiKartuKreditObserver
         $transaksiJurnal = TransaksiJurnal::where('no_trans',$transaksiKartuKredit->no_trans)->delete();
         $detailTransaksiJurnal = DetailTransaksiJurnal::where('no_trans',$transaksiKartuKredit->no_trans)->delete();
         if($transaksiJurnal && $detailTransaksiJurnal){
-          return response(200);
+          return true;
         } else {
-          return response()->status(500);
+          return false;
         }
     }
 }
