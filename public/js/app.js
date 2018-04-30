@@ -68464,15 +68464,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      transaksiKas: {
-        akun_masuk: '',
-        akun_keluar: '',
+      transaksiKartuKredit: {
+        kartu_kredit: '',
+        akun: '',
         jumlah: '',
         deskripsi: ''
       },
       akuns: [],
-      kasKas: [],
-      url: window.location.origin + window.location.pathname.replace("home", "transaksi-kas"),
+      kartuKredits: [],
+      url: window.location.origin + window.location.pathname.replace("home", "transaksi-kartu-kredit"),
       errors: [],
       message: ''
     };
@@ -68485,7 +68485,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     alert: function alert(pesan) {
       this.$swal({
-        title: "Berhasil Menambah Kas Masuk",
+        title: "Berhasil Bayar Kartu Kredit ",
         text: pesan,
         icon: "success"
       });
@@ -68493,10 +68493,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     saveForm: function saveForm() {
       var _this = this;
 
-      var newTransaksiKas = this.transaksiKas;
-      axios.post(this.url + '/kas-masuk', newTransaksiKas).then(function (resp) {
-        _this.alert('Berhasil Menambah Kas Masuk Sejumlah ' + _this.transaksiKas.jumlah);
-        _this.$router.replace('/transaksi-kas/');
+      var newTransaksiKartuKredit = this.transaksiKartuKredit;
+      axios.post(this.url + '/kartu-kredit-masuk', newTransaksiKartuKredit).then(function (resp) {
+        _this.alert('Berhasil Menambah Kartu Kredit  Sejumlah ' + _this.transaksiKartuKredit.jumlah);
+        _this.$router.replace('/transaksi-kartu-kredit/');
       }).catch(function (resp) {
         if (resp.response.status == 500) alert('Something Goes Wrong');
         _this.errors = resp.response.data.errors;
@@ -68505,13 +68505,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     getAkuns: function getAkuns() {
       var app = this;
-      axios.get(app.url.replace("transaksi-kas", "akun") + '/all').then(function (resp) {
+      axios.get(app.url.replace("transaksi-kartu-kredit", "akun") + '/all?kas=1').then(function (resp) {
         app.akuns = resp.data;
       }).catch(function (resp) {
         console.log(resp);
       });
-      axios.get(app.url.replace("transaksi-kas", "akun") + '/all?kas=1').then(function (resp) {
-        app.kasKas = resp.data;
+      axios.get(app.url.replace("transaksi-kartu-kredit", "kartu-kredit")).then(function (resp) {
+        app.kartuKredits = resp.data.data;
       }).catch(function (resp) {
         console.log(resp);
       });
@@ -68538,19 +68538,19 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { attrs: { to: { name: "IndexTransaksiKas" } } },
-                [_vm._v("Transaksi Kas")]
+                { attrs: { to: { name: "IndexTransaksiKartuKredit" } } },
+                [_vm._v("Transaksi Kartu Kredit")]
               )
             ],
             1
           ),
           _vm._v(" "),
-          _c("li", { staticClass: "active" }, [_vm._v("Tambah Kas Masuk")])
+          _c("li", { staticClass: "active" }, [_vm._v("Bayar Kartu Kredit ")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "panel panel-default" }, [
           _c("div", { staticClass: "panel-heading" }, [
-            _vm._v("Tambah Kas Masuk")
+            _vm._v("Bayar Kartu Kredit ")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "panel-body" }, [
@@ -68573,7 +68573,7 @@ var render = function() {
                       staticClass: "col-md-2 control-label",
                       attrs: { for: "name" }
                     },
-                    [_vm._v("Dari Akun")]
+                    [_vm._v("Bayar Dari")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -68586,11 +68586,11 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: { required: "" },
                           model: {
-                            value: _vm.transaksiKas.akun_keluar,
+                            value: _vm.transaksiKartuKredit.akun,
                             callback: function($$v) {
-                              _vm.$set(_vm.transaksiKas, "akun_keluar", $$v)
+                              _vm.$set(_vm.transaksiKartuKredit, "akun", $$v)
                             },
-                            expression: "transaksiKas.akun_keluar"
+                            expression: "transaksiKartuKredit.akun"
                           }
                         },
                         [
@@ -68609,9 +68609,9 @@ var render = function() {
                         2
                       ),
                       _vm._v(" "),
-                      _vm.errors.akun_keluar
+                      _vm.errors.akun
                         ? _c("span", { staticClass: "label label-danger" }, [
-                            _vm._v(" " + _vm._s(_vm.errors.akun_keluar[0]))
+                            _vm._v(" " + _vm._s(_vm.errors.akun[0]))
                           ])
                         : _vm._e()
                     ],
@@ -68626,7 +68626,7 @@ var render = function() {
                       staticClass: "col-md-2 control-label",
                       attrs: { for: "name" }
                     },
-                    [_vm._v("Ke Akun")]
+                    [_vm._v("Kartu Kredit")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -68639,32 +68639,36 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: { required: "" },
                           model: {
-                            value: _vm.transaksiKas.akun_masuk,
+                            value: _vm.transaksiKartuKredit.kartu_kredit,
                             callback: function($$v) {
-                              _vm.$set(_vm.transaksiKas, "akun_masuk", $$v)
+                              _vm.$set(
+                                _vm.transaksiKartuKredit,
+                                "kartu_kredit",
+                                $$v
+                              )
                             },
-                            expression: "transaksiKas.akun_masuk"
+                            expression: "transaksiKartuKredit.kartu_kredit"
                           }
                         },
                         [
                           _c("option", { attrs: { value: "" } }, [
-                            _vm._v("Pilih Akun Kas")
+                            _vm._v("Pilih Kartu Kredit")
                           ]),
                           _vm._v(" "),
-                          _vm._l(_vm.kasKas, function(akun) {
+                          _vm._l(_vm.kartuKredits, function(data) {
                             return _c(
                               "option",
-                              { domProps: { value: akun.id } },
-                              [_vm._v(_vm._s(akun.nama))]
+                              { domProps: { value: data.akun.id } },
+                              [_vm._v(_vm._s(data.akun.nama))]
                             )
                           })
                         ],
                         2
                       ),
                       _vm._v(" "),
-                      _vm.errors.akun_masuk
+                      _vm.errors.kartu_kredit
                         ? _c("span", { staticClass: "label label-danger" }, [
-                            _vm._v(" " + _vm._s(_vm.errors.akun_masuk[0]))
+                            _vm._v(" " + _vm._s(_vm.errors.kartu_kredit[0]))
                           ])
                         : _vm._e()
                     ],
@@ -68688,8 +68692,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.transaksiKas.deskripsi,
-                          expression: "transaksiKas.deskripsi"
+                          value: _vm.transaksiKartuKredit.deskripsi,
+                          expression: "transaksiKartuKredit.deskripsi"
                         }
                       ],
                       staticClass: "form-control",
@@ -68698,14 +68702,14 @@ var render = function() {
                         required: "",
                         placeholder: "Keterangan"
                       },
-                      domProps: { value: _vm.transaksiKas.deskripsi },
+                      domProps: { value: _vm.transaksiKartuKredit.deskripsi },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.transaksiKas,
+                            _vm.transaksiKartuKredit,
                             "deskripsi",
                             $event.target.value
                           )
@@ -68737,25 +68741,25 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.transaksiKas.jumlah,
-                          expression: "transaksiKas.jumlah"
+                          value: _vm.transaksiKartuKredit.jumlah,
+                          expression: "transaksiKartuKredit.jumlah"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
                         required: "",
-                        placeholder: "Jumlah Masuk",
+                        placeholder: "Jumlah ",
                         autofocus: ""
                       },
-                      domProps: { value: _vm.transaksiKas.jumlah },
+                      domProps: { value: _vm.transaksiKartuKredit.jumlah },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.transaksiKas,
+                            _vm.transaksiKartuKredit,
                             "jumlah",
                             $event.target.value
                           )
