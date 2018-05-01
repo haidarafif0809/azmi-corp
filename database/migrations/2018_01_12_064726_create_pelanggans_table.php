@@ -17,6 +17,10 @@ class CreatePelanggansTable extends Migration
             $table->increments('id');
             $table->string('kode')->unique();
             $table->string('nama')->unique();
+            $table->string('alamat')->nullable();
+            $table->string('email')->nullable();
+            $table->string('alamat_kantor')->nullable();
+            $table->string('perusahaan')->nullable();
             $table->string('kontak')->unique();
             $table->timestamps();
         });

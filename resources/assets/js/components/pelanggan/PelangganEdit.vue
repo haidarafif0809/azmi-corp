@@ -21,10 +21,38 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="name" class="col-md-2 control-label" >Plat</label>
+                        <label for="name" class="col-md-2 control-label" >Nama</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Plat Pelanggan" v-model="pelanggan.nama" autofocus=""/>
+                          <input type="text" class="form-control" required="" placeholder="Nama Pelanggan" v-model="pelanggan.nama" autofocus=""/>
                         <span v-if="errors.nama" class="label label-danger"> {{ errors.nama[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Alamat</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control" required="" placeholder="Alamat Pelanggan" v-model="pelanggan.alamat" autofocus=""/>
+                        <span v-if="errors.alamat" class="label label-danger"> {{ errors.alamat[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Email</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control" required="" placeholder="Email Pelanggan" v-model="pelanggan.email" autofocus=""/>
+                        <span v-if="errors.email" class="label label-danger"> {{ errors.email[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Alamat Kantor</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control" required="" placeholder="Alamat Kantor Pelanggan" v-model="pelanggan.alamat_kantor" autofocus=""/>
+                        <span v-if="errors.alamat_kantor" class="label label-danger"> {{ errors.alamat_kantor[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Perusahaan</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control" required="" placeholder="Perusahaan Pelanggan" v-model="pelanggan.perusahaan" autofocus=""/>
+                        <span v-if="errors.perusahaan" class="label label-danger"> {{ errors.perusahaan[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -55,7 +83,11 @@
         pelanggan: {
           kode: '',
           nama: '',
-          kontak: ''
+          kontak: '',
+          alamat: '',
+          email: '',
+          alamat_kantor: '',
+          perusahaan: ''
         },
         pelangganId : null,
         url: window.location.origin + (window.location.pathname).replace("home","pelanggan"),
@@ -71,7 +103,7 @@
        this.pelanggan =  resp.data;
      })
      .catch((resp) => {
-        alert("Something Goes Wrong");    
+        alert("Something Goes Wrong");
      });
 
     },
