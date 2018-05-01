@@ -66136,6 +66136,12 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _this = this;
+
+//
+//
+//
+//
 //
 //
 //
@@ -66320,6 +66326,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       message: ''
     };
   },
+  watch: {
+    'transaksiGas.produks': {
+      handler: function handler(newValue) {
+        console.log(newValue);
+        newValue.map(function (val) {
+          val.kosong_k = Number(val.kosong_p) + Number(val.kosong_r);
+          val.total = val.kosong_k + Number(val.isi);
+          return val;
+        });
+        _this.transaksiGas.produks = newValue;
+      },
+      deep: true
+    }
+  },
   mounted: function mounted() {
     var app = this;
     app.getMobils();
@@ -66339,15 +66359,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     saveForm: function saveForm() {
-      var _this = this;
+      var _this2 = this;
 
       var newTransaksiGas = this.transaksiGas;
       axios.post(this.url + '/gas-masuk', newTransaksiGas).then(function (resp) {
-        _this.alert('Berhasil Menambah Gas Masuk Sejumlah ' + _this.transaksiGas.jumlah);
-        _this.$router.replace('/transaksi-gas/');
+        _this2.alert('Berhasil Menambah Gas Masuk Sejumlah ' + _this2.transaksiGas.jumlah);
+        _this2.$router.replace('/transaksi-gas/');
       }).catch(function (resp) {
         if (resp.response.status == 500) alert('Something Goes Wrong');
-        _this.errors = resp.response.data.errors;
+        _this2.errors = resp.response.data.errors;
         console.log(resp);
       });
     },
@@ -66458,6 +66478,97 @@ var render = function() {
                           staticClass: "col-md-2 control-label",
                           attrs: { for: "name" }
                         },
+                        [_vm._v("Status")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c("div", { staticClass: "radio" }, [
+                          _c("label", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.status_barang,
+                                  expression: "transaksiGas.status_barang"
+                                }
+                              ],
+                              attrs: { type: "radio", value: "masuk" },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.transaksiGas.status_barang,
+                                  "masuk"
+                                )
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "status_barang",
+                                    "masuk"
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(
+                              "\n                             Masuk\n                          "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "radio" }, [
+                          _c("label", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.status_barang,
+                                  expression: "transaksiGas.status_barang"
+                                }
+                              ],
+                              attrs: { type: "radio", value: "keluar" },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.transaksiGas.status_barang,
+                                  "keluar"
+                                )
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "status_barang",
+                                    "keluar"
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(
+                              "\n                               Keluar\n                           "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm.errors.status_barang
+                          ? _c("span", { staticClass: "label label-danger" }, [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.errors.status_barang[0]) +
+                                  "\n                        "
+                              )
+                            ])
+                          : _vm._e()
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
                         [_vm._v("Mobil")]
                       ),
                       _vm._v(" "),
@@ -66559,97 +66670,6 @@ var render = function() {
                         ],
                         1
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-md-2 control-label",
-                          attrs: { for: "name" }
-                        },
-                        [_vm._v("Status")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c("div", { staticClass: "radio" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.transaksiGas.status_barang,
-                                  expression: "transaksiGas.status_barang"
-                                }
-                              ],
-                              attrs: { type: "radio", value: "masuk" },
-                              domProps: {
-                                checked: _vm._q(
-                                  _vm.transaksiGas.status_barang,
-                                  "masuk"
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  _vm.$set(
-                                    _vm.transaksiGas,
-                                    "status_barang",
-                                    "masuk"
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(
-                              "\n                             Masuk\n                          "
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "radio" }, [
-                          _c("label", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.transaksiGas.status_barang,
-                                  expression: "transaksiGas.status_barang"
-                                }
-                              ],
-                              attrs: { type: "radio", value: "keluar" },
-                              domProps: {
-                                checked: _vm._q(
-                                  _vm.transaksiGas.status_barang,
-                                  "keluar"
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  _vm.$set(
-                                    _vm.transaksiGas,
-                                    "status_barang",
-                                    "keluar"
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(
-                              "\n                               Keluar\n                           "
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _vm.errors.status_barang
-                          ? _c("span", { staticClass: "label label-danger" }, [
-                              _vm._v(
-                                "\n                        " +
-                                  _vm._s(_vm.errors.status_barang[0]) +
-                                  "\n                        "
-                              )
-                            ])
-                          : _vm._e()
-                      ])
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
@@ -67058,6 +67078,34 @@ var render = function() {
                               }
                             }
                           })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.total,
+                                expression: "produk.total"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "Total",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.total },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(produk, "total", $event.target.value)
+                              }
+                            }
+                          })
                         ])
                       ])
                     })
@@ -67099,7 +67147,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Kosong (K)")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Isi")])
+      _c("th", [_vm._v("Isi")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Total")])
     ])
   }
 ]
@@ -67165,6 +67215,17 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _this = this;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -67339,102 +67400,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       gudangs: [],
       suppliers: [],
       pelanggans: [],
-      transaksiGasId: null,
       url: window.location.origin + window.location.pathname.replace("home", "transaksi-gas"),
       errors: [],
-      message: '',
-      loading: true
+      message: ''
     };
+  },
+  watch: {
+    'transaksiGas.produks': {
+      handler: function handler(newValue) {
+        console.log(newValue);
+        newValue.map(function (val) {
+          val.kosong_k = Number(val.kosong_p) + Number(val.kosong_r);
+          val.total = val.kosong_k + Number(val.isi);
+          return val;
+        });
+        _this.transaksiGas.produks = newValue;
+      },
+      deep: true
+    }
   },
   mounted: function mounted() {
     var app = this;
-    app.getEditingData();
     app.getMobils();
-    app.getProduks();
     app.getDrivers();
     app.getGudangs();
     app.getSuppliers();
     app.getPelanggans();
+    app.getEditingData();
   },
 
   methods: {
     alert: function alert(pesan) {
       this.$swal({
-        title: "Berhasil Mengubah Transaksi Gas ",
+        title: "Berhasil Menambah Transaksi Gas",
         text: pesan,
         icon: "success"
-      });
-    },
-    getProduks: function getProduks() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url + '/' + app.transaksiGasId + '/edit-gas').then(function (resp) {
-        app.transaksiGas.produks = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getMobils: function getMobils() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url.replace("transaksi-gas", "mobil") + '/all').then(function (resp) {
-        app.mobils = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getDrivers: function getDrivers() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url.replace("transaksi-gas", "driver") + '/all').then(function (resp) {
-        app.drivers = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getPelanggans: function getPelanggans() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url.replace("transaksi-gas", "pelanggan") + '/all').then(function (resp) {
-        app.pelanggans = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getSuppliers: function getSuppliers() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url.replace("transaksi-gas", "supplier") + '/all').then(function (resp) {
-        app.suppliers = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getGudangs: function getGudangs() {
-      var app = this;
-      app.loading = true;
-      axios.get(app.url.replace("transaksi-gas", "gudang") + '/all').then(function (resp) {
-        app.gudangs = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        console.log(resp);
-      });
-    },
-    getEditingData: function getEditingData() {
-      var _this = this;
-
-      var app = this;
-      this.transaksiGasId = this.$route.params.id;
-      axios.get(app.url + '/' + this.transaksiGasId + '/edit').then(function (resp) {
-        _this.transaksiGas = resp.data;
-        app.loading = false;
-      }).catch(function (resp) {
-        alert("Something Goes Wrong");
       });
     },
     saveForm: function saveForm() {
@@ -67446,6 +67446,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this2.$router.replace('/transaksi-gas/');
       }).catch(function (resp) {
         console.log(resp);
+      });
+    },
+    getMobils: function getMobils() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "mobil") + '/all').then(function (resp) {
+        app.mobils = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
+    getDrivers: function getDrivers() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "driver") + '/all').then(function (resp) {
+        app.drivers = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
+    getPelanggans: function getPelanggans() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "pelanggan") + '/all').then(function (resp) {
+        app.pelanggans = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
+    getSuppliers: function getSuppliers() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "supplier") + '/all').then(function (resp) {
+        app.suppliers = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
+    getGudangs: function getGudangs() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "gudang") + '/all').then(function (resp) {
+        app.gudangs = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
+    getEditingData: function getEditingData() {
+      var _this3 = this;
+
+      var app = this;
+      this.transaksiGasId = this.$route.params.id;
+      axios.get(app.url + '/' + this.transaksiGasId + '/edit').then(function (resp) {
+        _this3.transaksiGas = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        alert("Something Goes Wrong");
       });
     }
   }
@@ -67461,7 +67513,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+      _c("div", { staticClass: "col-md-8  col-md-offset-2" }, [
         _c("ul", { staticClass: "breadcrumb" }, [
           _c("li", [_vm._v("Home")]),
           _vm._v(" "),
@@ -67485,595 +67537,664 @@ var render = function() {
             _vm._v("Edit Transaksi Gas ")
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "panel-body" },
-            [
-              _vm.loading
-                ? _c("vue-simple-spinner", { attrs: { message: "Loading..." } })
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-5" }, [
-                  _c(
-                    "form",
-                    {
-                      staticClass: "form-horizontal ",
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          _vm.saveForm()
-                        }
+          _c("div", { staticClass: "panel-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-5" }, [
+                _c(
+                  "form",
+                  {
+                    staticClass: "form-horizontal ",
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        _vm.saveForm()
                       }
-                    },
-                    [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Mobil")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-10" },
-                          [
-                            _c(
-                              "vue-selectize",
-                              {
-                                staticClass: "form-control",
-                                attrs: { required: "" },
-                                model: {
-                                  value: _vm.transaksiGas.mobil,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.transaksiGas, "mobil", $$v)
-                                  },
-                                  expression: "transaksiGas.mobil"
-                                }
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("Pilih Mobil")
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.mobils, function(mobil) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: mobil.plat } },
-                                    [_vm._v(_vm._s(mobil.plat))]
-                                  )
-                                })
-                              ],
-                              2
-                            ),
-                            _vm._v(" "),
-                            _vm.errors.mobil
-                              ? _c(
-                                  "span",
-                                  { staticClass: "label label-danger" },
-                                  [_vm._v(" " + _vm._s(_vm.errors.mobil[0]))]
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        )
-                      ]),
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Status")]
+                      ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Driver")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-10" },
-                          [
-                            _c(
-                              "vue-selectize",
-                              {
-                                staticClass: "form-control",
-                                attrs: { required: "" },
-                                model: {
-                                  value: _vm.transaksiGas.driver,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.transaksiGas, "driver", $$v)
-                                  },
-                                  expression: "transaksiGas.driver"
+                      _c("div", { staticClass: "col-md-10" }, [
+                        _c("div", { staticClass: "radio" }, [
+                          _c("label", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.status_barang,
+                                  expression: "transaksiGas.status_barang"
                                 }
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("Pilih Driver")
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.drivers, function(driver) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: driver.nama } },
-                                    [_vm._v(_vm._s(driver.nama))]
-                                  )
-                                })
                               ],
-                              2
-                            ),
-                            _vm._v(" "),
-                            _vm.errors.driver
-                              ? _c(
-                                  "span",
-                                  { staticClass: "label label-danger" },
-                                  [_vm._v(" " + _vm._s(_vm.errors.driver[0]))]
+                              attrs: { type: "radio", value: "masuk" },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.transaksiGas.status_barang,
+                                  "masuk"
                                 )
-                              : _vm._e()
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Status")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-10" }, [
-                          _c("div", { staticClass: "radio" }, [
-                            _c("label", [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.transaksiGas.status_barang,
-                                    expression: "transaksiGas.status_barang"
-                                  }
-                                ],
-                                attrs: { type: "radio", value: "masuk" },
-                                domProps: {
-                                  checked: _vm._q(
-                                    _vm.transaksiGas.status_barang,
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "status_barang",
                                     "masuk"
                                   )
-                                },
-                                on: {
-                                  change: function($event) {
-                                    _vm.$set(
-                                      _vm.transaksiGas,
-                                      "status_barang",
-                                      "masuk"
-                                    )
-                                  }
                                 }
-                              }),
-                              _vm._v(
-                                "\n                             Masuk\n                          "
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "radio" }, [
-                            _c("label", [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.transaksiGas.status_barang,
-                                    expression: "transaksiGas.status_barang"
-                                  }
-                                ],
-                                attrs: { type: "radio", value: "keluar" },
-                                domProps: {
-                                  checked: _vm._q(
-                                    _vm.transaksiGas.status_barang,
+                              }
+                            }),
+                            _vm._v(
+                              "\n                             Masuk\n                          "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "radio" }, [
+                          _c("label", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.status_barang,
+                                  expression: "transaksiGas.status_barang"
+                                }
+                              ],
+                              attrs: { type: "radio", value: "keluar" },
+                              domProps: {
+                                checked: _vm._q(
+                                  _vm.transaksiGas.status_barang,
+                                  "keluar"
+                                )
+                              },
+                              on: {
+                                change: function($event) {
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "status_barang",
                                     "keluar"
                                   )
-                                },
-                                on: {
-                                  change: function($event) {
-                                    _vm.$set(
-                                      _vm.transaksiGas,
-                                      "status_barang",
-                                      "keluar"
-                                    )
-                                  }
                                 }
-                              }),
+                              }
+                            }),
+                            _vm._v(
+                              "\n                               Keluar\n                           "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm.errors.status_barang
+                          ? _c("span", { staticClass: "label label-danger" }, [
                               _vm._v(
-                                "\n                               Keluar\n                           "
+                                "\n                        " +
+                                  _vm._s(_vm.errors.status_barang[0]) +
+                                  "\n                        "
                               )
                             ])
-                          ]),
+                          : _vm._e()
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Mobil")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-10" },
+                        [
+                          _c(
+                            "vue-selectize",
+                            {
+                              staticClass: "form-control",
+                              attrs: { required: "" },
+                              model: {
+                                value: _vm.transaksiGas.mobil,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.transaksiGas, "mobil", $$v)
+                                },
+                                expression: "transaksiGas.mobil"
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("Pilih Mobil")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.mobils, function(mobil) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: mobil.plat } },
+                                  [_vm._v(_vm._s(mobil.plat))]
+                                )
+                              })
+                            ],
+                            2
+                          ),
                           _vm._v(" "),
-                          _vm.errors.status_barang
+                          _vm.errors.mobil
+                            ? _c(
+                                "span",
+                                { staticClass: "label label-danger" },
+                                [_vm._v(" " + _vm._s(_vm.errors.mobil[0]))]
+                              )
+                            : _vm._e()
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Driver")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-10" },
+                        [
+                          _c(
+                            "vue-selectize",
+                            {
+                              staticClass: "form-control",
+                              attrs: { required: "" },
+                              model: {
+                                value: _vm.transaksiGas.driver,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.transaksiGas, "driver", $$v)
+                                },
+                                expression: "transaksiGas.driver"
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("Pilih Driver")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.drivers, function(driver) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: driver.nama } },
+                                  [_vm._v(_vm._s(driver.nama))]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _vm.errors.driver
+                            ? _c(
+                                "span",
+                                { staticClass: "label label-danger" },
+                                [_vm._v(" " + _vm._s(_vm.errors.driver[0]))]
+                              )
+                            : _vm._e()
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Asal")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-10" },
+                        [
+                          _c(
+                            "vue-selectize",
+                            {
+                              staticClass: "form-control",
+                              attrs: { required: "" },
+                              model: {
+                                value: _vm.transaksiGas.asal_barang,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.transaksiGas, "asal_barang", $$v)
+                                },
+                                expression: "transaksiGas.asal_barang"
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("Pilih Asal")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.gudangs, function(gudang) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: gudang.nama } },
+                                  [_vm._v(_vm._s(gudang.nama))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _vm._l(_vm.suppliers, function(supplier) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: supplier.nama } },
+                                  [_vm._v(_vm._s(supplier.nama))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _vm._l(_vm.pelanggans, function(pelanggan) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: pelanggan.nama } },
+                                  [_vm._v(_vm._s(pelanggan.nama))]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _vm.errors.asal_barang
                             ? _c(
                                 "span",
                                 { staticClass: "label label-danger" },
                                 [
                                   _vm._v(
-                                    "\n                        " +
-                                      _vm._s(_vm.errors.status_barang[0]) +
-                                      "\n                        "
+                                    " " + _vm._s(_vm.errors.asal_barang[0])
                                   )
                                 ]
                               )
                             : _vm._e()
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Tujuan")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-10" },
+                        [
+                          _c(
+                            "vue-selectize",
+                            {
+                              staticClass: "form-control",
+                              attrs: { required: "" },
+                              model: {
+                                value: _vm.transaksiGas.tujuan_barang,
+                                callback: function($$v) {
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "tujuan_barang",
+                                    $$v
+                                  )
+                                },
+                                expression: "transaksiGas.tujuan_barang"
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("Pilih Tujuan")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.gudangs, function(gudang) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: gudang.nama } },
+                                  [_vm._v(_vm._s(gudang.nama))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _vm._l(_vm.suppliers, function(supplier) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: supplier.nama } },
+                                  [_vm._v(_vm._s(supplier.nama))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _vm._l(_vm.pelanggans, function(pelanggan) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: pelanggan.nama } },
+                                  [_vm._v(_vm._s(pelanggan.nama))]
+                                )
+                              })
+                            ],
+                            2
+                          ),
+                          _vm._v(" "),
+                          _vm.errors.tujuan_barang
+                            ? _c(
+                                "span",
+                                { staticClass: "label label-danger" },
+                                [
+                                  _vm._v(
+                                    " " + _vm._s(_vm.errors.tujuan_barang[0])
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm.transaksiGas.status_barang == "keluar"
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Uang Jalan")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.uang_jalan,
+                                  expression: "transaksiGas.uang_jalan"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                placeholder: "Uang Jalan"
+                              },
+                              domProps: { value: _vm.transaksiGas.uang_jalan },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "uang_jalan",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.uang_jalan
+                              ? _c(
+                                  "span",
+                                  { staticClass: "label label-danger" },
+                                  [
+                                    _vm._v(
+                                      " " + _vm._s(_vm.errors.uang_jalan[0])
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Asal")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-10" },
-                          [
-                            _c(
-                              "vue-selectize",
-                              {
-                                staticClass: "form-control",
-                                attrs: { required: "" },
-                                model: {
-                                  value: _vm.transaksiGas.asal_barang,
-                                  callback: function($$v) {
-                                    _vm.$set(
-                                      _vm.transaksiGas,
-                                      "asal_barang",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "transaksiGas.asal_barang"
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.transaksiGas.status_barang == "masuk"
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Setoran")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.uang_jalan,
+                                  expression: "transaksiGas.uang_jalan"
                                 }
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("Pilih Asal")
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.gudangs, function(gudang) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: gudang.nama } },
-                                    [_vm._v(_vm._s(gudang.nama))]
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _vm._l(_vm.suppliers, function(supplier) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: supplier.nama } },
-                                    [_vm._v(_vm._s(supplier.nama))]
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _vm._l(_vm.pelanggans, function(pelanggan) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: pelanggan.nama } },
-                                    [_vm._v(_vm._s(pelanggan.nama))]
-                                  )
-                                })
                               ],
-                              2
-                            ),
+                              staticClass: "form-control",
+                              attrs: { type: "text", placeholder: "Setoran" },
+                              domProps: { value: _vm.transaksiGas.uang_jalan },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "uang_jalan",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
                             _vm._v(" "),
-                            _vm.errors.asal_barang
+                            _vm.errors.uang_jalan
                               ? _c(
                                   "span",
                                   { staticClass: "label label-danger" },
                                   [
                                     _vm._v(
-                                      " " + _vm._s(_vm.errors.asal_barang[0])
+                                      " " + _vm._s(_vm.errors.uang_jalan[0])
                                     )
                                   ]
                                 )
                               : _vm._e()
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Tujuan")]
-                        ),
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-7" }, [
+                _c("table", { staticClass: "table table-bordered " }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.transaksiGas.produks, function(produk) {
+                      return _c("tr", [
+                        _c("td", [
+                          _vm._v(
+                            "\n                             " +
+                              _vm._s(produk.nama_produk) +
+                              "\n                           "
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "col-md-10" },
-                          [
-                            _c(
-                              "vue-selectize",
-                              {
-                                staticClass: "form-control",
-                                attrs: { required: "" },
-                                model: {
-                                  value: _vm.transaksiGas.tujuan_barang,
-                                  callback: function($$v) {
-                                    _vm.$set(
-                                      _vm.transaksiGas,
-                                      "tujuan_barang",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "transaksiGas.tujuan_barang"
-                                }
-                              },
-                              [
-                                _c("option", { attrs: { value: "" } }, [
-                                  _vm._v("Pilih Tujuan")
-                                ]),
-                                _vm._v(" "),
-                                _vm._l(_vm.gudangs, function(gudang) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: gudang.nama } },
-                                    [_vm._v(_vm._s(gudang.nama))]
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _vm._l(_vm.suppliers, function(supplier) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: supplier.nama } },
-                                    [_vm._v(_vm._s(supplier.nama))]
-                                  )
-                                }),
-                                _vm._v(" "),
-                                _vm._l(_vm.pelanggans, function(pelanggan) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: pelanggan.nama } },
-                                    [_vm._v(_vm._s(pelanggan.nama))]
-                                  )
-                                })
-                              ],
-                              2
-                            ),
-                            _vm._v(" "),
-                            _vm.errors.tujuan_barang
-                              ? _c(
-                                  "span",
-                                  { staticClass: "label label-danger" },
-                                  [
-                                    _vm._v(
-                                      " " + _vm._s(_vm.errors.tujuan_barang[0])
-                                    )
-                                  ]
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "col-md-2 control-label",
-                            attrs: { for: "name" }
-                          },
-                          [_vm._v("Uang Jalan")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-10" }, [
+                        _c("td", [
                           _c("input", {
                             directives: [
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.transaksiGas.uang_jalan,
-                                expression: "transaksiGas.uang_jalan"
+                                value: produk.kosong_p,
+                                expression: "produk.kosong_p"
                               }
                             ],
                             staticClass: "form-control",
                             attrs: {
+                              placeholder: "P",
                               type: "text",
-                              placeholder: "Uang Jalan",
-                              autofocus: ""
+                              width: "3px"
                             },
-                            domProps: { value: _vm.transaksiGas.uang_jalan },
+                            domProps: { value: produk.kosong_p },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
                                 _vm.$set(
-                                  _vm.transaksiGas,
-                                  "uang_jalan",
+                                  produk,
+                                  "kosong_p",
                                   $event.target.value
                                 )
                               }
                             }
-                          }),
-                          _vm._v(" "),
-                          _vm.errors.uang_jalan
-                            ? _c(
-                                "span",
-                                { staticClass: "label label-danger" },
-                                [_vm._v(" " + _vm._s(_vm.errors.uang_jalan[0]))]
-                              )
-                            : _vm._e()
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.kosong_r,
+                                expression: "produk.kosong_r"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "R",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.kosong_r },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  produk,
+                                  "kosong_r",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.kosong_k,
+                                expression: "produk.kosong_k"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "K",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.kosong_k },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  produk,
+                                  "kosong_k",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.isi,
+                                expression: "produk.isi"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "ISI",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.isi },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(produk, "isi", $event.target.value)
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.total,
+                                expression: "produk.total"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "Total",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.total },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(produk, "total", $event.target.value)
+                              }
+                            }
+                          })
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _vm._m(0)
-                    ]
+                      ])
+                    })
                   )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-7" }, [
-                  _c("table", { staticClass: "table table-bordered " }, [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.transaksiGas.produks, function(produk) {
-                        return _c("tr", [
-                          _c("td", [
-                            _vm._v(
-                              "\n                             " +
-                                _vm._s(produk.nama_produk) +
-                                "\n                           "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: produk.kosong_p,
-                                  expression: "produk.kosong_p"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                placeholder: "P",
-                                type: "text",
-                                width: "3px"
-                              },
-                              domProps: { value: produk.kosong_p },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    produk,
-                                    "kosong_p",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: produk.kosong_r,
-                                  expression: "produk.kosong_r"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                placeholder: "R",
-                                type: "text",
-                                width: "3px"
-                              },
-                              domProps: { value: produk.kosong_r },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    produk,
-                                    "kosong_r",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: produk.kosong_k,
-                                  expression: "produk.kosong_k"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                placeholder: "K",
-                                type: "text",
-                                width: "3px"
-                              },
-                              domProps: { value: produk.kosong_k },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    produk,
-                                    "kosong_k",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: produk.isi,
-                                  expression: "produk.isi"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                placeholder: "ISI",
-                                type: "text",
-                                width: "3px"
-                              },
-                              domProps: { value: produk.isi },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(produk, "isi", $event.target.value)
-                                }
-                              }
-                            })
-                          ])
-                        ])
-                      })
-                    )
-                  ])
                 ])
               ])
-            ],
-            1
-          )
+            ])
+          ])
         ])
       ])
     ])
@@ -68107,7 +68228,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Kosong (K)")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Isi")])
+      _c("th", [_vm._v("Isi")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Total")])
     ])
   }
 ]

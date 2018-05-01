@@ -14,32 +14,6 @@
                    <div class="col-md-5">
                     <form v-on:submit.prevent="saveForm()" class="form-horizontal " >
                       <div class="form-group">
-                        <label for="name" class="col-md-2 control-label" >Mobil</label>
-                        <div class="col-md-10">
-                        <vue-selectize
-                          v-model="transaksiGas.mobil"
-                          class="form-control"
-                          required="" >
-                            <option value="">Pilih Mobil</option>
-                            <option v-for="mobil in mobils" :value="mobil.plat">{{ mobil.plat}}</option>
-                          </vue-selectize>
-                        <span v-if="errors.mobil" class="label label-danger"> {{ errors.mobil[0]}}</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="name" class="col-md-2 control-label" >Driver</label>
-                        <div class="col-md-10">
-                        <vue-selectize
-                          v-model="transaksiGas.driver"
-                          class="form-control"
-                          required="" >
-                            <option value="">Pilih Driver</option>
-                            <option v-for="driver in drivers" :value="driver.nama">{{ driver.nama}}</option>
-                          </vue-selectize>
-                        <span v-if="errors.driver" class="label label-danger"> {{ errors.driver[0]}}</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Status</label>
                         <div class="col-md-10">
                         <div class="radio">
@@ -63,6 +37,32 @@
                         <span v-if="errors.status_barang" class="label label-danger">
                         {{ errors.status_barang[0]}}
                         </span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Mobil</label>
+                        <div class="col-md-10">
+                        <vue-selectize
+                          v-model="transaksiGas.mobil"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Mobil</option>
+                            <option v-for="mobil in mobils" :value="mobil.plat">{{ mobil.plat}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.mobil" class="label label-danger"> {{ errors.mobil[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Driver</label>
+                        <div class="col-md-10">
+                        <vue-selectize
+                          v-model="transaksiGas.driver"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Driver</option>
+                            <option v-for="driver in drivers" :value="driver.nama">{{ driver.nama}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.driver" class="label label-danger"> {{ errors.driver[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -124,6 +124,7 @@
                          <th>Kosong (R))</th>
                          <th>Kosong (K)</th>
                          <th>Isi</th>
+                         <th>Total</th>
                        </thead>
                        <tbody>
                          <tr v-for="produk in transaksiGas.produks">
@@ -141,6 +142,9 @@
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.isi" placeholder="ISI" type="text" width="3px"/>
+                           </td>
+                           <td>
+                             <input class="form-control" v-model="produk.total" placeholder="Total" type="text" width="3px"/>
                            </td>
                          </tr>
                        </tbody>
@@ -180,6 +184,20 @@
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-gas"),
         errors: [],
         message: ''
+      }
+    },
+    watch: {
+      'transaksiGas.produks': {
+        handler: (newValue) => {
+          console.log(newValue);
+          newValue.map(val => {
+            val.kosong_k = Number(val.kosong_p) + Number(val.kosong_r)
+            val.total = val.kosong_k + Number(val.isi)
+            return val
+          })
+          this.transaksiGas.produks = newValue
+        },
+        deep: true
       }
     },
     mounted()  {

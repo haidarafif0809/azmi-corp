@@ -22,11 +22,11 @@ class TransaksiGasController extends Controller
     }
 
     public function laporanGas(Request $request){
-      
+
       $kas = $request->kas;
       $dariTanggal = $request->dariTanggal;
       $sampaiTanggal = $request->sampaiTanggal;
-      
+
       $laporan = TransaksiGas::leftJoin('akuns as akun_yang_masuk',
                'transaksi_kas.akun_masuk','=','akun_yang_masuk.id')
                ->leftJoin('akuns as akun_yang_keluar',
@@ -36,13 +36,13 @@ class TransaksiGasController extends Controller
                 ->where('akun_masuk',$kas)
                ->orWhere('akun_keluar',$kas)
                ->where(function($query) use ($dariTanggal,$sampaiTanggal){
-                  $query 
+                  $query
                    ->whereDate('transaksi_kas.created_at','>=',$dariTanggal)
                    ->whereDate('transaksi_kas.created_at','<=',$sampaiTanggal);
                })
                ->paginate(10);
       return $laporan;
-    
+
     }
 
     /**
@@ -77,23 +77,23 @@ class TransaksiGasController extends Controller
         $transaksiGas = TransaksiGas::create($request->all());
         $detailTransaksiGas = $this->storeDetailTransaksiGas($request->produks,
                                                             $request->status_barang,
-                                                            $noRute,$transaksiGas->id); 
+                                                            $noRute,$transaksiGas->id);
 
         if($transaksiGas && $detailTransaksiGas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     private function storeDetailTransaksiGas($produks,$status_barang,$noRute,$transaksiGasId){
-        
+
         if($status_barang == 'masuk'){
-           
+
            foreach($produks as $gas){
-              
+
               DetailTransaksiGasMasuk::create([
                             'produk_id' => $gas['id'],
-                            'nama_produk' => $gas['nama'],
+                            'nama_produk' => $gas['nama_produk'],
                             'kode_produk' => $gas['kode'],
                             'kosong_p' => $gas['kosong_p'],
                             'kosong_r' => $gas['kosong_r'],
@@ -104,7 +104,7 @@ class TransaksiGasController extends Controller
                             ]);
            }
         } else {
-            
+
            foreach($produks as $gas){
               DetailTransaksiGasKeluar::create([
                             'produk_id' => $gas['id'],
@@ -117,7 +117,7 @@ class TransaksiGasController extends Controller
                             'no_rute' => $noRute,
                             'transaksi_gas_id' => $transaksiGasId
                             ]);
-            } 
+            }
         }
         return true;
     }
@@ -138,9 +138,9 @@ class TransaksiGasController extends Controller
                                              'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiGas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
     public function storeGasKeluar(Request $request)
@@ -159,14 +159,14 @@ class TransaksiGasController extends Controller
                                              'keluar' => $request->jumlah,
                                              'deskripsi' => $request->deskripsi]);
         if($transaksiGas){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
-    
+
     public function search(Request $request){
-          
+
         $transaksiGas = TransaksiGas::where('id',$request->q)
                           ->orWhere('deskripsi','LIKE',"%$request->q%")
                           ->paginate(10);
@@ -184,7 +184,7 @@ class TransaksiGasController extends Controller
           $kasMutasi = TransaksiGas::where('akun_masuk',$akun->id)->sum('keluar');
           $jumlahGas = $kasMasuk - $kasKeluar + $kasMutasi;
           array_push($posisiGas,['id' => $akun->id,'nama'=>  $akun->nama,'jumlah' => $jumlahGas]);
-       } 
+       }
 
        return $posisiGas;
 
@@ -209,17 +209,26 @@ class TransaksiGasController extends Controller
     public function edit($id)
     {
         //
-        return TransaksiGas::find($id);
+        $transaksiGas = TransaksiGas::find($id);
+        if($transaksiGas->status_barang == 'masuk'){
+           $produks = DetailTransaksiGasMasuk::where('transaksi_gas_id',$id)->get();
+        } else {
+           $produks = DetailTransaksiGasKeluar::where('transaksi_gas_id',$id)->get();
+
+        }
+        $transaksiGas = TransaksiGas::find($id);
+        $transaksiGas->produks = $produks;
+        return $transaksiGas ;
     }
 
     public function editGas($id){
-        
+
         $transaksiGas = TransaksiGas::find($id);
         if($transaksiGas->status_barang == 'masuk'){
            return DetailTransaksiGasMasuk::where('transaksi_gas_id',$id)->get();
         } else {
            return DetailTransaksiGasKeluar::where('transaksi_gas_id',$id)->get();
-            
+
         }
     }
 
@@ -231,7 +240,7 @@ class TransaksiGasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function updateGasMasuk(Request $request, $id){
-        
+
         $request->validate([
             'mobil' => 'required',
             'driver' => 'required',
@@ -248,18 +257,18 @@ class TransaksiGasController extends Controller
                                         $id
                                         );
         if($transaksiGas){
-          return response(200);    
+          return response(200);
         } else {
-          return response()->status(500);    
+          return response()->status(500);
         }
     }
     private function updateDetailTransaksiGas($produks,$status_barang,$noRute,$transaksiGasId){
-        
-        
+
+
         if($status_barang == 'masuk'){
-           DetailTransaksiGasMasuk::where('transaksi_gas_id',$transaksiGasId)->delete();   
+           DetailTransaksiGasMasuk::where('transaksi_gas_id',$transaksiGasId)->delete();
            foreach($produks as $gas){
-              
+
               DetailTransaksiGasMasuk::create([
                             'produk_id' => $gas['produk_id'],
                             'nama_produk' => $gas['nama_produk'],
@@ -273,8 +282,8 @@ class TransaksiGasController extends Controller
                             ]);
            }
         } else {
-            
-           DetailTransaksiGasKeluar::where('transaksi_gas_id',$transaksiGasId)->delete();   
+
+           DetailTransaksiGasKeluar::where('transaksi_gas_id',$transaksiGasId)->delete();
            foreach($produks as $gas){
               DetailTransaksiGasKeluar::create([
                             'produk_id' => $gas['id'],
@@ -287,7 +296,7 @@ class TransaksiGasController extends Controller
                             'no_rute' => $noRute,
                             'transaksi_gas_id' => $transaksiGasId
                             ]);
-            } 
+            }
         }
         return true;
     }
@@ -303,7 +312,7 @@ class TransaksiGasController extends Controller
         //
         $transaksiGas = TransaksiGas::destroy($id);
         if($transaksiGas){
-          return response(200);    
+          return response(200);
         } else {
           return response(500);
         }
