@@ -66290,6 +66290,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -66800,54 +66806,114 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "col-md-2 control-label",
-                          attrs: { for: "name" }
-                        },
-                        [_vm._v("Uang Jalan")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c("input", {
-                          directives: [
+                    _vm.transaksiGas.status_barang == "keluar"
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
                             {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.transaksiGas.uang_jalan,
-                              expression: "transaksiGas.uang_jalan"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Uang Jalan",
-                            autofocus: ""
-                          },
-                          domProps: { value: _vm.transaksiGas.uang_jalan },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Uang Jalan")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.uang_jalan,
+                                  expression: "transaksiGas.uang_jalan"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                type: "text",
+                                placeholder: "Uang Jalan"
+                              },
+                              domProps: { value: _vm.transaksiGas.uang_jalan },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "uang_jalan",
+                                    $event.target.value
+                                  )
+                                }
                               }
-                              _vm.$set(
-                                _vm.transaksiGas,
-                                "uang_jalan",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _vm.errors.uang_jalan
-                          ? _c("span", { staticClass: "label label-danger" }, [
-                              _vm._v(" " + _vm._s(_vm.errors.uang_jalan[0]))
-                            ])
-                          : _vm._e()
-                      ])
-                    ]),
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.uang_jalan
+                              ? _c(
+                                  "span",
+                                  { staticClass: "label label-danger" },
+                                  [
+                                    _vm._v(
+                                      " " + _vm._s(_vm.errors.uang_jalan[0])
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.transaksiGas.status_barang == "masuk"
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Setoran")]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-10" }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.transaksiGas.uang_jalan,
+                                  expression: "transaksiGas.uang_jalan"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", placeholder: "Setoran" },
+                              domProps: { value: _vm.transaksiGas.uang_jalan },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.transaksiGas,
+                                    "uang_jalan",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.uang_jalan
+                              ? _c(
+                                  "span",
+                                  { staticClass: "label label-danger" },
+                                  [
+                                    _vm._v(
+                                      " " + _vm._s(_vm.errors.uang_jalan[0])
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      : _vm._e(),
                     _vm._v(" "),
                     _vm._m(0)
                   ]

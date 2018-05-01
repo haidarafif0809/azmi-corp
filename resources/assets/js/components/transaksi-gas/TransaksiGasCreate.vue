@@ -9,7 +9,6 @@
             </ul>
             <div class="panel panel-default">
                 <div class="panel-heading">Tambah Gas Masuk</div>
-
                 <div class="panel-body">
                   <div class="row">
                    <div class="col-md-5">
@@ -18,8 +17,8 @@
                         <label for="name" class="col-md-2 control-label" >Mobil</label>
                         <div class="col-md-10">
                         <vue-selectize
-                          v-model="transaksiGas.mobil" 
-                          class="form-control" 
+                          v-model="transaksiGas.mobil"
+                          class="form-control"
                           required="" >
                             <option value="">Pilih Mobil</option>
                             <option v-for="mobil in mobils" :value="mobil.plat">{{ mobil.plat}}</option>
@@ -31,8 +30,8 @@
                         <label for="name" class="col-md-2 control-label" >Driver</label>
                         <div class="col-md-10">
                         <vue-selectize
-                          v-model="transaksiGas.driver" 
-                          class="form-control" 
+                          v-model="transaksiGas.driver"
+                          class="form-control"
                           required="" >
                             <option value="">Pilih Driver</option>
                             <option v-for="driver in drivers" :value="driver.nama">{{ driver.nama}}</option>
@@ -45,18 +44,18 @@
                         <div class="col-md-10">
                         <div class="radio">
                           <label>
-                             <input 
-                               type="radio" 
-                               v-model="transaksiGas.status_barang" 
+                             <input
+                               type="radio"
+                               v-model="transaksiGas.status_barang"
                                value="masuk">
                              Masuk
                           </label>
                         </div>
                         <div class="radio">
                           <label>
-                            <input 
-                              type="radio" 
-                              v-model="transaksiGas.status_barang" 
+                            <input
+                              type="radio"
+                              v-model="transaksiGas.status_barang"
                               value="keluar">
                                Keluar
                            </label>
@@ -70,8 +69,8 @@
                         <label for="name" class="col-md-2 control-label" >Asal</label>
                         <div class="col-md-10">
                         <vue-selectize
-                          v-model="transaksiGas.asal_barang" 
-                          class="form-control" 
+                          v-model="transaksiGas.asal_barang"
+                          class="form-control"
                           required="" >
                             <option value="">Pilih Asal</option>
                             <option v-for="gudang in gudangs" :value="gudang.nama">{{ gudang.nama}}</option>
@@ -85,8 +84,8 @@
                         <label for="name" class="col-md-2 control-label" >Tujuan</label>
                         <div class="col-md-10">
                         <vue-selectize
-                          v-model="transaksiGas.tujuan_barang" 
-                          class="form-control" 
+                          v-model="transaksiGas.tujuan_barang"
+                          class="form-control"
                           required="" >
                             <option value="">Pilih Tujuan</option>
                             <option v-for="gudang in gudangs" :value="gudang.nama">{{ gudang.nama}}</option>
@@ -96,10 +95,17 @@
                         <span v-if="errors.tujuan_barang" class="label label-danger"> {{ errors.tujuan_barang[0]}}</span>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" v-if="transaksiGas.status_barang == 'keluar'">
                         <label for="name" class="col-md-2 control-label" >Uang Jalan</label>
                         <div class="col-md-10">
-                          <input type="text" class="form-control"  placeholder="Uang Jalan" v-model="transaksiGas.uang_jalan" autofocus=""/>
+                          <input type="text" class="form-control"  placeholder="Uang Jalan" v-model="transaksiGas.uang_jalan" />
+                        <span v-if="errors.uang_jalan" class="label label-danger"> {{ errors.uang_jalan[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group" v-if="transaksiGas.status_barang == 'masuk'">
+                        <label for="name" class="col-md-2 control-label" >Setoran</label>
+                        <div class="col-md-10">
+                          <input type="text" class="form-control"  placeholder="Setoran" v-model="transaksiGas.uang_jalan" />
                         <span v-if="errors.uang_jalan" class="label label-danger"> {{ errors.uang_jalan[0]}}</span>
                         </div>
                       </div>
@@ -206,64 +212,64 @@
           console.log(resp);
         });
       },
-      getProduks(){ 
+      getProduks(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","produk") + '/all')
         .then(function(resp){
           app.transaksiGas.produks = resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       },
-      getMobils(){ 
+      getMobils(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","mobil") + '/all')
         .then(function(resp){
           app.mobils = resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       },
-      getDrivers(){ 
+      getDrivers(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","driver") + '/all')
         .then(function(resp){
           app.drivers= resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       },
-      getPelanggans(){ 
+      getPelanggans(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","pelanggan") + '/all')
         .then(function(resp){
           app.pelanggans= resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       },
-      getSuppliers(){ 
+      getSuppliers(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","supplier") + '/all')
         .then(function(resp){
           app.suppliers= resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       },
-      getGudangs(){ 
+      getGudangs(){
         var app = this;
         axios.get(app.url.replace("transaksi-gas","gudang") + '/all')
         .then(function(resp){
           app.gudangs = resp.data;
         })
         .catch(function(resp){
-          console.log(resp); 
+          console.log(resp);
         })
       }
     }
