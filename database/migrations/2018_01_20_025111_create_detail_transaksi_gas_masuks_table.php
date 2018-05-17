@@ -19,9 +19,12 @@ class CreateDetailTransaksiGasMasuksTable extends Migration
             $table->string('nama');
             $table->string('kode_produk');
             $table->integer('kosong_p')->nullable();
+            $table->integer('harga_kosong_p')->nullable();
             $table->integer('kosong_r')->nullable();
+            $table->integer('harga_kosong_r')->nullable();
             $table->integer('kosong_k')->nullable();
             $table->integer('isi')->nullable();
+            $table->integer('harga_isi')->nullable();
             $table->string('no_rute');
             $table->integer('transaksi_gas_id')->unsigned();
             $table->timestamps();

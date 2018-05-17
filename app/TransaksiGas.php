@@ -10,9 +10,14 @@ class TransaksiGas extends Model
     //
     protected $fillable = [
       'no_rute','mobil',
-      'status_barang','asal_barang',
-      'tujuan_barang','driver',
-      'uang_jalan','akun_masuk','akun_keluar',
+      'jenis_order',
+      'status_barang',
+      'asal_barang',
+      'tujuan_barang',
+      'driver',
+      'uang_jalan',
+      'akun_masuk',
+      'akun_keluar',
       'no_kas'
     ];
 

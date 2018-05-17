@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-md-8  col-md-offset-2">
+        <div class="col-md-12">
             <ul class="breadcrumb">
               <li>Home</li>
               <li><router-link :to="{name: 'IndexTransaksiGas'}">Transaksi Gas</router-link></li>
@@ -37,6 +37,21 @@
                         <span v-if="errors.status_barang" class="label label-danger">
                         {{ errors.status_barang[0]}}
                         </span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Jenis Order</label>
+                        <div class="col-md-10">
+                        <vue-selectize
+                          v-model="transaksiGas.jenis_order"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Jenis Order</option>
+                            <option value="retail">Retail</option>
+                            <option value="online">Online</option>
+                            <option value="partai">Partai</option>
+                          </vue-selectize>
+                        <span v-if="errors.mobil" class="label label-danger"> {{ errors.mobil[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -159,22 +174,24 @@
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.kosong_p" placeholder="P" type="text" width="3px" />
+                             <input class="form-control" v-model="produk.harga_kosong_p" placeholder="$" type="text" width="3px" />
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.kosong_r" placeholder="R" type="text" width="3px"/>
+                             <input class="form-control" v-model="produk.harga_kosong_r" placeholder="$" type="text" width="3px" />
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.kosong_k" placeholder="K" type="text" width="3px"/>
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.isi" placeholder="ISI" type="text" width="3px"/>
+                             <input class="form-control" v-model="produk.harga_isi" placeholder="$" type="text" width="3px" />
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.total" placeholder="Total" type="text" width="3px"/>
                            </td>
                          </tr>
                        </tbody>
-
                     </table>
                    </div>
                    <!-- col-md-7 -->
@@ -196,6 +213,7 @@
           mobil: '',
           driver: '',
           status_barang: '',
+          jenis_order: '',
           asal_barang: '',
           uang_jalan: '',
           tujuan_barang: '',
@@ -209,6 +227,7 @@
         akuns: [],
         suppliers: [],
         pelanggans: [],
+        setoran: 0,
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-gas"),
         errors: [],
         message: ''
@@ -216,16 +235,32 @@
     },
     watch: {
       'transaksiGas.produks': {
-        handler: (newValue) => {
-          console.log(newValue);
+        handler(newValue)  {
+          var app = this
+          let setoran = 0
           newValue.map(val => {
             val.kosong_k = Number(val.kosong_p) + Number(val.kosong_r)
             val.total = val.kosong_k + Number(val.isi)
+            setoran += Number(val.harga_isi) + Number(val.harga_kosong_p) + Number(val.harga_kosong_r)
             return val
           })
+          this.setoran = setoran
+          if (this.transaksiGas.status_barang == 'masuk') {
+            this.transaksiGas.uang_jalan = this.setoran
+          }
+
           this.transaksiGas.produks = newValue
         },
         deep: true
+      },
+      'transaksiGas.status_barang': {
+        handler(newValue) {
+          if (newValue == 'masuk') {
+            this.transaksiGas.uang_jalan = this.setoran
+          } else {
+            this.transaksiGas.uang_jalan = 0
+          }
+        }
       }
     },
     mounted()  {

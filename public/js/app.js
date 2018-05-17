@@ -66059,6 +66059,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -66189,7 +66191,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    " \n                        Tambah Transaksi Gas\n                    "
+                    "\n                        Tambah Transaksi Gas\n                    "
                   )
                 ]
               ),
@@ -66236,6 +66238,8 @@ var render = function() {
                           _vm._l(_vm.transaksiGas, function(transaksi, index) {
                             return _c("tr", [
                               _c("td", [_vm._v(_vm._s(transaksi.created_at))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(transaksi.jenis_order))]),
                               _vm._v(" "),
                               _c("td", [_vm._v(_vm._s(transaksi.no_rute))]),
                               _vm._v(" "),
@@ -66343,6 +66347,8 @@ var staticRenderFns = [
     return _c("thead", [
       _c("th", [_vm._v("Tanggal")]),
       _vm._v(" "),
+      _c("th", [_vm._v("Jenis")]),
+      _vm._v(" "),
       _c("th", [_vm._v("No Rute")]),
       _vm._v(" "),
       _c("th", [_vm._v("Plat No")]),
@@ -66423,8 +66429,23 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _this = this;
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -66623,6 +66644,7 @@ var _this = this;
         mobil: '',
         driver: '',
         status_barang: '',
+        jenis_order: '',
         asal_barang: '',
         uang_jalan: '',
         tujuan_barang: '',
@@ -66636,6 +66658,7 @@ var _this = this;
       akuns: [],
       suppliers: [],
       pelanggans: [],
+      setoran: 0,
       url: window.location.origin + window.location.pathname.replace("home", "transaksi-gas"),
       errors: [],
       message: ''
@@ -66644,15 +66667,32 @@ var _this = this;
   watch: {
     'transaksiGas.produks': {
       handler: function handler(newValue) {
-        console.log(newValue);
+        var app = this;
+        var setoran = 0;
         newValue.map(function (val) {
           val.kosong_k = Number(val.kosong_p) + Number(val.kosong_r);
           val.total = val.kosong_k + Number(val.isi);
+          setoran += Number(val.harga_isi) + Number(val.harga_kosong_p) + Number(val.harga_kosong_r);
           return val;
         });
-        _this.transaksiGas.produks = newValue;
+        this.setoran = setoran;
+        if (this.transaksiGas.status_barang == 'masuk') {
+          this.transaksiGas.uang_jalan = this.setoran;
+        }
+
+        this.transaksiGas.produks = newValue;
       },
+
       deep: true
+    },
+    'transaksiGas.status_barang': {
+      handler: function handler(newValue) {
+        if (newValue == 'masuk') {
+          this.transaksiGas.uang_jalan = this.setoran;
+        } else {
+          this.transaksiGas.uang_jalan = 0;
+        }
+      }
     }
   },
   mounted: function mounted() {
@@ -66683,15 +66723,15 @@ var _this = this;
       });
     },
     saveForm: function saveForm() {
-      var _this2 = this;
+      var _this = this;
 
       var newTransaksiGas = this.transaksiGas;
       axios.post(this.url + '/gas-masuk', newTransaksiGas).then(function (resp) {
-        _this2.alert('Berhasil Menambah Gas Masuk Sejumlah ' + _this2.transaksiGas.jumlah);
-        _this2.$router.replace('/transaksi-gas/');
+        _this.alert('Berhasil Menambah Gas Masuk Sejumlah ' + _this.transaksiGas.jumlah);
+        _this.$router.replace('/transaksi-gas/');
       }).catch(function (resp) {
         if (resp.response.status == 500) alert('Something Goes Wrong');
-        _this2.errors = resp.response.data.errors;
+        _this.errors = resp.response.data.errors;
         console.log(resp);
       });
     },
@@ -66756,7 +66796,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-8  col-md-offset-2" }, [
+      _c("div", { staticClass: "col-md-12" }, [
         _c("ul", { staticClass: "breadcrumb" }, [
           _c("li", [_vm._v("Home")]),
           _vm._v(" "),
@@ -66884,6 +66924,64 @@ var render = function() {
                             ])
                           : _vm._e()
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-md-2 control-label",
+                          attrs: { for: "name" }
+                        },
+                        [_vm._v("Jenis Order")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col-md-10" },
+                        [
+                          _c(
+                            "vue-selectize",
+                            {
+                              staticClass: "form-control",
+                              attrs: { required: "" },
+                              model: {
+                                value: _vm.transaksiGas.jenis_order,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.transaksiGas, "jenis_order", $$v)
+                                },
+                                expression: "transaksiGas.jenis_order"
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "" } }, [
+                                _vm._v("Pilih Jenis Order")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "retail" } }, [
+                                _vm._v("Retail")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "online" } }, [
+                                _vm._v("Online")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "partai" } }, [
+                                _vm._v("Partai")
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm.errors.mobil
+                            ? _c(
+                                "span",
+                                { staticClass: "label label-danger" },
+                                [_vm._v(" " + _vm._s(_vm.errors.mobil[0]))]
+                              )
+                            : _vm._e()
+                        ],
+                        1
+                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
@@ -67439,6 +67537,36 @@ var render = function() {
                                 )
                               }
                             }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.harga_kosong_p,
+                                expression: "produk.harga_kosong_p"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "$",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.harga_kosong_p },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  produk,
+                                  "harga_kosong_p",
+                                  $event.target.value
+                                )
+                              }
+                            }
                           })
                         ]),
                         _vm._v(" "),
@@ -67467,6 +67595,36 @@ var render = function() {
                                 _vm.$set(
                                   produk,
                                   "kosong_r",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.harga_kosong_r,
+                                expression: "produk.harga_kosong_r"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "$",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.harga_kosong_r },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  produk,
+                                  "harga_kosong_r",
                                   $event.target.value
                                 )
                               }
@@ -67529,6 +67687,36 @@ var render = function() {
                                   return
                                 }
                                 _vm.$set(produk, "isi", $event.target.value)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: produk.harga_isi,
+                                expression: "produk.harga_isi"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              placeholder: "$",
+                              type: "text",
+                              width: "3px"
+                            },
+                            domProps: { value: produk.harga_isi },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  produk,
+                                  "harga_isi",
+                                  $event.target.value
+                                )
                               }
                             }
                           })

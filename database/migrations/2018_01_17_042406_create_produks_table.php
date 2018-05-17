@@ -18,9 +18,12 @@ class CreateProduksTable extends Migration
             $table->string('kode')->unique();
             $table->string('nama')->unique();
             $table->integer('kosong_p')->nullable();
+            $table->integer('harga_kosong_p')->default(0);
             $table->integer('kosong_r')->nullable();
+            $table->integer('harga_kosong_r')->default(0);
             $table->integer('kosong_k')->nullable();
             $table->integer('isi')->nullable();
+            $table->integer('harga_isi')->default(0);
             $table->timestamps();
         });
     }

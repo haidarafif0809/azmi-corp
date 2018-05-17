@@ -69,6 +69,7 @@ class TransaksiGasController extends Controller
             'mobil' => 'required',
             'driver' => 'required',
             'status_barang' => 'required',
+            'jenis_order' => 'required',
             'asal_barang' => 'required',
             'tujuan_barang' => 'required',
             'uang_jalan' => 'nullable|numeric',
@@ -98,9 +99,12 @@ class TransaksiGasController extends Controller
               'nama' => $gas['nama'],
               'kode_produk' => $gas['kode'],
               'kosong_p' => $gas['kosong_p'],
+              'harga_kosong_p' => $gas['harga_kosong_p'],
               'kosong_r' => $gas['kosong_r'],
+              'harga_kosong_r' => $gas['harga_kosong_r'],
               'kosong_k' => $gas['kosong_k'],
               'isi' => $gas['isi'],
+              'harga_isi' => $gas['harga_isi'],
               'no_rute' => $noRute,
               'transaksi_gas_id' => $transaksiGasId
             ]);
@@ -112,9 +116,12 @@ class TransaksiGasController extends Controller
               'nama' => $gas['nama'],
               'kode_produk' => $gas['kode'],
               'kosong_p' => $gas['kosong_p'],
+              'harga_kosong_p' => $gas['harga_kosong_p'],
               'kosong_r' => $gas['kosong_r'],
+              'harga_kosong_r' => $gas['harga_kosong_r'],
               'kosong_k' => $gas['kosong_k'],
               'isi' => $gas['isi'],
+              'harga_isi' => $gas['harga_isi'],
               'no_rute' => $noRute,
               'transaksi_gas_id' => $transaksiGasId
             ]);

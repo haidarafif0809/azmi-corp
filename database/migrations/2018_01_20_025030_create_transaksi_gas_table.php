@@ -18,6 +18,7 @@ class CreateTransaksiGasTable extends Migration
             $table->string('no_rute')->unique();
             $table->string('mobil')->nullable();
             $table->string('status_barang');
+            $table->string('jenis_order');
             $table->string('asal_barang');
             $table->string('tujuan_barang');
             $table->string('driver')->nullable();

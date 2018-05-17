@@ -10,15 +10,15 @@
                 <div class="panel-heading">Transaksi Gas</div>
 
                 <div class="panel-body">
-                    <router-link 
-                      :to="{name: 'CreateTransaksiGas'}" 
-                      class="btn btn-md btn-primary"> 
+                    <router-link
+                      :to="{name: 'CreateTransaksiGas'}"
+                      class="btn btn-md btn-primary">
                         Tambah Transaksi Gas
                     </router-link>
 
                     <br/>
                     <div class="table-responsive">
-                    
+
                     <div align="right">
                     <input type="text" placeholder="Pencarian ..." v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
                     </div>
@@ -26,6 +26,7 @@
                     <table class="table table-bordered" >
                     <thead>
                         <th>Tanggal</th>
+                        <th>Jenis</th>
                         <th>No Rute</th>
                         <th>Plat No</th>
                         <th>Driver</th>
@@ -38,6 +39,7 @@
                     <tbody v-if="transaksiGas.length">
                       <tr v-for="transaksi,index in transaksiGas">
                         <td>{{ transaksi.created_at}}</td>
+                        <td>{{ transaksi.jenis_order}}</td>
                         <td>{{ transaksi.no_rute}}</td>
                         <td>{{ transaksi.mobil}}</td>
                         <td>{{ transaksi.driver}}</td>
@@ -46,14 +48,14 @@
                         <td>{{ transaksi.tujuan_barang}}</td>
                         <td>{{ transaksi.uang_jalan}}</td>
                         <td >
-                        <router-link 
-                          :to="{name:'EditTransaksiGas' ,params:{id: transaksi.id}}" 
+                        <router-link
+                          :to="{name:'EditTransaksiGas' ,params:{id: transaksi.id}}"
                           class="btn btn-xs btn-default"
                        >
                           Edit
                        </router-link>
-                        <button 
-                          class="btn btn-xs btn-danger" 
+                        <button
+                          class="btn btn-xs btn-danger"
                           v-on:click="konfirmasiHapus(transaksi.id,index,transaksi.id)"
                         >
                           Hapus
@@ -67,8 +69,8 @@
                     </tr>
                     </tbody>
                     </table>
-                    <vue-pagination 
-                      :data="transaksiGasData" 
+                    <vue-pagination
+                      :data="transaksiGasData"
                       v-on:pagination-change-page="getResults"
                       :limit="4"
                     >
@@ -102,7 +104,7 @@
        pencarian: function(newSearch){
          this.loading = true;
          this.getHasilPencarian();
-       }  
+       }
     },
     methods: {
       getResults(page){
@@ -119,11 +121,11 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       getHasilPencarian(page){
-          
+
         var app = this;
         if(typeof page == 'undefined'){
           page = 1;
@@ -137,7 +139,7 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       deleteEntry(id,index,noTransaksi){
@@ -152,7 +154,7 @@
           })
       },
       konfirmasiHapus(id,index,noTransaksi){
-      
+
         this.$swal({
           title: " Ingin Menghapus Transaksi :  " + noTransaksi + "?",
           text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
@@ -164,7 +166,7 @@
           if (willDelete) {
             this.deleteEntry(id,index,noTransaksi);
           }
-        })  
+        })
       },
       alert(title,pesan){
         this.$swal({
