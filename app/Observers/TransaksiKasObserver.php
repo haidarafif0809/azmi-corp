@@ -20,7 +20,7 @@ class TransaksiKasObserver
         $noJurnal = TransaksiJurnal::noJurnal();
         $noTrans = $transaksiKas->no_trans;
         $jumlahAkun = 2;
-        if($transaksiKas->masuk == 0){ 
+        if($transaksiKas->masuk == 0){
         $jenisTrans = 'kas_keluar';
         $totalNilai = $transaksiKas->keluar;
         $akunDebit = $transaksiKas->akun_masuk;
@@ -34,7 +34,7 @@ class TransaksiKasObserver
         $nilaiDebitKredit = $transaksiKas->masuk;
         }
         $deskripsi = $transaksiKas->deskripsi;
-       
+
         $transaksiDebit = DetailTransaksiJurnal::create(['no_jurnal' => $noJurnal,
                                                        'trans_id' => $transaksiKas->id,
                                                        'no_trans' => $noTrans,
@@ -54,11 +54,11 @@ class TransaksiKasObserver
                                                        ]);
         $transaksiJurnal = TransaksiJurnal::create(['no_jurnal' => $noJurnal,'no_trans' => $noTrans,
                                  'jumlah_akun' => $jumlahAkun,'jenis_trans' => $jenisTrans,
-                                 'deskripsi' => $deskripsi,'total_nilai' => $totalNilai]);       
+                                 'deskripsi' => $deskripsi,'total_nilai' => $totalNilai]);
         if($transaksiJurnal && $transaksiKredit && $transaksiKredit){
-          return true;    
+          return true;
         } else {
-          return false;    
+          return false;
         }
     }
 
@@ -71,7 +71,7 @@ class TransaksiKasObserver
         // persiapkan variable yang dibutuhkan
         $noTrans = $transaksiKas->no_trans;
         $jumlahAkun = 2;
-        if($transaksiKas->masuk == 0){ 
+        if($transaksiKas->masuk == 0){
         $jenisTrans = 'kas_keluar';
         $totalNilai = $transaksiKas->keluar;
         $akunDebit = $transaksiKas->akun_masuk;
@@ -103,13 +103,13 @@ class TransaksiKasObserver
                                                        ]);
         $transaksiJurnal = TransaksiJurnal::create(['no_jurnal' => $noJurnal,'no_trans' => $noTrans,
                                  'jumlah_akun' => $jumlahAkun,'jenis_trans' => $jenisTrans,
-                                 'deskripsi' => $deskripsi,'total_nilai' => $totalNilai]);       
+                                 'deskripsi' => $deskripsi,'total_nilai' => $totalNilai]);
         if($transaksiJurnal && $transaksiKredit && $transaksiKredit){
-          return true;    
+          return true;
         } else {
-          return false;    
+          return false;
         }
-    
+
     }
 
     /**
@@ -124,9 +124,9 @@ class TransaksiKasObserver
         $transaksiJurnal = TransaksiJurnal::where('no_trans',$transaksiKas->no_trans)->delete();
         $detailTransaksiJurnal = DetailTransaksiJurnal::where('no_trans',$transaksiKas->no_trans)->delete();
         if($transaksiJurnal && $detailTransaksiJurnal){
-          return response(200);    
+          return true;
         } else {
-          return response()->status(500);    
+          return false;
         }
     }
 }

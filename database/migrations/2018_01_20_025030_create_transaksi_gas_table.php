@@ -22,7 +22,13 @@ class CreateTransaksiGasTable extends Migration
             $table->string('tujuan_barang');
             $table->string('driver')->nullable();
             $table->decimal('uang_jalan',15,2)->nullable();
+            $table->integer('akun_masuk')->unsigned();
+            $table->integer('akun_keluar')->unsigned();
+            $table->string('no_kas');
             $table->timestamps();
+            $table->foreign('akun_masuk')->references('id')->on('akuns');
+            $table->foreign('akun_keluar')->references('id')->on('akuns');
+            $table->foreign('no_kas')->references('no_trans')->on('transaksi_kas');
         });
     }
 

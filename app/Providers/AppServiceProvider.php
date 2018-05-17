@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\TransaksiKas;
+use App\TransaksiGas;
 use App\TransaksiKartuKredit;
 use App\Observers\TransaksiKasObserver;
+use App\Observers\TransaksiGasObserver;
 use App\Observers\TransaksiKartuKreditObserver;
 use App\JurnalManual;
 use App\Observers\JurnalManualObserver;
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(191);
         TransaksiKas::observe(TransaksiKasObserver::class);
+        TransaksiGas::observe(TransaksiGasObserver::class);
         TransaksiKartuKredit::observe(TransaksiKartuKreditObserver::class);
         JurnalManual::observe(JurnalManualObserver::class);
     }

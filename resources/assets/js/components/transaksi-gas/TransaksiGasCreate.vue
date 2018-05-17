@@ -109,6 +109,32 @@
                         <span v-if="errors.uang_jalan" class="label label-danger"> {{ errors.uang_jalan[0]}}</span>
                         </div>
                       </div>
+                      <div class="form-group" v-if="transaksiGas.status_barang !== ''">
+                        <label for="name" class="col-md-2 control-label" >Akun Masuk</label>
+                        <div class="col-md-10">
+                        <vue-selectize
+                          v-model="transaksiGas.akun_masuk"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Akun</option>
+                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.akun_masuk" class="label label-danger"> {{ errors.akun_masuk[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group" v-if="transaksiGas.status_barang !== ''">
+                        <label for="name" class="col-md-2 control-label" >Akun Keluar</label>
+                        <div class="col-md-10">
+                        <vue-selectize
+                          v-model="transaksiGas.akun_keluar"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Akun</option>
+                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.akun_keluar" class="label label-danger"> {{ errors.akun_keluar[0]}}</span>
+                        </div>
+                      </div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-2">
                           <button class="btn btn-primary" type="submit">Submit</button>
@@ -173,12 +199,14 @@
           asal_barang: '',
           uang_jalan: '',
           tujuan_barang: '',
-          produks: []
-
+          produks: [],
+          akun_masuk: '',
+          akun_keluar: ''
         },
         mobils: [],
         drivers: [],
         gudangs: [],
+        akuns: [],
         suppliers: [],
         pelanggans: [],
         url: window.location.origin + (window.location.pathname).replace("home","transaksi-gas"),
@@ -203,6 +231,7 @@
     mounted()  {
      var app = this;
      app.getMobils();
+     app.getAkuns();
      app.getProduks();
      app.getDrivers();
      app.getGudangs();
@@ -210,6 +239,16 @@
      app.getPelanggans();
     },
     methods: {
+      getAkuns(){
+        var app = this;
+        axios.get(app.url.replace("transaksi-gas","akun") + '/all?all=1')
+        .then(function(resp){
+          app.akuns = resp.data;
+        })
+        .catch(function(resp){
+          console.log(resp);
+        })
+      },
       alert(pesan){
         this.$swal({
           title: "Berhasil Menambah Transaksi Gas",

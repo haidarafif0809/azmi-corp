@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\TransaksiGas;
+use App\TransaksiKas;
 use App\DetailTransaksiGasMasuk;
 use App\DetailTransaksiGasKeluar;
 use App\Akun;
@@ -71,9 +72,12 @@ class TransaksiGasController extends Controller
             'asal_barang' => 'required',
             'tujuan_barang' => 'required',
             'uang_jalan' => 'nullable|numeric',
+            'akun_masuk' => 'nullable|numeric',
+            'akun_keluar' => 'nullable|numeric',
         ]);
         $noRute = TransaksiGas::noRute();
-        $request->request->add(['no_rute' => $noRute]);
+        $noTrans = TransaksiKas::noTrans();
+        $request->request->add(['no_rute' => $noRute,'no_kas' => $noTrans]);
         $transaksiGas = TransaksiGas::create($request->all());
         $detailTransaksiGas = $this->storeDetailTransaksiGas($request->produks,
                                                             $request->status_barang,
@@ -87,82 +91,36 @@ class TransaksiGasController extends Controller
     }
     private function storeDetailTransaksiGas($produks,$status_barang,$noRute,$transaksiGasId){
 
-        if($status_barang == 'masuk'){
-
-           foreach($produks as $gas){
-
-              DetailTransaksiGasMasuk::create([
-                            'produk_id' => $gas['id'],
-                            'nama_produk' => $gas['nama_produk'],
-                            'kode_produk' => $gas['kode'],
-                            'kosong_p' => $gas['kosong_p'],
-                            'kosong_r' => $gas['kosong_r'],
-                            'kosong_k' => $gas['kosong_k'],
-                            'isi' => $gas['isi'],
-                            'no_rute' => $noRute,
-                            'transaksi_gas_id' => $transaksiGasId
-                            ]);
-           }
-        } else {
-
-           foreach($produks as $gas){
-              DetailTransaksiGasKeluar::create([
-                            'produk_id' => $gas['id'],
-                            'nama_produk' => $gas['nama'],
-                            'kode_produk' => $gas['kode'],
-                            'kosong_p' => $gas['kosong_p'],
-                            'kosong_r' => $gas['kosong_r'],
-                            'kosong_k' => $gas['kosong_k'],
-                            'isi' => $gas['isi'],
-                            'no_rute' => $noRute,
-                            'transaksi_gas_id' => $transaksiGasId
-                            ]);
-            }
+      if($status_barang == 'masuk'){
+         foreach($produks as $gas){
+            DetailTransaksiGasMasuk::create([
+              'produk_id' => $gas['id'],
+              'nama' => $gas['nama'],
+              'kode_produk' => $gas['kode'],
+              'kosong_p' => $gas['kosong_p'],
+              'kosong_r' => $gas['kosong_r'],
+              'kosong_k' => $gas['kosong_k'],
+              'isi' => $gas['isi'],
+              'no_rute' => $noRute,
+              'transaksi_gas_id' => $transaksiGasId
+            ]);
+         }
+      } else {
+         foreach($produks as $gas){
+            DetailTransaksiGasKeluar::create([
+              'produk_id' => $gas['id'],
+              'nama' => $gas['nama'],
+              'kode_produk' => $gas['kode'],
+              'kosong_p' => $gas['kosong_p'],
+              'kosong_r' => $gas['kosong_r'],
+              'kosong_k' => $gas['kosong_k'],
+              'isi' => $gas['isi'],
+              'no_rute' => $noRute,
+              'transaksi_gas_id' => $transaksiGasId
+            ]);
         }
-        return true;
-    }
-
-    public function storeGasMutasi(Request $request)
-    {
-        //
-        $request->validate([
-            'akun_masuk' => 'required|numeric',
-            'akun_keluar' => 'required|numeric',
-            'jumlah' => 'required|numeric',
-            'deskripsi' => 'max:255'
-        ]);
-        $noTrans = TransaksiGas::noTrans();
-        $transaksiGas = TransaksiGas::create(['no_trans' => $noTrans,
-                                              'akun_masuk' => $request->akun_masuk,
-                                             'akun_keluar' => $request->akun_keluar,
-                                             'keluar' => $request->jumlah,
-                                             'deskripsi' => $request->deskripsi]);
-        if($transaksiGas){
-          return response(200);
-        } else {
-          return response(500);
-        }
-    }
-    public function storeGasKeluar(Request $request)
-    {
-        //
-        $request->validate([
-            'akun_masuk' => 'required|numeric',
-            'akun_keluar' => 'required|numeric',
-            'jumlah' => 'required|numeric',
-            'deskripsi' => 'max:255'
-        ]);
-        $noTrans = TransaksiGas::noTrans();
-        $transaksiGas = TransaksiGas::create(['no_trans' => $noTrans,
-                                             'akun_masuk' => $request->akun_masuk,
-                                             'akun_keluar' => $request->akun_keluar,
-                                             'keluar' => $request->jumlah,
-                                             'deskripsi' => $request->deskripsi]);
-        if($transaksiGas){
-          return response(200);
-        } else {
-          return response(500);
-        }
+      }
+      return true;
     }
 
     public function search(Request $request){
@@ -248,6 +206,7 @@ class TransaksiGasController extends Controller
             'asal_barang' => 'required',
             'tujuan_barang' => 'required',
             'uang_jalan' => 'nullable|numeric',
+            'akun' => 'nullable|numeric',
         ]);
         $transaksiGas = TransaksiGas::find($id)->update($request->all());
         $detailTransaksiGas = $this->updateDetailTransaksiGas(

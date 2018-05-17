@@ -19,7 +19,7 @@ class CreateTransaksiJurnalsTable extends Migration
             $table->string('no_trans');
             $table->integer('jumlah_akun');
             $table->string('jenis_trans');
-            $table->string('deskripsi');
+            $table->string('deskripsi')->nullable();
             $table->float('total_nilai');
             $table->timestamps();
         });

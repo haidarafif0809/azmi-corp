@@ -16,7 +16,7 @@ class CreateDetailTransaksiGasMasuksTable extends Migration
         Schema::create('detail_transaksi_gas_masuks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('produk_id')->unsigned();
-            $table->string('nama_produk');
+            $table->string('nama');
             $table->string('kode_produk');
             $table->integer('kosong_p')->nullable();
             $table->integer('kosong_r')->nullable();

@@ -16,7 +16,7 @@ class CreateDetailTransaksiGasKeluarsTable extends Migration
         Schema::create('detail_transaksi_gas_keluars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('produk_id')->unsigned();
-            $table->string('nama_produk');
+            $table->string('nama');
             $table->string('kode_produk');
             $table->integer('kosong_p')->nullable();
             $table->integer('kosong_r')->nullable();
@@ -27,7 +27,7 @@ class CreateDetailTransaksiGasKeluarsTable extends Migration
             $table->timestamps();
             $table->foreign('produk_id')->references('id')->on('produks');
             $table->foreign('transaksi_gas_id')->references('id')->on('transaksi_gas')->onDelete('cascade');
-           
+
         });
     }
 
