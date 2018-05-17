@@ -45875,7 +45875,7 @@ var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_da
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(234)
 /* template */
 var __vue_template__ = __webpack_require__(43)
 /* template functional */
@@ -45923,26 +45923,65 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [_vm._v("Dashboard")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c("div", { staticClass: "panel panel-danger" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "panel-body" }, [
+                _c(
+                  "ul",
+                  { staticClass: "list-group" },
+                  _vm._l(_vm.kartuKredits, function(kartuKredit) {
+                    return _c(
+                      "li",
+                      { key: kartuKredit.id, staticClass: "list-group-item" },
+                      [
+                        kartuKredit.sisaHari == 0
+                          ? _c("p", [
+                              _c("b", [_vm._v(_vm._s(kartuKredit.akun.nama))]),
+                              _vm._v(" Jatuh Tanggal Bayar "),
+                              _c("b", [_vm._v("Hari Ini!")])
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        kartuKredit.sisaHari < 5 && kartuKredit.sisaHari > 0
+                          ? _c("p", [
+                              _c("b", [_vm._v(_vm._s(kartuKredit.akun.nama))]),
+                              _vm._v(" Jatuh Tanggal Bayar Tinggal "),
+                              _c("b", [
+                                _vm._v(
+                                  _vm._s(kartuKredit.sisaHari) + " Hari Lagi!"
+                                )
+                              ])
+                            ])
+                          : _vm._e()
+                      ]
+                    )
+                  })
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [_vm._v("Dashboard")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n\n                    You are logged in!\n                "
-              )
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h3", { staticClass: "panel-title" }, [
+        _c("b", [_vm._v("Peringatan ")]),
+        _vm._v(" Kartu Kredit")
       ])
     ])
   }
@@ -53881,6 +53920,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -54056,6 +54097,10 @@ var render = function() {
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(kartuKredit.limit))]),
                             _vm._v(" "),
+                            _c("td", [
+                              _vm._v(_vm._s(kartuKredit.tanggal_bayar))
+                            ]),
+                            _vm._v(" "),
                             _c(
                               "td",
                               [
@@ -54123,6 +54168,8 @@ var staticRenderFns = [
       _c("th", [_vm._v("Akun")]),
       _vm._v(" "),
       _c("th", [_vm._v("Limit")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Tanggal Bayar")]),
       _vm._v(" "),
       _c("th", [_vm._v("Aksi")])
     ])
@@ -54238,13 +54285,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       kartuKredit: {
         akun: '',
-        limit: 0
+        limit: 0,
+        tanggal_bayar: ''
       },
       url: window.location.origin + window.location.pathname.replace("home", "kartu-kredit"),
       errors: [],
@@ -54441,6 +54496,55 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Tanggal Bayar")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.kartuKredit.tanggal_bayar,
+                          expression: "kartuKredit.tanggal_bayar"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "number",
+                        required: "",
+                        placeholder: "Tanggal Bayar Kartu Kredit"
+                      },
+                      domProps: { value: _vm.kartuKredit.tanggal_bayar },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.kartuKredit,
+                            "tanggal_bayar",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.tanggal_bayar
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.tanggal_bayar[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
                 _vm._m(0)
               ]
             )
@@ -54576,13 +54680,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       kartuKredit: {
         akun: '',
-        limit: 0
+        limit: 0,
+        tanggal_bayar: ''
       },
       kartuKreditId: null,
       url: window.location.origin + window.location.pathname.replace("home", "kartu-kredit"),
@@ -54779,9 +54891,58 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _vm.errors.nama
+                    _vm.errors.limit
                       ? _c("span", { staticClass: "label label-danger" }, [
-                          _vm._v(" " + _vm._s(_vm.errors.nama[0]))
+                          _vm._v(" " + _vm._s(_vm.errors.limit[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Tanggal Bayar")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.kartuKredit.tanggal_bayar,
+                          expression: "kartuKredit.tanggal_bayar"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "number",
+                        required: "",
+                        placeholder: "Tanggal Bayar Kartu Kredit"
+                      },
+                      domProps: { value: _vm.kartuKredit.tanggal_bayar },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.kartuKredit,
+                            "tanggal_bayar",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.tanggal_bayar
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.tanggal_bayar[0]))
                         ])
                       : _vm._e()
                   ])
@@ -71163,6 +71324,96 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      kartuKredits: [],
+      url: window.location.origin + window.location.pathname.replace("home", "kartu-kredit")
+    };
+  },
+  mounted: function mounted() {
+    var app = this;
+    app.getKartuKredit();
+  },
+
+  methods: {
+    getKartuKredit: function getKartuKredit(page) {
+      var app = this;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      axios.get(app.url + '/view?page=' + page).then(function (resp) {
+        app.kartuKredits = resp.data.data;
+        app.loading = false;
+        app.tentukanSisaHari();
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    tentukanSisaHari: function tentukanSisaHari() {
+      var date = new Date();
+      var day = date.getDate();
+
+      this.kartuKredits = this.kartuKredits.map(function (kartu) {
+        var sisaHari = -1;
+        if (kartu.tanggal_bayar >= day) {
+          sisaHari = Number(kartu.tanggal_bayar) - Number(day);
+        }
+        kartu.sisaHari = sisaHari;
+        return kartu;
+      });
+    }
+  }
+});
 
 /***/ })
 /******/ ]);

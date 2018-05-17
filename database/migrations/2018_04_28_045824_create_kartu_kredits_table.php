@@ -19,6 +19,7 @@ class CreateKartuKreditsTable extends Migration
             $table->string('limit');
             $table->timestamps();
             $table->foreign('akun')->references('id')->on('akuns');
+            $table->string('tanggal_bayar');
         });
     }
 

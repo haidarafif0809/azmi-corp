@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class KartuKredit extends Model
 {
     //
-    protected $fillable = ['akun','limit'];
+    protected $fillable = ['akun','limit','tanggal_bayar'];
 
     public function akun()
     {

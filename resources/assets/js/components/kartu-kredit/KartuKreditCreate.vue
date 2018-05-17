@@ -33,6 +33,13 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="name" class="col-md-2 control-label" >Tanggal Bayar</label>
+                      <div class="col-md-4">
+                        <input type="number" class="form-control" required="" placeholder="Tanggal Bayar Kartu Kredit" v-model="kartuKredit.tanggal_bayar" />
+                      <span v-if="errors.tanggal_bayar" class="label label-danger"> {{ errors.tanggal_bayar[0]}}</span>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <div class="col-md-4 col-md-offset-2">
                         <button class="btn btn-primary" type="submit">Submit</button>
                       </div>
@@ -52,7 +59,8 @@
       return {
         kartuKredit: {
           akun: '',
-          limit: 0
+          limit: 0,
+          tanggal_bayar: '',
         },
         url: window.location.origin + (window.location.pathname).replace("home","kartu-kredit"),
         errors: [],

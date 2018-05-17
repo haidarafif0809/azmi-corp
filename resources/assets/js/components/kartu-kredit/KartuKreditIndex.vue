@@ -26,12 +26,14 @@
                     <thead>
                         <th>Akun</th>
                         <th>Limit</th>
+                        <th>Tanggal Bayar</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody v-if="kartuKredits.length">
                       <tr v-for="kartuKredit,index in kartuKredits">
                         <td>{{ kartuKredit.akun.nama}}</td>
                         <td>{{ kartuKredit.limit}}</td>
+                        <td>{{ kartuKredit.tanggal_bayar}}</td>
                         <td>
                         <router-link
                           :to="{name:'EditKartuKredit' ,params:{id: kartuKredit.id}}"
