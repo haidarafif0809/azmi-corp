@@ -11,15 +11,15 @@
 
                 <div class="panel-body">
 
-                    <router-link 
-                      :to="{name: 'CreatePelanggan'}" 
-                      class="btn btn-md btn-primary"> 
+                    <router-link
+                      :to="{name: 'CreatePelanggan'}"
+                      class="btn btn-md btn-primary">
                         Tambah Pelanggan
                     </router-link>
                     <div class="table-responsive">
-                    
+
                     <div align="right">
-                   Pencarian 
+                   Pencarian
                     <input type="text" v-bind:style="{width: '20%' }" v-model="pencarian" class="form-control" />
                     </div>
                     <table class="table table-bordered" >
@@ -35,18 +35,19 @@
                         <td>{{ pelanggan.nama}}</td>
                         <td>{{ pelanggan.kontak}}</td>
                         <td>
-                        <router-link 
-                          :to="{name:'EditPelanggan' ,params:{id: pelanggan.id}}" 
-                          class="btn btn-xs btn-default"
-                       >
-                          Edit
-                       </router-link>
-                        <button 
-                          class="btn btn-xs btn-danger" 
-                          v-on:click="konfirmasiHapus(pelanggan.id,index,pelanggan.nama)"
-                        >
-                          Hapus
-                        </button>
+                          <a target="_blank" v-bind:href="`https://www.google.co.id/maps/place/${pelanggan.koordinat}`" >Map</a>
+                          <router-link
+                            :to="{name:'EditPelanggan' ,params:{id: pelanggan.id}}"
+                            class="btn btn-xs btn-default"
+                         >
+                            Edit
+                         </router-link>
+                          <button
+                            class="btn btn-xs btn-danger"
+                            v-on:click="konfirmasiHapus(pelanggan.id,index,pelanggan.nama)"
+                          >
+                            Hapus
+                          </button>
                         </td>
                       </tr>
                     </tbody>
@@ -78,7 +79,7 @@
     watch: {
        pencarian: function(newSearch){
          this.getHasilPencarian();
-       }  
+       }
     },
     methods: {
       getResults(page){
@@ -95,11 +96,11 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       getHasilPencarian(page){
-          
+
         var app = this;
         if(typeof page == 'undefined'){
           page = 1;
@@ -113,7 +114,7 @@
         .catch(function(resp){
           console.log(resp);
           app.loading = false;
-         
+
         })
       },
       deleteEntry(id,index,namaPelanggan){
@@ -128,7 +129,7 @@
           })
       },
       konfirmasiHapus(id,index,namaPelanggan){
-      
+
         this.$swal({
           title: "Yakin Ingin Menghapus Pelanggan " + namaPelanggan + "?",
           text: "Data yang di hapus tidak akan bisa di kembalikan lagi",
@@ -140,7 +141,7 @@
           if (willDelete) {
             this.deleteEntry(id,index,namaPelanggan);
           }
-        })  
+        })
       },
       alert(title,pesan){
         this.$swal({

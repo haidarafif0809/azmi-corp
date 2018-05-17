@@ -51,15 +51,22 @@
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Perusahaan</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Perusahaan Pelanggan" v-model="pelanggan.perusahaan" autofocus=""/>
+                          <input type="text" class="form-control"  placeholder="Perusahaan Pelanggan" v-model="pelanggan.perusahaan" autofocus=""/>
                         <span v-if="errors.perusahaan" class="label label-danger"> {{ errors.perusahaan[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="name" class="col-md-2 control-label" >Kontak</label>
                         <div class="col-md-4">
-                          <input type="text" class="form-control" required="" placeholder="Kontak Pelanggan" v-model="pelanggan.kontak" autofocus=""/>
+                          <input type="text" class="form-control"  placeholder="Kontak Pelanggan" v-model="pelanggan.kontak" autofocus=""/>
                         <span v-if="errors.kontak" class="label label-danger"> {{ errors.kontak[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Koordinat</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control"  placeholder="Koordinat Pelanggan" v-model="pelanggan.koordinat" autofocus=""/>
+                        <span v-if="errors.koordinat" class="label label-danger"> {{ errors.koordinat[0]}}</span>
                         </div>
                       </div>
                       <div class="form-group">
@@ -87,7 +94,8 @@
           alamat: '',
           email: '',
           alamat_kantor: '',
-          perusahaan: ''
+          perusahaan: '',
+          koordinat: ''
         },
         pelangganId : null,
         url: window.location.origin + (window.location.pathname).replace("home","pelanggan"),

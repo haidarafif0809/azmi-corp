@@ -51216,6 +51216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51345,7 +51346,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    " \n                        Tambah Pelanggan\n                    "
+                    "\n                        Tambah Pelanggan\n                    "
                   )
                 ]
               ),
@@ -51353,7 +51354,7 @@ var render = function() {
               _c("div", { staticClass: "table-responsive" }, [
                 _c("div", { attrs: { align: "right" } }, [
                   _vm._v(
-                    "\n                   Pencarian \n                    "
+                    "\n                   Pencarian\n                    "
                   ),
                   _c("input", {
                     directives: [
@@ -51397,6 +51398,19 @@ var render = function() {
                               "td",
                               [
                                 _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      target: "_blank",
+                                      href:
+                                        "https://www.google.co.id/maps/place/" +
+                                        pelanggan.koordinat
+                                    }
+                                  },
+                                  [_vm._v("Map")]
+                                ),
+                                _vm._v(" "),
+                                _c(
                                   "router-link",
                                   {
                                     staticClass: "btn btn-xs btn-default",
@@ -51409,7 +51423,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                          Edit\n                       "
+                                      "\n                            Edit\n                         "
                                     )
                                   ]
                                 ),
@@ -51430,7 +51444,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                          Hapus\n                        "
+                                      "\n                            Hapus\n                          "
                                     )
                                   ]
                                 )
@@ -51607,6 +51621,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -51618,7 +51639,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         alamat: '',
         email: '',
         alamat_kantor: '',
-        perusahaan: ''
+        perusahaan: '',
+        koordinat: ''
       },
       url: window.location.origin + window.location.pathname.replace("home", "pelanggan"),
       errors: [],
@@ -52028,6 +52050,55 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Koordinat")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.koordinat,
+                          expression: "pelanggan.koordinat"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Koordinat Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.koordinat },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.pelanggan,
+                            "koordinat",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.koordinat
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.koordinat[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
                 _vm._m(0)
               ]
             )
@@ -52193,6 +52264,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -52204,7 +52282,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         alamat: '',
         email: '',
         alamat_kantor: '',
-        perusahaan: ''
+        perusahaan: '',
+        koordinat: ''
       },
       pelangganId: null,
       url: window.location.origin + window.location.pathname.replace("home", "pelanggan"),
@@ -52550,7 +52629,6 @@ var render = function() {
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
-                        required: "",
                         placeholder: "Perusahaan Pelanggan",
                         autofocus: ""
                       },
@@ -52600,7 +52678,6 @@ var render = function() {
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
-                        required: "",
                         placeholder: "Kontak Pelanggan",
                         autofocus: ""
                       },
@@ -52618,6 +52695,55 @@ var render = function() {
                     _vm.errors.kontak
                       ? _c("span", { staticClass: "label label-danger" }, [
                           _vm._v(" " + _vm._s(_vm.errors.kontak[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Koordinat")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.pelanggan.koordinat,
+                          expression: "pelanggan.koordinat"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        placeholder: "Koordinat Pelanggan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.pelanggan.koordinat },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.pelanggan,
+                            "koordinat",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.koordinat
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.koordinat[0]))
                         ])
                       : _vm._e()
                   ])
@@ -66302,6 +66428,32 @@ var _this = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -66313,12 +66465,14 @@ var _this = this;
         asal_barang: '',
         uang_jalan: '',
         tujuan_barang: '',
-        produks: []
-
+        produks: [],
+        akun_masuk: '',
+        akun_keluar: ''
       },
       mobils: [],
       drivers: [],
       gudangs: [],
+      akuns: [],
       suppliers: [],
       pelanggans: [],
       url: window.location.origin + window.location.pathname.replace("home", "transaksi-gas"),
@@ -66343,6 +66497,7 @@ var _this = this;
   mounted: function mounted() {
     var app = this;
     app.getMobils();
+    app.getAkuns();
     app.getProduks();
     app.getDrivers();
     app.getGudangs();
@@ -66351,6 +66506,14 @@ var _this = this;
   },
 
   methods: {
+    getAkuns: function getAkuns() {
+      var app = this;
+      axios.get(app.url.replace("transaksi-gas", "akun") + '/all?all=1').then(function (resp) {
+        app.akuns = resp.data;
+      }).catch(function (resp) {
+        console.log(resp);
+      });
+    },
     alert: function alert(pesan) {
       this.$swal({
         title: "Berhasil Menambah Transaksi Gas",
@@ -66932,6 +67095,136 @@ var render = function() {
                                 )
                               : _vm._e()
                           ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.transaksiGas.status_barang !== ""
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Akun Masuk")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-10" },
+                            [
+                              _c(
+                                "vue-selectize",
+                                {
+                                  staticClass: "form-control",
+                                  attrs: { required: "" },
+                                  model: {
+                                    value: _vm.transaksiGas.akun_masuk,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.transaksiGas,
+                                        "akun_masuk",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "transaksiGas.akun_masuk"
+                                  }
+                                },
+                                [
+                                  _c("option", { attrs: { value: "" } }, [
+                                    _vm._v("Pilih Akun")
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._l(_vm.akuns, function(akun) {
+                                    return _c(
+                                      "option",
+                                      { domProps: { value: akun.id } },
+                                      [_vm._v(_vm._s(akun.nama))]
+                                    )
+                                  })
+                                ],
+                                2
+                              ),
+                              _vm._v(" "),
+                              _vm.errors.akun_masuk
+                                ? _c(
+                                    "span",
+                                    { staticClass: "label label-danger" },
+                                    [
+                                      _vm._v(
+                                        " " + _vm._s(_vm.errors.akun_masuk[0])
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.transaksiGas.status_barang !== ""
+                      ? _c("div", { staticClass: "form-group" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-md-2 control-label",
+                              attrs: { for: "name" }
+                            },
+                            [_vm._v("Akun Keluar")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-md-10" },
+                            [
+                              _c(
+                                "vue-selectize",
+                                {
+                                  staticClass: "form-control",
+                                  attrs: { required: "" },
+                                  model: {
+                                    value: _vm.transaksiGas.akun_keluar,
+                                    callback: function($$v) {
+                                      _vm.$set(
+                                        _vm.transaksiGas,
+                                        "akun_keluar",
+                                        $$v
+                                      )
+                                    },
+                                    expression: "transaksiGas.akun_keluar"
+                                  }
+                                },
+                                [
+                                  _c("option", { attrs: { value: "" } }, [
+                                    _vm._v("Pilih Akun")
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._l(_vm.akuns, function(akun) {
+                                    return _c(
+                                      "option",
+                                      { domProps: { value: akun.id } },
+                                      [_vm._v(_vm._s(akun.nama))]
+                                    )
+                                  })
+                                ],
+                                2
+                              ),
+                              _vm._v(" "),
+                              _vm.errors.akun_keluar
+                                ? _c(
+                                    "span",
+                                    { staticClass: "label label-danger" },
+                                    [
+                                      _vm._v(
+                                        " " + _vm._s(_vm.errors.akun_keluar[0])
+                                      )
+                                    ]
+                                  )
+                                : _vm._e()
+                            ],
+                            1
+                          )
                         ])
                       : _vm._e(),
                     _vm._v(" "),

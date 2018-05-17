@@ -22,6 +22,7 @@ class CreatePelanggansTable extends Migration
             $table->string('alamat_kantor')->nullable();
             $table->string('perusahaan')->nullable();
             $table->string('kontak')->unique();
+            $table->string('koordinat')->nullable();
             $table->timestamps();
         });
     }

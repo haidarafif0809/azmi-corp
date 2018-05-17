@@ -63,6 +63,13 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Koordinat</label>
+                        <div class="col-md-4">
+                          <input type="text" class="form-control"  placeholder="Koordinat Pelanggan" v-model="pelanggan.koordinat" autofocus=""/>
+                        <span v-if="errors.koordinat" class="label label-danger"> {{ errors.koordinat[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <div class="col-md-4 col-md-offset-2">
                           <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
@@ -87,7 +94,8 @@
           alamat: '',
           email: '',
           alamat_kantor: '',
-          perusahaan: ''
+          perusahaan: '',
+          koordinat: '',
         },
         url: window.location.origin + (window.location.pathname).replace("home","pelanggan"),
         errors: [],
