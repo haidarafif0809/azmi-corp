@@ -56817,13 +56817,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       produk: {
         kode: '',
-        nama: ''
+        nama: '',
+        warna: ''
       },
       url: window.location.origin + window.location.pathname.replace("home", "produk"),
       errors: [],
@@ -56990,6 +56998,52 @@ var render = function() {
                     _vm.errors.nama
                       ? _c("span", { staticClass: "label label-danger" }, [
                           _vm._v(" " + _vm._s(_vm.errors.nama[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Warna")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.produk.warna,
+                          expression: "produk.warna"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "color",
+                        required: "",
+                        placeholder: "Warna Produk",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.produk.warna },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.produk, "warna", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.warna
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.warna[0]))
                         ])
                       : _vm._e()
                   ])
@@ -67614,257 +67668,259 @@ var render = function() {
                   _c(
                     "tbody",
                     _vm._l(_vm.transaksiGas.produks, function(produk) {
-                      return _c("tr", [
-                        _c("td", [
-                          _vm._v(
-                            "\n                             " +
-                              _vm._s(produk.nama) +
-                              "\n                           "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.kosong_p,
-                                expression: "produk.kosong_p"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "P",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.kosong_p },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  produk,
-                                  "kosong_p",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          }),
+                      return _c(
+                        "tr",
+                        { style: { backgroundColor: produk.warna } },
+                        [
+                          _c("td", [
+                            _c("b", { style: { color: "black" } }, [
+                              _vm._v(_vm._s(produk.nama))
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.harga_kosong_p,
-                                expression: "produk.harga_kosong_p"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "$",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.harga_kosong_p },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c("td", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.kosong_p,
+                                  expression: "produk.kosong_p"
                                 }
-                                _vm.$set(
-                                  produk,
-                                  "harga_kosong_p",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.kosong_r,
-                                expression: "produk.kosong_r"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "R",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.kosong_r },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "P",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.kosong_p },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "kosong_p",
+                                    $event.target.value
+                                  )
                                 }
-                                _vm.$set(
-                                  produk,
-                                  "kosong_r",
-                                  $event.target.value
-                                )
                               }
-                            }
-                          }),
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.harga_kosong_p,
+                                  expression: "produk.harga_kosong_p"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "$",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.harga_kosong_p },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "harga_kosong_p",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.harga_kosong_r,
-                                expression: "produk.harga_kosong_r"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "$",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.harga_kosong_r },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c("td", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.kosong_r,
+                                  expression: "produk.kosong_r"
                                 }
-                                _vm.$set(
-                                  produk,
-                                  "harga_kosong_r",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.kosong_k,
-                                expression: "produk.kosong_k"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "K",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.kosong_k },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "R",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.kosong_r },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "kosong_r",
+                                    $event.target.value
+                                  )
                                 }
-                                _vm.$set(
-                                  produk,
-                                  "kosong_k",
-                                  $event.target.value
-                                )
                               }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.isi,
-                                expression: "produk.isi"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "ISI",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.isi },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.harga_kosong_r,
+                                  expression: "produk.harga_kosong_r"
                                 }
-                                _vm.$set(produk, "isi", $event.target.value)
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "$",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.harga_kosong_r },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "harga_kosong_r",
+                                    $event.target.value
+                                  )
+                                }
                               }
-                            }
-                          }),
+                            })
+                          ]),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.harga_isi,
-                                expression: "produk.harga_isi"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "$",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.harga_isi },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                          _c("td", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.kosong_k,
+                                  expression: "produk.kosong_k"
                                 }
-                                _vm.$set(
-                                  produk,
-                                  "harga_isi",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: produk.total,
-                                expression: "produk.total"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              placeholder: "Total",
-                              type: "text",
-                              width: "3px"
-                            },
-                            domProps: { value: produk.total },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "K",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.kosong_k },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "kosong_k",
+                                    $event.target.value
+                                  )
                                 }
-                                _vm.$set(produk, "total", $event.target.value)
                               }
-                            }
-                          })
-                        ])
-                      ])
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.isi,
+                                  expression: "produk.isi"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "ISI",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.isi },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(produk, "isi", $event.target.value)
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.harga_isi,
+                                  expression: "produk.harga_isi"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "$",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.harga_isi },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    produk,
+                                    "harga_isi",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: produk.total,
+                                  expression: "produk.total"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: {
+                                placeholder: "Total",
+                                type: "text",
+                                width: "3px"
+                              },
+                              domProps: { value: produk.total },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(produk, "total", $event.target.value)
+                                }
+                              }
+                            })
+                          ])
+                        ]
+                      )
                     })
                   )
                 ]),

@@ -34,7 +34,7 @@ class ProdukController extends Controller
 
 
     private function jumlahGas($produkId,$jenis){
-        
+
           $masuk = DetailTransaksiGasMasuk::where('produk_id',$produkId)->sum($jenis);
           $keluar = DetailTransaksiGasKeluar::where('produk_id',$produkId)->sum($jenis);
           $jumlah =  $masuk - $keluar;
@@ -68,17 +68,18 @@ class ProdukController extends Controller
         $request->validate([
             'kode' => 'required|unique:produks,kode|max:255',
             'nama' => 'required|unique:produks,nama|max:255',
+            'warna' => 'required|unique:produks,warna|max:255',
         ]);
         $produk = Produk::create($request->all());
         if($produk){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
     }
-    
+
     public function search(Request $request){
-          
+
         $produk = Produk::where('kode','LIKE',"%$request->q%")
                           ->orWhere('nama','LIKE',"%$request->q%")
                           ->paginate(10);
@@ -120,13 +121,14 @@ class ProdukController extends Controller
         $request->validate([
             'kode' => 'required|unique:produks,kode,'.$id.'|max:255',
             'nama' => 'required|unique:produks,nama,'.$id.'|max:255',
+            'warna' => 'required|unique:produks,warna,'.$id.'|max:255',
         ]);
-       
+
         $produk = Produk::find($id)->update($request->all());
         if($produk){
-          return response(200);    
+          return response(200);
         } else {
-          return response(500);    
+          return response(500);
         }
 
     }
@@ -142,7 +144,7 @@ class ProdukController extends Controller
         //
         $produk = Produk::destroy($id);
         if($produk){
-          return response(200);    
+          return response(200);
         } else {
           return response(500);
         }

@@ -168,9 +168,9 @@
                          <th>Total</th>
                        </thead>
                        <tbody>
-                         <tr v-for="produk in transaksiGas.produks">
+                         <tr v-for="produk in transaksiGas.produks" :style="{ backgroundColor: produk.warna}">
                            <td>
-                             {{ produk.nama}}
+                             <b :style="{color: 'black'}">{{ produk.nama}}</b>
                            </td>
                            <td>
                              <input class="form-control" v-model="produk.kosong_p" placeholder="P" type="text" width="3px" />

@@ -28,6 +28,13 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label for="name" class="col-md-2 control-label" >Warna</label>
+                        <div class="col-md-4">
+                          <input type="color" class="form-control" required="" placeholder="Warna Produk" v-model="produk.warna" autofocus=""/>
+                        <span v-if="errors.warna" class="label label-danger"> {{ errors.warna[0]}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <div class="col-md-4 col-md-offset-2">
                           <button class="btn btn-primary" type="submit">Submit</button>
                         </div>
@@ -47,7 +54,8 @@
       return {
         produk: {
           kode: '',
-          nama: ''
+          nama: '',
+          warna: ''
         },
         url: window.location.origin + (window.location.pathname).replace("home","produk"),
         errors: [],

@@ -24,6 +24,7 @@ class CreateProduksTable extends Migration
             $table->integer('kosong_k')->nullable();
             $table->integer('isi')->nullable();
             $table->integer('harga_isi')->default(0);
+            $table->string('warna')->unique();
             $table->timestamps();
         });
     }
