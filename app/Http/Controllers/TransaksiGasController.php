@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\TransaksiGas;
 use App\TransaksiKas;
+use App\TransaksiLain;
 use App\DetailTransaksiGasMasuk;
 use App\DetailTransaksiGasKeluar;
 use App\Akun;
@@ -80,6 +81,16 @@ class TransaksiGasController extends Controller
         $noTrans = TransaksiKas::noTrans();
         $request->request->add(['no_rute' => $noRute,'no_kas' => $noTrans]);
         $transaksiGas = TransaksiGas::create($request->all());
+        if ($request->jumlah_lain != '') {
+          $noTransLain = TransaksiLain::noTrans();
+          TransaksiLain::create([
+            'no_trans' => $noTransLain,
+            'no_rute' => $noRute,
+            'akun_debit' => $request->akun_masuk_lain,
+            'akun_kredit' => $request->akun_keluar_lain,
+            'jumlah' => $request->jumlah_lain
+          ]);
+        }
         $detailTransaksiGas = $this->storeDetailTransaksiGas($request->produks,
                                                             $request->status_barang,
                                                             $noRute,$transaksiGas->id);

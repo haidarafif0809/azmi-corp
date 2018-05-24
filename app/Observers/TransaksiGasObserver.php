@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\TransaksiGas;
 use App\TransaksiKas;
+use App\TransaksiLain;
 
 class TransaksiGasObserver
 {
@@ -50,6 +51,9 @@ class TransaksiGasObserver
         //
         $transaksiKas = TransaksiKas::where('no_trans',$transaksiGas->no_kas)->first();
         TransaksiKas::destroy($transaksiKas->id);
+        $transaksiLain = TransaksiLain::where('no_rute',$transaksiGas->no_rute)->first();
+        TransaksiLain::destroy($transaksiLain->id);
+
 
     }
 }

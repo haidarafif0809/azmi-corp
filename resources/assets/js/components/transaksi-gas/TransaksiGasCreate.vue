@@ -193,6 +193,32 @@
                          </tr>
                        </tbody>
                     </table>
+                    <p v-if="transaksiGas.status_barang !== ''">Biaya Lain </p>
+                     <form class="form-inline" v-if="transaksiGas.status_barang !== ''">
+                      <div class="form-group" >
+                        <vue-selectize
+                          v-model="transaksiGas.akun_masuk_lain"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Akun Debit</option>
+                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.akun_masuk_lain" class="label label-danger"> {{ errors.akun_masuk_lain[0]}}</span>
+                      </div>
+                      <div class="form-group" >
+                        <vue-selectize
+                          v-model="transaksiGas.akun_keluar_lain"
+                          class="form-control"
+                          required="" >
+                            <option value="">Pilih Akun Kredit</option>
+                            <option v-for="akun in akuns" :value="akun.id">{{ akun.nama}}</option>
+                          </vue-selectize>
+                        <span v-if="errors.akun_keluar_lain" class="label label-danger"> {{ errors.akun_keluar_lain[0]}}</span>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Jumlah Biaya Lain" v-model="transaksiGas.jumlah_lain">
+                      </div>
+                    </form>
                    </div>
                    <!-- col-md-7 -->
                   </div>
@@ -219,7 +245,10 @@
           tujuan_barang: '',
           produks: [],
           akun_masuk: '',
-          akun_keluar: ''
+          akun_keluar: '',
+          akun_masuk_lain: '',
+          akun_keluar_lain: '',
+          jumlah_lain: '',
         },
         mobils: [],
         drivers: [],
