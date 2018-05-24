@@ -34,6 +34,11 @@ Route::get('/supplier/all', 'SupplierController@all')->middleware('auth');
 Route::get('/supplier/search', 'SupplierController@search')->middleware('auth');
 Route::resource('supplier','SupplierController')->middleware('auth');
 
+Route::get('/perusahaan/view', 'PerusahaanController@index')->middleware('auth');
+Route::get('/perusahaan/all', 'PerusahaanController@all')->middleware('auth');
+Route::get('/perusahaan/search', 'PerusahaanController@search')->middleware('auth');
+Route::resource('perusahaan','PerusahaanController')->middleware('auth');
+
 
 Route::get('/driver/view', 'DriverController@index')->middleware('auth');
 Route::get('/driver/all', 'DriverController@all')->middleware('auth');

@@ -52,6 +52,7 @@
                                 <li><router-link :to="{name: 'IndexPelanggan'}" >Pelanggan</router-link></li>
                                 <li><router-link :to="{name: 'IndexAkun'}" >Akun</router-link></li>
                                 <li><router-link :to="{name: 'IndexKartuKredit'}" >Kartu Kredit</router-link></li>
+                                <li><router-link :to="{name: 'IndexPerusahaan'}" >Perusahaan</router-link></li>
                             </ul>
                         </li>
                         <li class="dropdown">

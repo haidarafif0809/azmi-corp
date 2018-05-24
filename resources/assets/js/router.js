@@ -11,6 +11,8 @@ import MobilEdit from './components/mobil/MobilEdit.vue';
 import SupplierIndex from './components/supplier/SupplierIndex.vue';
 import SupplierCreate from './components/supplier/SupplierCreate.vue';
 import SupplierEdit from './components/supplier/SupplierEdit.vue';
+import PerusahaanIndex from './components/perusahaan/PerusahaanIndex.vue';
+import PerusahaanEdit from './components/perusahaan/PerusahaanEdit.vue';
 import DriverIndex from './components/driver/DriverIndex.vue';
 import DriverCreate from './components/driver/DriverCreate.vue';
 import DriverEdit from './components/driver/DriverEdit.vue';
@@ -81,6 +83,8 @@ const routes = [
   { path: '/supplier', component:SupplierIndex,name: 'IndexSupplier' },
   { path: '/supplier/create', component:SupplierCreate,name: 'CreateSupplier' },
   { path: '/supplier/edit/:id', component:SupplierEdit,name: 'EditSupplier' },
+  { path: '/perusahaan', component:PerusahaanIndex,name: 'IndexPerusahaan' },
+  { path: '/perusahaan/edit/:id', component:PerusahaanEdit,name: 'EditPerusahaan' },
   { path: '/driver', component:DriverIndex,name: 'IndexDriver' },
   { path: '/driver/create', component:DriverCreate,name: 'CreateDriver' },
   { path: '/driver/edit/:id', component:DriverEdit,name: 'EditDriver' },

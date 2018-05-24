@@ -45698,103 +45698,109 @@ exports.version = version;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_kartu_kredit_KartuKreditIndex_vue__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_kartu_kredit_KartuKreditIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__components_kartu_kredit_KartuKreditIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_kartu_kredit_KartuKreditCreate_vue__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_kartu_kredit_KartuKreditCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__components_kartu_kredit_KartuKreditCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditEdit_vue__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_akun_AkunIndex_vue__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_akun_AkunIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__components_akun_AkunIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_akun_AkunCreate_vue__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_akun_AkunCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__components_akun_AkunCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunEdit_vue__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27__components_akun_AkunEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_produk_ProdukIndex_vue__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_produk_ProdukIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28__components_produk_ProdukIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_produk_ProdukCreate_vue__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_produk_ProdukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29__components_produk_ProdukCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukEdit_vue__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_PosisiKasIndex_vue__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_PosisiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_PosisiKasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasIndex_vue__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasCreate_vue__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasEdit_vue__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukCreate_vue__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarCreate_vue__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMutasiCreate_vue__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMutasiCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasMasukEdit_vue__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasMasukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasMasukEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasKeluarEdit_vue__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasKeluarEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_laporan_LaporanTransaksiKasIndex_vue__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_laporan_LaporanTransaksiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_45__components_laporan_LaporanTransaksiKasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_laporan_LaporanBukuBesarIndex_vue__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_laporan_LaporanBukuBesarIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46__components_laporan_LaporanBukuBesarIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanJurnalUmumIndex_vue__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanJurnalUmumIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanJurnalUmumIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanNeracaIndex_vue__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanNeracaIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanNeracaIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanLabaRugiIndex_vue__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanLabaRugiIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanLabaRugiIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_transaksi_gas_TransaksiGasIndex_vue__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_transaksi_gas_TransaksiGasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_50__components_transaksi_gas_TransaksiGasIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_transaksi_gas_TransaksiGasCreate_vue__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_transaksi_gas_TransaksiGasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_51__components_transaksi_gas_TransaksiGasCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasEdit_vue__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_jurnal_manual_JurnalManualIndex_vue__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_jurnal_manual_JurnalManualIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_53__components_jurnal_manual_JurnalManualIndex_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_jurnal_manual_JurnalManualCreate_vue__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_jurnal_manual_JurnalManualCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_54__components_jurnal_manual_JurnalManualCreate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualEdit_vue__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualEdit_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_error_Page404_vue__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_error_Page404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_56__components_error_Page404_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_perusahaan_PerusahaanIndex_vue__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_perusahaan_PerusahaanIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_perusahaan_PerusahaanIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_perusahaan_PerusahaanEdit_vue__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_perusahaan_PerusahaanEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_perusahaan_PerusahaanEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverIndex_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_driver_DriverIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_driver_DriverCreate_vue__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_driver_DriverCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_driver_DriverCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_driver_DriverEdit_vue__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_driver_DriverEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_driver_DriverEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangIndex_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_gudang_GudangCreate_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_gudang_GudangCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_gudang_GudangCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_gudang_GudangEdit_vue__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_gudang_GudangEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_gudang_GudangEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganIndex_vue__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_pelanggan_PelangganCreate_vue__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_pelanggan_PelangganCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_pelanggan_PelangganCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_pelanggan_PelangganEdit_vue__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_pelanggan_PelangganEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__components_pelanggan_PelangganEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_kas_KasIndex_vue__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_kas_KasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__components_kas_KasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_kas_KasCreate_vue__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_kas_KasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__components_kas_KasCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_kas_KasEdit_vue__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_kas_KasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__components_kas_KasEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditIndex_vue__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_kartu_kredit_KartuKreditCreate_vue__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_kartu_kredit_KartuKreditCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25__components_kartu_kredit_KartuKreditCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_kartu_kredit_KartuKreditEdit_vue__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_kartu_kredit_KartuKreditEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26__components_kartu_kredit_KartuKreditEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunIndex_vue__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_27__components_akun_AkunIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_akun_AkunCreate_vue__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_akun_AkunCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28__components_akun_AkunCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_akun_AkunEdit_vue__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_akun_AkunEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_29__components_akun_AkunEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukIndex_vue__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_produk_ProdukCreate_vue__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_produk_ProdukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_31__components_produk_ProdukCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_produk_ProdukEdit_vue__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_produk_ProdukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_32__components_produk_ProdukEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_PosisiKasIndex_vue__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_PosisiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_PosisiKasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasIndex_vue__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasCreate_vue__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasEdit_vue__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMasukCreate_vue__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMasukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMasukCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasKeluarCreate_vue__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasKeluarCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasMutasiCreate_vue__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasMutasiCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kas_TransaksiKasMasukEdit_vue__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kas_TransaksiKasMasukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40__components_transaksi_kas_TransaksiKasMasukEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kas_TransaksiKasKeluarEdit_vue__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_41__components_transaksi_kas_TransaksiKasKeluarEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_45__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanTransaksiKasIndex_vue__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanTransaksiKasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanTransaksiKasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanBukuBesarIndex_vue__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanBukuBesarIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanBukuBesarIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanJurnalUmumIndex_vue__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanJurnalUmumIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanJurnalUmumIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_laporan_LaporanNeracaIndex_vue__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__components_laporan_LaporanNeracaIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_50__components_laporan_LaporanNeracaIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_laporan_LaporanLabaRugiIndex_vue__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__components_laporan_LaporanLabaRugiIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_51__components_laporan_LaporanLabaRugiIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasIndex_vue__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_transaksi_gas_TransaksiGasCreate_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_transaksi_gas_TransaksiGasCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_53__components_transaksi_gas_TransaksiGasCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_transaksi_gas_TransaksiGasEdit_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_transaksi_gas_TransaksiGasEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_54__components_transaksi_gas_TransaksiGasEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualIndex_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_jurnal_manual_JurnalManualCreate_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_jurnal_manual_JurnalManualCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_56__components_jurnal_manual_JurnalManualCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_jurnal_manual_JurnalManualEdit_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__components_jurnal_manual_JurnalManualEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_57__components_jurnal_manual_JurnalManualEdit_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_error_Page404_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__components_error_Page404_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_58__components_error_Page404_vue__);
 
 // 1. Define route components.
 // These can be imported from other files
+
+
 
 
 
@@ -45864,7 +45870,7 @@ exports.version = version;
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_10__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_11__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_13__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_14__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }, { path: '/pelanggan', component: __WEBPACK_IMPORTED_MODULE_16__components_pelanggan_PelangganIndex_vue___default.a, name: 'IndexPelanggan' }, { path: '/pelanggan/create', component: __WEBPACK_IMPORTED_MODULE_17__components_pelanggan_PelangganCreate_vue___default.a, name: 'CreatePelanggan' }, { path: '/pelanggan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganEdit_vue___default.a, name: 'EditPelanggan' }, { path: '/kas', component: __WEBPACK_IMPORTED_MODULE_19__components_kas_KasIndex_vue___default.a, name: 'IndexKas' }, { path: '/kas/create', component: __WEBPACK_IMPORTED_MODULE_20__components_kas_KasCreate_vue___default.a, name: 'CreateKas' }, { path: '/kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_21__components_kas_KasEdit_vue___default.a, name: 'EditKas' }, { path: '/kartu-kredit', component: __WEBPACK_IMPORTED_MODULE_22__components_kartu_kredit_KartuKreditIndex_vue___default.a, name: 'IndexKartuKredit' }, { path: '/kartu-kredit/create', component: __WEBPACK_IMPORTED_MODULE_23__components_kartu_kredit_KartuKreditCreate_vue___default.a, name: 'CreateKartuKredit' }, { path: '/kartu-kredit/edit/:id', component: __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditEdit_vue___default.a, name: 'EditKartuKredit' }, { path: '/akun', component: __WEBPACK_IMPORTED_MODULE_25__components_akun_AkunIndex_vue___default.a, name: 'IndexAkun' }, { path: '/akun/create', component: __WEBPACK_IMPORTED_MODULE_26__components_akun_AkunCreate_vue___default.a, name: 'CreateAkun' }, { path: '/akun/edit/:id', component: __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunEdit_vue___default.a, name: 'EditAkun' }, { path: '/produk', component: __WEBPACK_IMPORTED_MODULE_28__components_produk_ProdukIndex_vue___default.a, name: 'IndexProduk' }, { path: '/produk/create', component: __WEBPACK_IMPORTED_MODULE_29__components_produk_ProdukCreate_vue___default.a, name: 'CreateProduk' }, { path: '/produk/edit/:id', component: __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukEdit_vue___default.a, name: 'EditProduk' }, { path: '/transaksi-gas', component: __WEBPACK_IMPORTED_MODULE_50__components_transaksi_gas_TransaksiGasIndex_vue___default.a, name: 'IndexTransaksiGas' }, { path: '/transaksi-gas/create', component: __WEBPACK_IMPORTED_MODULE_51__components_transaksi_gas_TransaksiGasCreate_vue___default.a, name: 'CreateTransaksiGas' }, { path: '/transaksi-gas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasEdit_vue___default.a, name: 'EditTransaksiGas' }, { path: '/jurnal-manual', component: __WEBPACK_IMPORTED_MODULE_53__components_jurnal_manual_JurnalManualIndex_vue___default.a, name: 'IndexJurnalManual' }, { path: '/jurnal-manual/create', component: __WEBPACK_IMPORTED_MODULE_54__components_jurnal_manual_JurnalManualCreate_vue___default.a, name: 'CreateJurnalManual' }, { path: '/jurnal-manual/edit/:id', component: __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualEdit_vue___default.a, name: 'EditJurnalManual' }, { path: '/posisi-kas', component: __WEBPACK_IMPORTED_MODULE_31__components_transaksi_kas_PosisiKasIndex_vue___default.a, name: 'IndexPosisiKas' }, { path: '/laporan/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_45__components_laporan_LaporanTransaksiKasIndex_vue___default.a, name: 'IndexLaporanTransaksiKas' }, { path: '/laporan/neraca', component: __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanNeracaIndex_vue___default.a, name: 'IndexLaporanNeraca' }, { path: '/laporan/buku-besar', component: __WEBPACK_IMPORTED_MODULE_46__components_laporan_LaporanBukuBesarIndex_vue___default.a, name: 'IndexLaporanBukuBesar' }, { path: '/laporan/laba-rugi', component: __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanLabaRugiIndex_vue___default.a, name: 'IndexLaporanLabaRugi' }, { path: '/laporan/jurnal-umum', component: __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanJurnalUmumIndex_vue___default.a, name: 'IndexLaporanJurnalUmum' }, { path: '/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_32__components_transaksi_kas_TransaksiKasIndex_vue___default.a, name: 'IndexTransaksiKas' }, { path: '/transaksi-kas/create', component: __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_TransaksiKasCreate_vue___default.a, name: 'CreateTransaksiKas' }, { path: '/transaksi-kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasEdit_vue___default.a, name: 'EditTransaksiKas' }, { path: '/transaksi-kas/create/kas-mutasi', component: __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default.a, name: 'CreateTransaksiKasMutasi' }, { path: '/transaksi-kas/create/kas-masuk', component: __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasMasukCreate_vue___default.a, name: 'CreateTransaksiKasMasuk' }, { path: '/transaksi-kas/create/kas-keluar', component: __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default.a, name: 'CreateTransaksiKasKeluar' }, { path: '/transaksi-kas/edit/kas-masuk/:id', component: __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasMasukEdit_vue___default.a, name: 'EditTransaksiKasMasuk' }, { path: '/transaksi-kas/edit/kas-keluar/:id', component: __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default.a, name: 'EditTransaksiKasKeluar' }, { path: '/transaksi-kartu-kredit', component: __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue___default.a, name: 'IndexTransaksiKartuKredit' }, { path: '/transaksi-kartu-kredit/create/masuk', component: __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue___default.a, name: 'CreateTransaksiKartuKreditMasuk' }, { path: '/transaksi-kartu-kredit/create/keluar', component: __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue___default.a, name: 'CreateTransaksiKartuKreditKeluar' }, { path: '/transaksi-kartu-kredit/edit/:id/masuk', component: __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue___default.a, name: 'EditTransaksiKartuKreditMasuk' }, { path: '/transaksi-kartu-kredit/edit/:id/keluar', component: __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue___default.a, name: 'EditTransaksiKartuKreditKeluar' }, { path: '/*', component: __WEBPACK_IMPORTED_MODULE_56__components_error_Page404_vue___default.a }];
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_0__components_dashboard_DashboardIndex_vue___default.a, name: 'IndexDashboard' }, { path: '/user', component: __WEBPACK_IMPORTED_MODULE_1__components_user_UserIndex_vue___default.a, name: 'IndexUser' }, { path: '/user/create', component: __WEBPACK_IMPORTED_MODULE_2__components_user_UserCreate_vue___default.a, name: 'CreateUser' }, { path: '/user/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_user_UserEdit_vue___default.a, name: 'EditUser' }, { path: '/mobil', component: __WEBPACK_IMPORTED_MODULE_4__components_mobil_MobilIndex_vue___default.a, name: 'IndexMobil' }, { path: '/mobil/create', component: __WEBPACK_IMPORTED_MODULE_5__components_mobil_MobilCreate_vue___default.a, name: 'CreateMobil' }, { path: '/mobil/edit/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_mobil_MobilEdit_vue___default.a, name: 'EditMobil' }, { path: '/supplier', component: __WEBPACK_IMPORTED_MODULE_7__components_supplier_SupplierIndex_vue___default.a, name: 'IndexSupplier' }, { path: '/supplier/create', component: __WEBPACK_IMPORTED_MODULE_8__components_supplier_SupplierCreate_vue___default.a, name: 'CreateSupplier' }, { path: '/supplier/edit/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_supplier_SupplierEdit_vue___default.a, name: 'EditSupplier' }, { path: '/perusahaan', component: __WEBPACK_IMPORTED_MODULE_10__components_perusahaan_PerusahaanIndex_vue___default.a, name: 'IndexPerusahaan' }, { path: '/perusahaan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_11__components_perusahaan_PerusahaanEdit_vue___default.a, name: 'EditPerusahaan' }, { path: '/driver', component: __WEBPACK_IMPORTED_MODULE_12__components_driver_DriverIndex_vue___default.a, name: 'IndexDriver' }, { path: '/driver/create', component: __WEBPACK_IMPORTED_MODULE_13__components_driver_DriverCreate_vue___default.a, name: 'CreateDriver' }, { path: '/driver/edit/:id', component: __WEBPACK_IMPORTED_MODULE_14__components_driver_DriverEdit_vue___default.a, name: 'EditDriver' }, { path: '/gudang', component: __WEBPACK_IMPORTED_MODULE_15__components_gudang_GudangIndex_vue___default.a, name: 'IndexGudang' }, { path: '/gudang/create', component: __WEBPACK_IMPORTED_MODULE_16__components_gudang_GudangCreate_vue___default.a, name: 'CreateGudang' }, { path: '/gudang/edit/:id', component: __WEBPACK_IMPORTED_MODULE_17__components_gudang_GudangEdit_vue___default.a, name: 'EditGudang' }, { path: '/pelanggan', component: __WEBPACK_IMPORTED_MODULE_18__components_pelanggan_PelangganIndex_vue___default.a, name: 'IndexPelanggan' }, { path: '/pelanggan/create', component: __WEBPACK_IMPORTED_MODULE_19__components_pelanggan_PelangganCreate_vue___default.a, name: 'CreatePelanggan' }, { path: '/pelanggan/edit/:id', component: __WEBPACK_IMPORTED_MODULE_20__components_pelanggan_PelangganEdit_vue___default.a, name: 'EditPelanggan' }, { path: '/kas', component: __WEBPACK_IMPORTED_MODULE_21__components_kas_KasIndex_vue___default.a, name: 'IndexKas' }, { path: '/kas/create', component: __WEBPACK_IMPORTED_MODULE_22__components_kas_KasCreate_vue___default.a, name: 'CreateKas' }, { path: '/kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_23__components_kas_KasEdit_vue___default.a, name: 'EditKas' }, { path: '/kartu-kredit', component: __WEBPACK_IMPORTED_MODULE_24__components_kartu_kredit_KartuKreditIndex_vue___default.a, name: 'IndexKartuKredit' }, { path: '/kartu-kredit/create', component: __WEBPACK_IMPORTED_MODULE_25__components_kartu_kredit_KartuKreditCreate_vue___default.a, name: 'CreateKartuKredit' }, { path: '/kartu-kredit/edit/:id', component: __WEBPACK_IMPORTED_MODULE_26__components_kartu_kredit_KartuKreditEdit_vue___default.a, name: 'EditKartuKredit' }, { path: '/akun', component: __WEBPACK_IMPORTED_MODULE_27__components_akun_AkunIndex_vue___default.a, name: 'IndexAkun' }, { path: '/akun/create', component: __WEBPACK_IMPORTED_MODULE_28__components_akun_AkunCreate_vue___default.a, name: 'CreateAkun' }, { path: '/akun/edit/:id', component: __WEBPACK_IMPORTED_MODULE_29__components_akun_AkunEdit_vue___default.a, name: 'EditAkun' }, { path: '/produk', component: __WEBPACK_IMPORTED_MODULE_30__components_produk_ProdukIndex_vue___default.a, name: 'IndexProduk' }, { path: '/produk/create', component: __WEBPACK_IMPORTED_MODULE_31__components_produk_ProdukCreate_vue___default.a, name: 'CreateProduk' }, { path: '/produk/edit/:id', component: __WEBPACK_IMPORTED_MODULE_32__components_produk_ProdukEdit_vue___default.a, name: 'EditProduk' }, { path: '/transaksi-gas', component: __WEBPACK_IMPORTED_MODULE_52__components_transaksi_gas_TransaksiGasIndex_vue___default.a, name: 'IndexTransaksiGas' }, { path: '/transaksi-gas/create', component: __WEBPACK_IMPORTED_MODULE_53__components_transaksi_gas_TransaksiGasCreate_vue___default.a, name: 'CreateTransaksiGas' }, { path: '/transaksi-gas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_54__components_transaksi_gas_TransaksiGasEdit_vue___default.a, name: 'EditTransaksiGas' }, { path: '/jurnal-manual', component: __WEBPACK_IMPORTED_MODULE_55__components_jurnal_manual_JurnalManualIndex_vue___default.a, name: 'IndexJurnalManual' }, { path: '/jurnal-manual/create', component: __WEBPACK_IMPORTED_MODULE_56__components_jurnal_manual_JurnalManualCreate_vue___default.a, name: 'CreateJurnalManual' }, { path: '/jurnal-manual/edit/:id', component: __WEBPACK_IMPORTED_MODULE_57__components_jurnal_manual_JurnalManualEdit_vue___default.a, name: 'EditJurnalManual' }, { path: '/posisi-kas', component: __WEBPACK_IMPORTED_MODULE_33__components_transaksi_kas_PosisiKasIndex_vue___default.a, name: 'IndexPosisiKas' }, { path: '/laporan/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_47__components_laporan_LaporanTransaksiKasIndex_vue___default.a, name: 'IndexLaporanTransaksiKas' }, { path: '/laporan/neraca', component: __WEBPACK_IMPORTED_MODULE_50__components_laporan_LaporanNeracaIndex_vue___default.a, name: 'IndexLaporanNeraca' }, { path: '/laporan/buku-besar', component: __WEBPACK_IMPORTED_MODULE_48__components_laporan_LaporanBukuBesarIndex_vue___default.a, name: 'IndexLaporanBukuBesar' }, { path: '/laporan/laba-rugi', component: __WEBPACK_IMPORTED_MODULE_51__components_laporan_LaporanLabaRugiIndex_vue___default.a, name: 'IndexLaporanLabaRugi' }, { path: '/laporan/jurnal-umum', component: __WEBPACK_IMPORTED_MODULE_49__components_laporan_LaporanJurnalUmumIndex_vue___default.a, name: 'IndexLaporanJurnalUmum' }, { path: '/transaksi-kas', component: __WEBPACK_IMPORTED_MODULE_34__components_transaksi_kas_TransaksiKasIndex_vue___default.a, name: 'IndexTransaksiKas' }, { path: '/transaksi-kas/create', component: __WEBPACK_IMPORTED_MODULE_35__components_transaksi_kas_TransaksiKasCreate_vue___default.a, name: 'CreateTransaksiKas' }, { path: '/transaksi-kas/edit/:id', component: __WEBPACK_IMPORTED_MODULE_36__components_transaksi_kas_TransaksiKasEdit_vue___default.a, name: 'EditTransaksiKas' }, { path: '/transaksi-kas/create/kas-mutasi', component: __WEBPACK_IMPORTED_MODULE_39__components_transaksi_kas_TransaksiKasMutasiCreate_vue___default.a, name: 'CreateTransaksiKasMutasi' }, { path: '/transaksi-kas/create/kas-masuk', component: __WEBPACK_IMPORTED_MODULE_37__components_transaksi_kas_TransaksiKasMasukCreate_vue___default.a, name: 'CreateTransaksiKasMasuk' }, { path: '/transaksi-kas/create/kas-keluar', component: __WEBPACK_IMPORTED_MODULE_38__components_transaksi_kas_TransaksiKasKeluarCreate_vue___default.a, name: 'CreateTransaksiKasKeluar' }, { path: '/transaksi-kas/edit/kas-masuk/:id', component: __WEBPACK_IMPORTED_MODULE_40__components_transaksi_kas_TransaksiKasMasukEdit_vue___default.a, name: 'EditTransaksiKasMasuk' }, { path: '/transaksi-kas/edit/kas-keluar/:id', component: __WEBPACK_IMPORTED_MODULE_41__components_transaksi_kas_TransaksiKasKeluarEdit_vue___default.a, name: 'EditTransaksiKasKeluar' }, { path: '/transaksi-kartu-kredit', component: __WEBPACK_IMPORTED_MODULE_42__components_transaksi_kartu_kredit_TransaksiKartuKreditIndex_vue___default.a, name: 'IndexTransaksiKartuKredit' }, { path: '/transaksi-kartu-kredit/create/masuk', component: __WEBPACK_IMPORTED_MODULE_43__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukCreate_vue___default.a, name: 'CreateTransaksiKartuKreditMasuk' }, { path: '/transaksi-kartu-kredit/create/keluar', component: __WEBPACK_IMPORTED_MODULE_44__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarCreate_vue___default.a, name: 'CreateTransaksiKartuKreditKeluar' }, { path: '/transaksi-kartu-kredit/edit/:id/masuk', component: __WEBPACK_IMPORTED_MODULE_45__components_transaksi_kartu_kredit_TransaksiKartuKreditMasukEdit_vue___default.a, name: 'EditTransaksiKartuKreditMasuk' }, { path: '/transaksi-kartu-kredit/edit/:id/keluar', component: __WEBPACK_IMPORTED_MODULE_46__components_transaksi_kartu_kredit_TransaksiKartuKreditKeluarEdit_vue___default.a, name: 'EditTransaksiKartuKreditKeluar' }, { path: '/*', component: __WEBPACK_IMPORTED_MODULE_58__components_error_Page404_vue___default.a }];
 
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
@@ -71764,6 +71770,725 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(236)
+/* template */
+var __vue_template__ = __webpack_require__(237)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/perusahaan/PerusahaanIndex.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7a924c4c", Component.options)
+  } else {
+    hotAPI.reload("data-v-7a924c4c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      perusahaans: [],
+      perusahaansData: {},
+      url: window.location.origin + window.location.pathname.replace("home", "perusahaan"),
+      pencarian: '',
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    var app = this;
+    app.getResults();
+  },
+
+  watch: {
+    pencarian: function pencarian(newSearch) {
+      this.getHasilPencarian();
+    }
+  },
+  methods: {
+    getResults: function getResults(page) {
+      var app = this;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      axios.get(app.url + '/view?page=' + page).then(function (resp) {
+        app.perusahaans = resp.data.data;
+        app.perusahaansData = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    getHasilPencarian: function getHasilPencarian(page) {
+
+      var app = this;
+      if (typeof page == 'undefined') {
+        page = 1;
+      }
+      axios.get(app.url + '/search?q=' + app.pencarian + '&page=' + page).then(function (resp) {
+        app.perusahaans = resp.data.data;
+        app.perusahaansData = resp.data;
+        app.loading = false;
+      }).catch(function (resp) {
+        console.log(resp);
+        app.loading = false;
+      });
+    },
+    alert: function alert(title, pesan) {
+      this.$swal({
+        title: title,
+        text: pesan,
+        icon: "success"
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: { name: "IndexDashboard" } } }, [
+                _vm._v("Home")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Kelola Perusahaan")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Kelola Perusahaan")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c("div", { staticClass: "table-responsive" }, [
+              _c("table", { staticClass: "table table-bordered" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _vm.perusahaans.length
+                  ? _c(
+                      "tbody",
+                      _vm._l(_vm.perusahaans, function(perusahaan, index) {
+                        return _c("tr", [
+                          _c("td", [_vm._v(_vm._s(perusahaan.nama))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(perusahaan.no_telp))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(perusahaan.alamat))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(perusahaan.website))]),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "btn btn-xs btn-default",
+                                  attrs: {
+                                    to: {
+                                      name: "EditPerusahaan",
+                                      params: { id: perusahaan.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                          Edit\n                       "
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      })
+                    )
+                  : _vm._e()
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("th", [_vm._v("Nama Perusahaan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("No Telp Perusahaan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Alamat Perusahaan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Website Perusahaan")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Aksi")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7a924c4c", module.exports)
+  }
+}
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(239)
+/* template */
+var __vue_template__ = __webpack_require__(240)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/perusahaan/PerusahaanEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-35b5a632", Component.options)
+  } else {
+    hotAPI.reload("data-v-35b5a632", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 239 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      perusahaan: {
+        no_telp: '',
+        nama: '',
+        alamat: '',
+        website: ''
+      },
+      perusahaanId: null,
+      url: window.location.origin + window.location.pathname.replace("home", "perusahaan"),
+      errors: [],
+      message: ''
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var app = this;
+    this.perusahaanId = this.$route.params.id;
+    axios.get(app.url + '/' + this.perusahaanId + '/edit').then(function (resp) {
+      _this.perusahaan = resp.data;
+    }).catch(function (resp) {
+      alert("Something Goes Wrong");
+    });
+  },
+
+  methods: {
+    alert: function alert(pesan) {
+      this.$swal({
+        title: "Berhasil Mengubah Perusahaan",
+        text: pesan,
+        icon: "success"
+      });
+    },
+    saveForm: function saveForm() {
+      var _this2 = this;
+
+      var newPerusahaan = this.perusahaan;
+      axios.patch(this.url + '/' + this.perusahaanId, newPerusahaan).then(function (resp) {
+        _this2.alert('Berhasil Mengubah Perusahaan ' + _this2.perusahaan.nama);
+        _this2.$router.replace('/perusahaan/');
+      }).catch(function (resp) {
+        if (resp.response.status == 500) alert('Something Goes Wrong');
+        _this2.errors = resp.response.data.errors;
+        console.log(resp);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("ul", { staticClass: "breadcrumb" }, [
+          _c("li", [_vm._v("Home")]),
+          _vm._v(" "),
+          _c(
+            "li",
+            [
+              _c(
+                "router-link",
+                { attrs: { to: { name: "IndexPerusahaan" } } },
+                [_vm._v("Kelola Perusahaan")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v("Edit  Perusahaan")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("Edit  Perusahaan")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "form",
+              {
+                staticClass: "form-horizontal",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.saveForm()
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Nama")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.perusahaan.nama,
+                          expression: "perusahaan.nama"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Nama Perusahaan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.perusahaan.nama },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.perusahaan, "nama", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.nama
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.nama[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("No Telp")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.perusahaan.no_telp,
+                          expression: "perusahaan.no_telp"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "No Telp Perusahaan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.perusahaan.no_telp },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.perusahaan,
+                            "no_telp",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.no_telp
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.no_telp[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Alamat")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.perusahaan.alamat,
+                          expression: "perusahaan.alamat"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Alamat Perusahaan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.perusahaan.alamat },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.perusahaan,
+                            "alamat",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.alamat
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.alamat[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-md-2 control-label",
+                      attrs: { for: "name" }
+                    },
+                    [_vm._v("Website")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.perusahaan.website,
+                          expression: "perusahaan.website"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        required: "",
+                        placeholder: "Website Perusahaan",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.perusahaan.website },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.perusahaan,
+                            "website",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.website
+                      ? _c("span", { staticClass: "label label-danger" }, [
+                          _vm._v(" " + _vm._s(_vm.errors.website[0]))
+                        ])
+                      : _vm._e()
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "col-md-4 col-md-offset-2" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-35b5a632", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
