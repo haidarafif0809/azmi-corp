@@ -49,6 +49,12 @@
                       </tr>
                     </tbody>
                     </table>
+                    <vue-pagination
+                      :data="driversData"
+                      v-on:pagination-change-page="getResults"
+                      :limit="4"
+                    >
+                    </vue-pagination>
                    </div>
                 </div>
             </div>

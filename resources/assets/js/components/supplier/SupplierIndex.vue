@@ -51,6 +51,12 @@
                       </tr>
                     </tbody>
                     </table>
+                    <vue-pagination
+                      :data="suppliersData"
+                      v-on:pagination-change-page="getResults"
+                      :limit="4"
+                    >
+                    </vue-pagination>
                    </div>
                 </div>
             </div>

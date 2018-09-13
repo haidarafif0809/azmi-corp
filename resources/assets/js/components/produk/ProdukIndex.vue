@@ -57,6 +57,12 @@
                       </tr>
                     </tbody>
                     </table>
+                    <vue-pagination
+                      :data="produksData"
+                      v-on:pagination-change-page="getResults"
+                      :limit="4"
+                    >
+                    </vue-pagination>
                    </div>
                 </div>
             </div>
